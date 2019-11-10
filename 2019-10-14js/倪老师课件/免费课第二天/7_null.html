@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        null(空)
+            空对象指针
+            typeof null  -> 'object'
+            Number(null) -> 0
+            parseInt(null) -> NaN
+
+            要么代表空对象，要么代表对象不存在
+
+
+        常见在:
+            1.变量未来会赋值一个对象类型，所以在初始化的时候赋值为null
+            2.在页面中找不到某个元素
+            3.正则匹配不到
+            4.强行让某个变量释放(被浏览器垃圾回收机制回收,性能优化)
+
+
+    */
+   //obj未来会赋值一个对象类型，所以在声明变量的时候通过赋值null取定义变量
+//    let obj = null;
+//    obj = {}
+
+    // 元素找不到
+
+    // console.log(document.getElementById('box'))
+
+    // console.log('312312'.match(/5/));
+
+    // let obj = {
+    //     name:'珠峰培训'
+    // }
+
+    // obj = null;
+
+    /*
+        区别是2个不是一个类型的，但是undefined是从null派生出来的，所以双等比较为相等
+    */
+    console.log(null == undefined); //标准说相等
+
+
+
+
+</script>
+</body>
+</html>

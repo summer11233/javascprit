@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+ul{
+    width:200px;
+    height:300px;
+    border:1px solid #000;
+}
+</style>
+</head>
+<body>
+    <ul id="ul">
+        <li>你你你好好好</li>
+    </ul>
+    <input type="text" id="txt"/><button id="btn">发送</button>
+
+<script>
+    /*
+        字符串与字符串相加，叫字符串拼接
+
+        字符串 + 任意的数据都是字符串拼接
+
+    */    
+//    let str = '珠峰';
+//    let str2 = '培训';
+//    let a = {};
+//    console.log(str2 + a);//'珠峰培训'
+
+
+    /*
+        输入内容，当点击发送按钮的时候，获取输入的内容
+        给ul里面添加一个li，li里面的内容就为输入的内容
+        清空输入框的内容
+    */
+
+    let ul = document.getElementById('ul');
+    let btn = document.getElementById('btn');
+    let txt = document.getElementById('txt');
+
+    btn.onclick = function(){
+        // alert(txt.value);
+        ul.innerHTML = ul.innerHTML + '<li>' + txt.value + '</li>';
+        txt.value = '';
+    }
+
+
+
+
+</script>
+</body>
+</html>

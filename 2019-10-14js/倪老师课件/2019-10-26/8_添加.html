@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    /*
+        创建元素
+
+
+        回流:
+            当某个元素发生了几何、坐标..的变化,会使页面局部刷新，或者导致整个页面刷新
+        
+        重绘:
+            元素几何、坐标..不发生变化，只是外观、颜色、风格发生变化的时候会导致某个样式重新绘制
+
+
+        不管是回流还是重绘，都是性能的杀手。我们要尽可能去少操作DOM，页面至少会回流一次，页面第一次加载的时候
+        回流一定会重绘，而重绘不一定会导致回流
+    */
+
+    console.time('计时器');
+    let html = '';
+    for(let i=0;i<500;i++){
+        html += '<li>'+i+'</li>';
+    }
+    ul.innerHTML = html;
+    //ul.innerHTML = ul.innerHTML + '<li>'+i+'</li>'
+    console.timeEnd('计时器');
+    //2281.533203125ms
+    //2130.85693359375ms
+    //2820.409912109375ms
+
+    // 计时器: 3.27392578125ms
+    //计时器: 2.554931640625ms
+    // 计时器: 9.964111328125ms
+
+
+    
+
+</script>
+</body>
+</html>

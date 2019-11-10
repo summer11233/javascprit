@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        string, '',"",``
+
+        new String('123') -> '123'
+
+        字符串有length
+            注意:length只可读不可写
+
+        *** ('',"")字符串不能换行,如果非要换行要用字符串拼接 
+
+
+        `` 模板字符串 ES6的语法
+            可以通过${}把想拼接的数据放到${}中
+                ${}可以进行数学运算
+
+        
+    *** 页面的属性值都是字符串
+            innerHTML
+            innerText
+            value
+            src
+            href
+    */
+
+    // console.log(typeof new String('123')); //object
+    
+    // let str = 'dshdjksa';
+    // str.length = 2;
+    // console.log(str.length);
+
+    /*
+        字符串拼接是个难点
+    */
+
+    let w = '100px';
+    let h = '120px';
+    let bg = 'red';
+
+    /*
+        拼接字符串的小技巧:
+            给要填充的内容设置一个初始值，然后'+  +'(咔咔加加)把要替换的内容放到两个加号的中间
+    */    
+    // box.innerHTML = '<div style="width:'+ w + ';height:' + h + ';background:'+ bg +'"></div>';
+
+
+    // box.innerHTML = `<div style="width:${parseInt(w)+20}px;height:${h};background:${bg}"></div>`;
+
+
+    // let str = 'h8932bucr3'+
+    // '28rbc2r';
+
+    let str = `h8932bu
+    cr328rbc2r`;
+
+</script>
+</body>
+</html>

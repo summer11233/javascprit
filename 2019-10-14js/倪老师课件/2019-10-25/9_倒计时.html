@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        现在  离  8点半  有多少时间
+
+        现在的时间(8点20)    将来的时间(8点30)
+
+        将来的时间(8点30) - 现在的时间(8点20) = 剩下多少时间
+
+        现在的时间:
+            new Date;
+
+        将来的时间:
+            new Date(2019,9,25,20,30);
+            new Date('2019 10 25 20:30');
+
+    */
+
+    // let d = new Date(2019,9,25,20,30);//年月日时分秒，唯一要注意的是月份要比当前月份少1
+    // let d = new Date('2019 10 25 20:30');  //'2019 10 25 20:30'
+    // console.log(d);
+
+    /*
+        86400  天
+        3600   时
+        60     分
+    */
+
+    let d = new Date('2019 10 26 20:50'); //未来的时间
+
+    function fn(){
+        let d2 = new Date;//现在的时间
+        let t = Math.floor((d-d2)/1000);
+        let dd = Math.floor(t/86400);
+        t %= 86400;
+        let Hour = Math.floor(t/3600);
+        t %= 3600;
+        let Mi = Math.floor(t/60);
+        t %= 60;
+        // console.log();
+        box.innerHTML = dd+'天'+Hour+'时'+Mi+'分'+t+'秒';
+    }
+    fn();
+    setInterval(fn,1000);
+    
+    // let d2 = new Date;//现在的时间
+    // // console.log(d - d2); //毫秒
+
+    // let t = Math.floor((d-d2)/1000);
+
+    // let dd = Math.floor(t/86400);
+    // t %= 86400;
+    // let Hour = Math.floor(t/3600);
+    // t %= 3600;
+    // let Mi = Math.floor(t/60);
+    // t %= 60;
+
+    // console.log(dd+'天'+Hour+'时'+Mi+'分'+t+'秒');
+
+
+
+
+    // let mi = Math.floor(t/60);
+
+    // t = t%60; //66秒 -> 1分钟6秒   66%60 6
+    // console.log(mi+'分'+t+'秒');
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

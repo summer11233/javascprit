@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        递归
+            函数自己调用自己(什么时候用？怎么用？)
+
+
+        push
+        pop
+        unshift
+        shift
+        splice
+        slice
+        reverse
+        join
+        concat
+        indexOf
+        sort(function(a,b){return a-b})
+        
+        forEach(function(item,i,all){
+            console.log(item);
+        },document)
+
+        let ary = [1,2,3,5];
+        map((item,i,all)=>{return item;console.log(item)})
+        console.log(arr.filter((item,i,all)=>item>2));
+        arr.some(num=>num>=8)
+        find
+        findIndex
+        every
+        flat
+        reduce
+
+
+
+
+
+    */  
+    // let arr = [1,2,3,4,5,8];
+
+    // let arr2 = ['1px',!!!('1px'-5),'6',!('p'/5)];
+
+
+    let ary3 = ['1100元','100块','50.5元'];
+
+    let num = ary3.reduce((item,next)=>parseFloat(item)+parseFloat(next));
+    console.log(num);//1250.5
+
+
+    // console.log(arr2.every(item=>!!item));  //Boolean(item)===true
+
+        
+
+    
+    // let index = arr.findIndex(function(item,i,all){return item===8})
+    // console.log(index);
+    // console.log(arr.find(item=>item===8));
+
+    
+    // console.log(arr.some(num=>num>=8))
+
+    // console.log(arr.filter((item,i,all)=>item>2));
+
+
+    let ary = [1,2,3,4,[5,[5,[5,7,[8]]]]];
+
+    console.log( ary.flat(Infinity) );//Infinity不管有多少层，都能拆开
+
+
+    function deepClone(ary){
+        let ary2 = []; //创建一个新数组(另一个空间)
+        for(let i=0;i<ary.length;i++){
+            //如果当前的数组的某一项为数组，那么就继续递归
+            if(Array.isArray(ary[i])){
+                ary2[i] = deepClone(ary[i]);
+            }else{
+                //如果数组的某一项不是数组，那么就赋值
+                ary2[i] = ary[i]; 
+            }
+        }
+        return ary2;
+    }
+
+
+    // let ary2 = ary;
+    let ary2 = deepClone(ary);
+    
+    // [...ary];
+    //ary.concat();
+    //ary.slice();
+
+    ary2[4].push(5);
+
+    // console.log(ary);
+
+    
+    // function fn(a){
+    //     // console.log(a);
+    //     a(function(a){
+    //         a(function(a){
+    //             a(function(){
+
+    //             })
+    //         });
+    //     });
+    // }
+    // fn(function(a){
+    //     a(function(a){
+    //         a(function(a){
+    //             a();
+    //         })
+    //     });
+    // });
+    
+</script>
+</body>
+</html>

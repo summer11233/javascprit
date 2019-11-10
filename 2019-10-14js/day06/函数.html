@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数提的小括号放的是形参变量(和实参是一一对应的)
+    function fn (m,  n){
+        //函数执行时,实参没有给形参赋值,那在函数体里输出就是undefined
+    console.log(n ,m)//20.10
+    //把函数的执行结果返回出去,阻断代码向下运行
+    return 1;
+    console.log(n)
+    }
+    //函数名+():函数执行
+    //括号里放的是实参
+    // console.log(fn(10,  20))
+    // console.log(fn())
+    // console.log(10,20,30)
+    console.log(fn(10))//1
+
+    //匿名函数
+    //函数表示式
+    // let fn = function(){
+
+    // }
+    // fn()
+    // //自执行函数
+    // (function(n){
+    //     console.log(n)//100
+    // })(100)
+
+    let fn = function(x){
+        return x
+    }
+    let m = fn(function(){})
+    console.log(m)//
+    </script>
+</body>
+</html>

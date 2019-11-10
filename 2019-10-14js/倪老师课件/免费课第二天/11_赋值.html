@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        简单类型的赋值操作是按值操作（赋值），是拷贝了一份数据给另一个变量，
+        改变其一不会影响其二。
+
+
+        引用类型的赋值，是按地址操作（赋址），把两个变量指向同一个堆内存空间地址，
+        改变其一，一定会影响其二
+
+    */    
+//    let a = 10;
+
+//    let b = a;
+
+//    b = 20;
+
+//    console.log(a);  //10
+
+
+    let obj = {
+        name:'珠峰'
+    }
+
+    let obj2 = obj;
+
+    obj2.name = '前端培训';
+
+    console.log(obj.name);
+
+</script>
+</body>
+</html>

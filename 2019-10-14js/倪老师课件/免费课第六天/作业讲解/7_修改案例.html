@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.box{
+    width:200px;
+    height: 50px;
+    border:1px solid #000;
+}
+.btns_box{
+    display: none;
+}
+.btn{
+    height:50px;
+    float:right;
+}
+.txt{
+    width:150px;
+    float: left;
+    line-height: 50px;
+}
+.txt_box{
+    _display: none;
+}
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="txt_box">
+            <div class="txt">好好学习,天天向上</div>
+            <button class="btn">修改</button>
+        </div>
+        <div class="btns_box">
+            <input value="好好学习,天天向上" class="txtv"/>
+            <button class="esc">取消</button>
+            <button class="ok">确定</button>
+        </div>
+    </div>
+
+    <div class="box">
+            <div class="txt_box">
+                <div class="txt">好好学习,天天向上</div>
+                <button class="btn">修改</button>
+            </div>
+            <div class="btns_box">
+                <input value="好好学习,天天向上" class="txtv"/>
+                <button class="esc">取消</button>
+                <button class="ok">确定</button>
+            </div>
+        </div>
+
+        <div class="box">
+                <div class="txt_box">
+                    <div class="txt">好好学习,天天向上</div>
+                    <button class="btn">修改</button>
+                </div>
+                <div class="btns_box">
+                    <input value="好好学习,天天向上" class="txtv"/>
+                    <button class="esc">取消</button>
+                    <button class="ok">确定</button>
+                </div>
+            </div>
+           
+<script>
+    let box = document.querySelectorAll('.box');
+
+    for(let i=0;i<box.length;i++){
+        changeText(i);
+    }
+    
+    function changeText(i){
+        let boxOne = box[i]; //代码缓存
+        let txt_box = boxOne.querySelector('.txt_box');
+        let txt = boxOne.querySelector('.txt');
+        let btn = boxOne.querySelector('.btn');
+        let btns_box = boxOne.querySelector('.btns_box');
+        let txtv = boxOne.querySelector('.txtv');
+        let esc = boxOne.querySelector('.esc');
+        let ok = boxOne.querySelector('.ok');
+
+        btn.onclick = function(){
+            txt_box.style.display = 'none'; 
+            btns_box.style.display = 'block';
+            txtv.value = txt.innerHTML;
+        }
+        esc.onclick = function(){
+            txt_box.style.display = 'block'; 
+            btns_box.style.display = 'none';
+        }
+
+        ok.onclick = function(){
+            txt.innerHTML = txtv.value;
+            esc.onclick();
+        }
+    }
+
+
+
+
+
+
+
+
+
+    // btn.onclick = function(){
+    //     txt_box.style.display = 'none'; 
+    //     btns_box.style.display = 'block';
+    // }
+    // esc.onclick = function(){
+    //     txt_box.style.display = 'block'; 
+    //     btns_box.style.display = 'none';
+    // }
+
+    // ok.onclick = function(){
+    //     txt.innerHTML = txtv.value;
+    //     esc.onclick();
+    // }
+
+</script>
+</body>
+</html>

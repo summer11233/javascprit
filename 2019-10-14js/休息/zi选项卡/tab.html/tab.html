@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <link rel="stylesheet" href="../css/tab.css">
+</head>
+<body>
+    <div id="tabBox">
+         <ul id="navBox">
+             <li class="active">朴树</li>
+             <li>赵雷</li>
+             <li>许巍</li>
+         </ul>
+      
+         <div class="active">人随风飘荡 天各自一方
+      在风尘中遗忘的清白脸庞</div>
+      
+      <div>我是个沉默不语的靠着车窗想念你的乘客</div>
+      
+      <div>曾梦想仗剑走天涯
+        看一看世界的繁华</div>
+</div>
+<script>
+var tabBox=document.getElementById('tabBox');
+var tabList=tabBox.getElementsByTagName('div');
+var navBox=document.getElementById('navBox');
+var navList=navBox.getElementsByTagName('li');
+
+
+
+for(var i = 0; i<navList.length;i++){
+    navList[i].myIndex = i;
+    navList[i].onclick = function(){
+      changeTab(this.myIndex);
+    }
+}
+function changeTab(clickIndex){
+    for(var i =0;i<navList.length;i++){
+        navList[i].className = '';
+        tabList[i].className = '';
+    }
+    navList[clickIndex].className ='active';
+    tabList[clickIndex].className ='active';
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>

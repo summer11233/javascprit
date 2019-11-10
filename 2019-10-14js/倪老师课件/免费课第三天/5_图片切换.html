@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+#box{
+    width:300px;
+    height:200px;
+    border:1px solid #000;
+    position: relative;
+}
+#box2{
+    width:300px;
+    position: absolute;
+    top:40%;
+}
+#prev{
+    float:left;
+}
+#next{
+    float:right;
+}
+#img{
+    width:300px;
+    height:200px;
+    border:none;
+}
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="box2">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+        <img src="./img/1.png" id="img" />
+    </div>
+<script>
+    /*
+        1.点击next，让num ++
+        2.点击prev,让num--
+    */
+    let num = 0;
+    // num = num+1;
+    // num += 1;
+    // num ++;
+    // console.log(num);
+
+    /*
+        1   1
+        2   2
+        7   7
+        8   8   
+        9   1  0
+        10  2
+        11  3
+
+        %
+    */
+    next.onclick = function(){
+        // num ++;
+        // num = num % 8;
+        // img.src = './img/'+(num+1)+'.png';
+        // console.log(num+1);
+
+        num ++;
+        if(num > 7){
+            num = 0;
+        }
+        img.src = './img/'+(num+1)+'.png';
+
+    }
+
+    /*
+        1.如果是-1就变成0
+        2.如果是小于0的，到最后一张上去
+    */
+    prev.onclick = function(){
+        //num只有大于0的时候才能--
+        if(num > 0){
+            num --;
+            img.src = './img/'+(num+1)+'.png';
+            console.log(num);
+        }
+        // num --;
+        // if(num < 0){
+        //     num = 0;
+        // }
+        // if(num < 0){
+        //     num = 7;
+        // }
+        // img.src = './img/'+(num+1)+'.png';
+        // console.log(num);
+    }
+
+
+</script>
+</body>
+</html>

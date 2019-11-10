@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="./css/1.css" id="link">
+</head>
+<body>
+    <!-- <div id="box">
+        555555
+        <div>
+            1111111
+            <p>323231</p>
+        </div>
+    </div> -->
+    <button id="b1">黄色</button>
+    <button id="b2">红色</button>
+    <div id="box" style="width:100px;height:100px">珠峰培训</div>
+<script> 
+
+    document.getElementById('b1').onclick = function(){
+        document.getElementById('link').href = './css/1.css';
+    }
+    document.getElementById('b2').onclick = function(){
+        document.getElementById('link').href = './css/2.css';
+    }
+
+
+    /*
+        属性操作
+            基本上css如何写，js就如何写
+
+            遇到复合样式的时候把横杠去掉，横杆后面的首字母大写
+                比如:
+                    font-size -> fontSize
+                    background-color -> backgroundColor
+
+            读操作（输出、打印、弹框），写操作（改变、设置、赋值）
+                    
+        src
+
+        href
+
+        innerText 操作元素的文本
+
+        innerHTML 操作元素的结构
+
+    */
+
+    // document.getElementById("box").style.width = '100px';
+    // document.getElementById("box").style.height = '100px';
+    // document.getElementById("box").style.background = 'red';
+    // document.getElementById("box").style.fontSize = '50px';
+
+    document.getElementById("box").innerText = '你好';
+
+    // document.getElementById("box").innerText = '<p>哈哈</p>';
+
+    // document.getElementById("box").innerHTML = '<p>哈哈</p>';
+
+    // console.log(document.getElementById("box").innerText);
+
+
+
+    // console.dir(document.getElementById("box"));
+</script>
+</body>
+</html>

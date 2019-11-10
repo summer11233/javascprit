@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.y{
+    background: coral;
+}
+.sky{
+    background:skyblue;
+}
+li{
+    width:300px;
+    height:25px;
+    line-height: 25px;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <li>页面中有一个区域显示中奖人员的编0</li>
+        <li>页面中有一个区域显示中奖人员的编1</li>
+        <li>页面中有一个区域显示中奖人员的编2</li>
+        <li>页面中有一个区域显示中奖人员的编3</li>
+        <li>页面中有一个区域显示中奖人员的编4</li>
+        <li>页面中有一个区域显示中奖人员的编5</li>
+    </ul>
+<script>    
+    const lis = document.querySelectorAll('li');
+    lis.forEach((ele,index)=>{
+        if(!(index % 2)){
+            ele.classList.add('y');
+        }
+        ele.onmouseover = function(){
+            this.classList.add('sky');
+        }
+        ele.onmouseout = function(){
+            this.classList.remove('sky');
+        }
+        ele.onclick = function(){
+            alert('我是第'+(index+1)+'个LI');
+        }
+    });
+</script>
+</body>
+</html>

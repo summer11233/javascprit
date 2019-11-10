@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+<script>
+    /*
+        除了3别的li都变色
+
+
+        continue,跳过，跳过的时候***依然会***修改下次循环条件
+
+        break,跳出，直接跳出循环，是***不会修改***此次循环条件的
+
+    */
+    const lis = document.querySelectorAll('li');
+
+    let num = 0;
+    for(var i=0;i<5;i++){
+        if(num > 2){
+            continue
+        }else{
+            num = num + 2;
+        }
+        break;
+    }
+    console.log(num);
+
+
+
+    // for(var i=0;i<lis.length;i++){
+    //     if(i === 2)break;
+    //     alert(i);
+    //     // lis[i].style.background = 'pink';
+    // }
+    // console.log(i);//2
+
+
+
+    // for(var i=0;i<lis.length;i++){
+    //     if(i === 2)continue;
+    //     // alert(i);
+    //     lis[i].style.background = 'pink';
+    // }
+
+
+    // for(var i=0;i<lis.length;i++){
+    //     if(i !== 2){
+    //         lis[i].style.background = 'pink';
+    //     }
+    // }
+  
+
+    // for(var i=0;i<lis.length;i++){
+    //     lis[i].style.background = 'pink';
+    // }
+    // lis[2].style.background = '';
+</script>
+</body>
+</html>

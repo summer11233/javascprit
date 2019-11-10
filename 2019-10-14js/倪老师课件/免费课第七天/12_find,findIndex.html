@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        find(callback) 
+            查找条件符合的数据，没有找到就返回undefined
+
+            callback(每个数据,每个数据对应的索引,整个数组)
+
+            callback必须要有返回值，返回的是布尔值，true就返回数据，flase就是undefined
+
+
+        findIndex
+            查找条件符合的数据索引,找不到返回-1
+    */
+
+    let ary = [
+        {
+            name:'炸鸡',
+            id:0
+        },
+        {
+            name:'啤酒',
+            id:1
+        },
+        {
+            name:'烤串',
+            id:2
+        },
+        {
+            name:'花生毛豆',
+            id:3
+        }
+    ];
+
+    // let obj = ary.find(function(item,i,all){
+    //     // console.log(item,i,all)
+    //     return item.name === '啤酒';
+    // });
+
+    // let obj = ary.find((item)=>item.name === '啤酒');
+
+    // function find(ary,callback){
+    //     for(let i=0;i<ary.length;i++){
+    //         if(callback(ary[i],i,ary)){ //说明返回了一个true
+    //             return ary[i];
+    //         }
+    //     }
+    // }
+
+    // let obj = find(ary,function(item,i,all){
+    //     return item.name === '啤酒';
+    // });
+
+
+    // let index = ary.findIndex((item)=>item.name === '啤酒');
+    let index = ary.findIndex(function(item,i,all){
+        // console.log(item,i,all);
+        return item.name === '喝啤酒';
+    });
+
+    console.log(index);
+
+
+
+
+
+
+</script>
+</body>
+</html>

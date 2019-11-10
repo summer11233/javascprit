@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        简单类型如果说2个值是一样的，那么相等
+    */
+//    console.log(true == true);
+console.log(1 == 1);
+ console.log('5' == '5');
+    let str = '5';
+    let str2 = '5';
+
+    let s = Symbol('5');
+    let s2 = Symbol('5');
+    console.log(s == s2);//false
+     console.log(typeof s);//symbol
+    console.log(str == str2);//true
+
+    let obj = {
+        [s]:'symbol',
+        [s2]:'symbol'
+    }
+    console.log(obj);
+
+</script>
+</body>
+</html>

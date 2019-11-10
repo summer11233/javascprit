@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <button id="stop1">停</button>
+    <p id="p">随机</p>
+<script>
+    /*
+        Math
+            PI  圆周率
+            abs 取绝对值
+            max 求最大
+            min 求最小
+            pow 幂  
+            round 四舍五入
+            random 随机
+                0-1之间的无限不循环小数
+
+            sqrt  开方
+
+    */
+//    console.dir(Math.PI);
+    // console.log(Math.abs(1))
+    let ary = [0,2,3,4,5];
+
+    // console.log(Math.pow(5,2));
+
+    // console.log(Math.round(4.4));
+
+
+    // console.log(Math.random())
+
+
+
+    // console.log(Math.min(...ary));
+    // console.log(Math.max(...ary));
+
+    let ary2 = ['赵炎','尹德智','董尚','李磊','冉德鹏','刘成','韩俊','刘月鹏','邓志刚','周柯含','王萌军','李瑞洲','王东亮','刘艳旭','彭锦程','保森','冠冠'];
+
+    // console.log(Math.round(Math.random()*17));
+
+
+    let timer;
+    btn.onclick = function(){
+        timer = setInterval(() => {
+            p.innerText = ary2[Math.round(Math.random()*16)]
+        },50);
+    }
+
+    stop1.onclick = function(){
+        clearInterval(timer);
+    }
+
+
+   console.dir(Math);
+</script>
+</body>
+</html>

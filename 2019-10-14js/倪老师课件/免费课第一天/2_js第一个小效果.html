@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height:0;
+            transition: .5s;
+            /* height:100px; */
+            background: red;
+            position: absolute;
+            left:0;
+            top:50px;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">显示</button> 
+    <div id="box"></div>
+<script>
+    /*
+        点击按钮的时候，让box的样式的display等于block
+
+        在操作元素的样式时，值要为字符换
+
+        '',"",`` 字符串（成对出现）
+        千万不要一个单引号和双引号
+    */
+    document.getElementById('btn').onclick = function(){
+        // document.getElementById('box').style.display = 'block';
+        document.getElementById('box').style.height = '100px';
+        document.getElementById('box').style.background = 'green';
+        document.getElementById('box').style.width = "200px";
+        document.getElementById('box').style.left = `200px`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Array  数组
+
+        ...  剩余运算符
+
+        [...] 扩展运算符 把数组中的成员展开
+            比如:
+                let ary = [1,2,3,4];
+
+                [...ary] -> [1,2,3,4] 是个新的数组
+
+        数组的方法，都可以通过Array.prototype上去查找
+
+    */    
+//    console.log(Array)//基类
+
+    // console.log(new Array('a'));
+
+    let ary = [true,1]; //想在数组的最后一位添加一个或者多个数据
+
+    // console.log([...ary,5]);
+
+    // ary[ary.length] = 5;  
+
+    /*
+        往数组中添加一个或者多个数据，返回值为新数据组的长度
+    */
+
+    // function push(ary,...arg){
+    //     let newAry = [...ary,...arg]; //[true,1,1,5]
+    //     for(let i=0;i<newAry.length;i++){
+    //         ary[i] = newAry[i]
+    //     }
+    //     return newAry.length;
+    // }
+
+    // function push(){
+    //     let ary = arguments[0];//ary  //[ary,1,5]
+    //     let len = ary.length; //2
+    //     for(let i=1;i<arguments.length;i++){
+    //         // debugger;
+    //         ary[len + (i-1)] = arguments[i];  //[true,1,1,5]
+    //     }
+    //     return ary.length;
+    //     console.log(ary);
+    // }
+
+
+//    console.log(push(ary,1,5)); //4
+//    console.log(ary);//[true,1,1,5]
+
+    // console.log(ary.push(1,5));
+    // console.log(ary);
+
+
+    console.dir(Array);
+
+
+
+
+   
+
+
+
+</script>
+</body>
+</html>

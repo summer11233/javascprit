@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    属性名:<input type="text" id="txt">
+    属性值:<input type="text" id="txt2">
+    <button id="btn">生成样式</button>
+    <div id="box"></div>
+<script>
+
+    //一般属性名可变的时候用[]
+    /*
+        []数组
+        []下标
+        []可变属性  
+    */
+    btn.onclick = function(){
+        let v1 = txt.value;//'width'
+        let v2 = txt2.value;
+        box['style'][v1] = v2;  //v2  '200px'
+        // box['style'][v1] = [v2][0]; 
+        // console.log([v2])
+        //box.style.width box.style.height...  
+        //box.style.v1 
+        //box.style[v1] -> box.style['width']
+
+    }
+
+
+
+    /*
+        undefined
+            除了了null和undefined的别的简单数据类型，自定义属性都为undefined
+
+            *** null和undefined不能添加属性，添加了就报错
+            Uncaught TypeError: Cannot read property 'aaa' of undefined
+    */
+
+    //变量 (没主)
+    // var a = 10;
+    // let b = 20;
+
+    //属性  对象上有属性(某个名字前面有. 点前面的就是这个名字的主)
+
+    //什么时候用.什么时候用[]
+    /*
+        .的情况下是对象下指定的属性(当对象下没有指定属性的时候就为undefined)
+        [],对象属性为可变的时候
+    */
+
+    /*
+        document.getElementById()
+
+        xxx. 操作属性
+    */
+
+    // let obj = {
+    //     "a":'201911期',
+    //     "b":'赵炎'
+    // }
+
+    // let attr = 'a';
+
+    // console.log(obj.a);
+    // console.log(obj[attr]);
+    // console.log(obj.attr);
+
+    // obj.b = 30;
+
+
+    // console.dir(document);
+
+    /*
+        Uncaught TypeError: Cannot read property 'aaa' of undefined
+    */
+    // console.log(obj.ccc.aaa);
+
+    // obj.ccc = 10;
+
+    // let str = '';
+    // str.ccc = 10;
+
+    // console.log(str.ccc);//undefined
+
+
+
+</script>
+</body>
+</html>

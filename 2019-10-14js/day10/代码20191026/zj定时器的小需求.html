@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>定时器的小需求</title>
+
+    <style>
+    #box{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: chartreuse;
+        transition: 1s;
+    }
+    
+    
+    
+    </style>
+</head>
+<body>
+        <button id="btn">停止广告</button>
+        <div id="box"></div>
+    <script>
+    
+     let timer = setInterval(() => {//间隔一定时间执行
+        setTimeout(()=>{//
+            box.style.top = 0;
+            setTimeout(() => {
+                box.style.top = '-100px';
+            }, 2000);
+        },2000);
+    }, 4050);  
+    /*  定时器
+    setTimeout  到了指定时间之后执行函数
+
+    setTimeout(回调函数,间隔多少时间,回调函数的实参)
+    
+     关闭定时器:clearTimeout(定时器的返回值,编号)
+     */ 
+     let onoff = true;
+    function fn(){
+        setTimeout(()=>{
+            box.style.top = 0;
+            setTimeout(() => {
+                box.style.top = '-100px';
+                onoff && fn();
+            }, 2000);
+        },2000);
+    }
+    fn();
+
+    btn.onclick = function(){
+        onoff = false;
+    }
+    
+    </script>
+
+
+
+
+</body>
+</html>

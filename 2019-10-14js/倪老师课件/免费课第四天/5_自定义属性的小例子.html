@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮(0)</button>
+    <button id="btn2">按钮(0)</button>
+    <button id="btn3">按钮(0)</button>
+<script>
+
+    /*
+        this 当前这个
+            在事件中，this指向的是当前触发的元素
+
+            同一个this，但是因为触发元素不一样，所以结果就不一样
+    */
+
+    // const btn = document.getElementById('btn');
+    // const btn2 = document.getElementById('btn2');
+    // const btn3 = document.getElementById('btn3');
+    // let num = 0;
+    // let num2 = 0;
+    // let num3 = 0;
+
+    // btn.onclick = function(){
+    //     ++num;
+    //     if(num == 2){
+    //         btn.disabled = true
+    //     }
+    //     btn.innerText = `按钮(${num})`;
+    // }
+    // btn2.onclick = function(){
+    //     ++num2;
+    //     if(num2 == 2){
+    //         btn2.disabled = true
+    //     }
+    //     btn2.innerText = `按钮(${num2})`;
+    // }
+    // btn3.onclick = function(){
+    //     ++num3;
+    //     if(num3 == 2){
+    //         btn3.disabled = true
+    //     }
+    //     btn3.innerText = `按钮(${num3})`;
+    // }
+
+
+
+    let btns = document.querySelectorAll('button');
+
+    for(var i=0;i<btns.length;i++){
+        //循环的时候给每个按钮添加一个自定义的属性叫zdy,并且赋值为0
+        btns[i].zdy = 0;
+        /*
+            btns[0].zdy = 0;
+            btns[1].zdy = 0;
+            btns[2].zdy = 0;
+        */
+        btns[i].onclick = function(){
+            //点击当前按钮的时候，让自身的zdy属性加加
+            // alert(1);
+            this.zdy ++;
+            //判断当前zdy属性是否为2，如果是2就取消点击行为
+            if(this.zdy === 2){
+                this.disabled = true;
+            }
+            //让当前按钮的内容变成 '按钮' + zdy的值
+            this.innerText = `按钮(${this.zdy})`;
+            // console.log(this.zdy);
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

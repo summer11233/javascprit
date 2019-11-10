@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">发送</button>
+    <ul id="ul"></ul>
+<script>
+    /*
+        style
+        value
+        href
+        src
+        innerText
+        innerHTML
+
+        需求:点击发送，给ul添加li，把输入的内容放到li中
+
+        1.绑定点击事件  √
+        2.获取输入的内容  √
+        3.输入的内容放到li中，把li放到ul中 √
+        4.把input中的内容清空
+    */
+    // ul.innerHTML = '<li>哈哈哈</li>';
+
+    btn.onclick = function(){
+        let val = txt.value;
+        // ul.innerHTML = ul.innerHTML + '<li>'+val+'</li>';
+        ul.innerHTML += '<li>'+val+'</li>';
+        //清空val只是清空这个变量，跟txt.value没有半毛钱关系
+        // val = '';
+        txt.value = '';
+    }
+
+
+
+</script>
+</body>
+</html>

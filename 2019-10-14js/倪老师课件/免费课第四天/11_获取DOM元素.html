@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div class="box2">
+            <p>
+                <span>1</span>
+            </p>
+        </div>
+        <div class="box2">
+            <p>
+                <span>2</span>
+            </p>
+        </div>
+    </div>
+<script>
+    /*
+        document.getElementById(id名) 
+        document.getElementsByTagName(标签名)
+        document.getElementsByClassName(类名：比如:'active')
+
+        document.querySelector(选择器)
+        document.querySelectorAll(选择器:比如:'.active')
+
+    */
+
+    //代码块缓存：可以先通过document的方式存一个结构范围，然后再从这个范围查找元素，节省性能
+    let box2 = document.querySelectorAll('.box2')[1];
+    let span = box2.querySelector('span');
+    console.log(span.innerText);
+
+
+</script>
+</body>
+</html>

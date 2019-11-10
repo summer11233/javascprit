@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        数组有length
+        字符串有length
+        类数组有length
+
+        for嵌套for
+    */
+
+    /*
+        遇到单纯for套for的情况(两个for的变量不能重名，不然会有小惊吓)，先执行一次大循环，再执行完小循环
+
+
+    */
+    // for(var i=0;i<4;i++){
+    //     alert('大循环'+i); //0,3,3,3
+
+    //     for(var i=0;i<2;i++){
+    //         alert('小循环'+i); //0,1
+    //     }
+    //     //2+1=3
+    // }
+
+
+    // for(var i=0;i<4;i++){
+    //     alert('大循环'+i); //0,1,2,3
+    //     for(var j=0;j<2;j++){
+    //         alert('小循环'+j);  //0,1,0,1,0,1,0,1
+    //     }
+    // }
+
+    // for(var i=1;i<=9;i++){
+    //     for(var j=1;j<=9;j++){
+    //         console.log(i +'*'+ j + '=' + i*j);
+    //     }
+    // }
+
+
+    // let str = '37281'; 
+    // for(var i=0;i<str.length;i++){
+    //     console.log(str[i]);
+    // }  
+    
+    // for(var i=str.length-1;i>=0;i--){
+    //     console.log(str[i]);
+    // }  
+    // console.log(i);
+    /*
+        for(var i= 4;4 > 0;i--){
+            console.log(str[4]);  //1
+        }  
+
+        i=3
+        for(;3 > 0;i--){
+            console.log(str[3]);  //8
+        } 
+
+        i=2
+        for(;2 > 0;i--){
+            console.log(str[2]);  //2
+        } 
+
+        i=1
+        for(;1 > 0;i--){
+            console.log(str[1]);  //7
+        } 
+
+        i=0
+        for(;0 >= 0;i--){
+            console.log(str[0]);  //3
+        }
+
+        i=-1
+
+    */
+
+</script>
+</body>
+</html>

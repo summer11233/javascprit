@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        +、-、*、/ 、取余
+
+        = 赋值 （把右边的值赋到左边，从右往左读）
+        == 比较 双等的情况下，左右两边的值会进行一次隐式类型转换
+        === 全等，不会转换数据类型，左值直接跟右值比，比较是值和类型，更加严谨，更加高效
+        ! 非、否 ,能够把数据转成布尔值，并且是以数据本身相反的布尔值进行转换
+
+        != 不等于
+        !== 不全等，比较是值和类型，更加严谨，更加高效
+
+        下面的这些都会进行隐式类型转换
+        1>0  大于
+        0<1  小于
+        >= 大于等于
+        <= 小于等于
+
+    *****
+        字符串跟数字比较，会转成数字，再进行比较
+        字符串跟字符串比较，会按照unicode编码来比较
+        对象跟对象比较，比较的是地址
+        布尔值和字符串比较，会转成数字
+        数组跟字符串比，转成数字
+        对象跟字符串比，转成数字
+        null和undefined和字符串比较的时候为false
+    */
+
+    // console.log('5' == 5); //true
+    // console.log(5 == 5);//true
+    // console.log('2' > '12');//true
+
+    // console.log([] == []); //两个地址比较
+
+    // let ary = [1,2,3];
+    // let ary2 = [1,2,3];
+
+    // console.log(ary == ary2);
+    // console.log({} == {});
+
+    // console.log(true == '1');
+    // console.log('' == false);
+    // console.log([] == '');
+    // console.log({} == '');
+
+
+    // console.log('5' === 5); //不但比较值还会比较类型
+
+
+    // console.log(!true);
+    // console.log(!1);
+    // console.log(!{});
+    // console.log(!NaN);
+    // console.log(!!NaN); //!!会把一个数据转成本身的布尔值
+
+
+    // console.log(null == 0);
+    // console.log(undefined == 0);
+
+    // if(!!NaN === false){
+
+    // }
+    // if(!NaN){
+
+    // }
+    
+    // if(!!NaN === false){
+
+    // }
+
+    // console.log('5' != 2); //true
+    // console.log('5' !== 5);
+
+</script>
+</body>
+</html>

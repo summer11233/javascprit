@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+#box{
+    position: relative;
+}
+#box div{
+    width:50px;
+    height: 50px;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: .5s;
+}
+</style>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    let ary = ['yellow','green','skyblue','pink'];
+    let html = '';
+    for(let i=0;i<10;i++){
+        html += `<div style="left:${i*(60)}px;background:${ary[i%4]}"></div>`
+    }
+    box.innerHTML = html;
+
+    const divs = document.querySelectorAll('#box div');
+    let i = 0;
+    let onoff = true;
+
+    // document.onclick = function(){
+    //     let timer = setInterval(()=>{
+    //         divs[i].style.top = onoff?'300px':'0';
+    //         i++;
+    //         if(i >= divs.length){
+    //             clearInterval(timer);
+    //             i = 0;
+    //             onoff = !onoff;
+    //         }
+    //     },100);
+    // }
+
+
+    /*
+        点击某个元素的时候让当前掉，再让当前的上一个或者下一个掉
+    */
+    // console.dir(divs)
+
+    divs.forEach((ele,i)=>{
+        ele.onclick = function(){
+            // console.log(ele,i);
+            let el = this;
+            let el2 = this;
+            let timer = setInterval(() => {
+                el.style.top = '300px';
+               setTimeout(() => {
+                    if(!prev(el) && !next(el2)){
+                        clearInterval(timer);
+                        return ;
+                    }
+                    if( prev(el) ){
+                        prev(el).style.top = '300px';
+                        el = prev(el);
+                    }
+                    if(next(el2)){
+                        next(el2).style.top = '300px';
+                        el2 = next(el2);
+                    }
+               }, 100);
+            }, 100);
+        }
+    });
+
+    function prev(that){
+        return that.previousElementSibling;
+    }
+    function next(that){
+        return that.nextElementSibling;
+    }
+
+
+
+
+
+
+
+    // document.onclick = function(){
+    //     let timer = setInterval(()=>{
+    //         divs[i].style.top = '0';
+    //         i++;
+    //         if(i >= divs.length){
+    //             clearInterval(timer);
+    //         }
+    //     },100);
+    // }
+
+
+
+</script>
+</body>
+</html>

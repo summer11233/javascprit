@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        '',"",``
+
+        String
+    */  
+//    let s = new String('珠峰培训');
+//  console.log(typeof s);  
+    // console.log(s.valueOf());
+    // console.dir(s);
+
+    // let str = '珠峰培训';
+    // console.log(str.includes('培')); //true
+
+    //查找下面字符串中峰出现了多少次，并且他们在哪个位置
+    // let str = '珠峰培训峰珠峰培训峰珠峰培训峰';
+    // console.log(str.indexOf('峰')) // 1
+    // console.log(str.indexOf('峰',2)) // 4
+    // console.log(str.indexOf('峰',7)) //-1
+
+    // console.log(str.lastIndexOf('峰')) //4
+    // console.log(str.lastIndexOf('峰',2)) // 1
+
+    //找得到就循环，否则就不循环了
+    // let i = 0;
+    // let ary = [];//存位置的
+    // while(str.indexOf('峰',i) != -1){
+    //     let index = str.indexOf('峰',i); 
+    //     ary.push(index);
+    //     i = index + 1;
+    // }
+    // console.log(ary,'出现了'+ary.length+'次');
+
+
+    // let str2 = '1.txt.html.js.css.php';
+    // let index = str2.lastIndexOf('.');
+    // let s = '';
+    // for(let i=str2.length-1;i>=0;i--){
+    //     if(i !== index){
+    //         s += str2[i];
+    //     }else{
+    //         break;
+    //     }
+    // }
+    // console.log(s);
+
+    // let str = 'e1278ycfn8';
+    // // console.log(str.substring(8,4))  // 8ycf
+    // // console.log(str.substring(7)) 
+    // console.log(str.substr(4,4))  // 8ycf
+
+    // let str = '珠峰陪训';
+    // console.log(str.replace('陪','培'));
+
+    // let str = '珠-峰-培-训'; //['珠','峰','培','训']
+
+    // console.log(str.split('-'));
+    // console.log(str.split('珠-峰-培-训')) //['','']
+
+    // let str = '';
+    // console.log(str.split(''));//[]
+
+    // let str = '666训培峰珠';
+    // console.log(str.split('').reverse().join(''));
+
+    // let str = 'SHDJKSA';
+    // console.log(str.toLowerCase()) //- > shdjksa
+
+    // let str = 'shdjksa';
+    // console.log(str.toUpperCase()) //- > SHDJKSA
+
+    //subtring,toUpperCase //课堂小练习
+    // let str = 'get-element-by-id';//getElementById
+
+    // let str = '    ds  da    ';//ds  da
+    // console.log(str.trim()) //-> 'ds  da'
+
+    let str = 'txt.js.html';
+    console.log(str.slice(-2,-1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</script>
+</body>
+</html>

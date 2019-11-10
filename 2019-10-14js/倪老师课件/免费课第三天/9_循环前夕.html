@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="li">1</li>
+        <li id="li1">2</li>
+        <li id="li2">3</li>
+        <li id="li3">4</li>
+        <li id="li4">5</li>
+        <li class="li5">6</li>
+    </ul>
+<script>
+    /*
+        获取一个元素:
+            getElementById('id')
+
+        通过标签来获取元素（类数组,元素集合）
+            document.getElementsByTagName('标签名称')
+
+            类似于数组，有数组length，还可以通过下标去获取某个指定的元素,但是不能使用数组的方法
+
+            document.getElementsByClassName('active')
+
+
+
+        *** 初学者的噩梦
+            如果通过方法获取多个元素（集合），就算页面只有一个元素，它也是集合，一定要加下标。
+        
+
+        document.querySelector   只获取一个元素，就算是一组元素也只会获取第一个
+        
+        document.querySelectorAll  使用css选择器的方式去获取一堆元素
+
+
+
+        循环
+    */
+
+    li.style.background = 'red';
+    li1.style.background = 'red';
+    li2.style.background = 'red';
+    li3.style.background = 'red';
+    li4.style.background = 'red';
+
+    console.log(document.getElementsByTagName('li'))
+
+    console.log(document.getElementsByTagName('ul')[0]); //[ul]集合
+
+    document.getElementsByTagName('ul')[0].style.width = '200px';
+
+
+    console.log(document.querySelector('.li5'));
+
+    console.log(document.querySelectorAll('li[class="li5"]')[0])
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+    // console.log([].push);
+
+
+
+
+
+</script>
+</body>
+</html>

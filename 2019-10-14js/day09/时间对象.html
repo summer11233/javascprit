@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Date  记录当前本地的计算机时间(本地)是不安全的
+    //new Date(传入一个时间) 
+    console.dir(Date)
+    console.log(new Date);
+
+    let date = new Date;
+    console.log(date.getFullYear());//2019  数字类型
+    console.log(date.getMonth()+1);//10  获取月份 记得加一
+    console.log(date.getDate());// 获取日 
+    console.log(date.getDay());// 获取周几  周日为0
+    console.log(['周日','周一','周二','周三','周四','周五','周六'][date.getDay()]);
+    
+    console.log(date.getHours());//小时
+    console.log(date.getMinutes());//分
+    console.log(date.getSeconds());//秒
+    //一秒等于1000毫秒
+
+    //时间戳  1970年到现在的时间
+
+
+    console.log(Date.now());
+    console.log(+date);
+    console.log(+'123');
+    console.log('123'+56);
+    
+    
+    
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

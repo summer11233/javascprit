@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    全选:<input type="checkbox" id="all">
+    <hr />
+    <div id="box">
+        你:<input type="checkbox">
+        我:<input type="checkbox">
+        ta:<input type="checkbox">:
+        那个谁:<input type="checkbox">
+    </div>
+<script>
+    /*
+        every:
+            数组的每项都必须满足回调函数的条件(返回true)，只要有一个不满足，就返回false
+
+        参数一个是callback(数组的每个,索引,数组本身)，另一个是改变this指向
+
+    */
+    // let ary = [true,true,true];
+    // let b = ary.every(function (item){
+    //     console.log(this);
+    //     return item === true;
+    // },document);
+    // let b = ary.every((item)=>{
+    //     return item === true;
+    // });
+    // let b = ary.every((item)=>item === true);
+    // let b = ary.every(item=>item);
+    // console.log(b);
+
+    let ary = [
+        {id:0,checked:false},
+        {id:1,checked:false},
+        {id:2,checked:false},
+        {id:3,checked:true}
+    ];
+    const checkeEle = document.querySelectorAll('#box input[type="checkbox"]')
+    // console.log(checkeEle)
+
+    //循环每个数组
+    ary.forEach((item,i)=>{
+        //给数组每个对应的checkbox添加一个布尔值
+        checkeEle[i].checked = item.checked;
+        checkeEle[i].onclick = function(){ 
+            //当点击input的时候，把最新的checked值拿到手上,赋值给对应的对象checked属性
+            ary[i].checked = this.checked;
+            //根据最新的数据，来判断数组中是否都满足回调函数的条件
+            all.checked = ary.every(item=>item.checked === true);
+        }
+    });
+
+</script>
+</body>
+</html>

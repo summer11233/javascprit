@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let str = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+    
+    /*
+        Math.random()  0-1
+
+        
+        5-10  多少到多少的随机数
+            Math.round(Math.random()*(y-x))+x   
+        
+    */
+
+    function random(x,y){
+       return Math.round(Math.random()*(y-x))+x;
+    }
+
+    // console.log( random(5,10) );
+    // console.log(str[random(0,str.length-1)])
+
+  
+    // let ary = [];
+    //ary.push(str[random(0,str.length-1)])
+    // console.time('计数器');
+    let str2 = '';
+    for(let i=0;i<4;i++){
+        str2 += str[random(0,str.length-1)]
+    }
+    console.log(str2);
+    // console.timeEnd('计数器');
+    // console.log( ary.join('') );
+
+    //计数器: 0.5361328125ms,1.912109375ms
+
+    // console.log(str2)
+
+    /*
+        打乱数组的顺序
+    */
+
+    let ary3 = [1,2,3,4,5];
+    ary3.sort(()=>Math.random() - 0.5);
+    console.log(ary3);
+
+
+
+
+
+
+//    console.log( Math.round(Math.random()*(10-5))+5 )
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //  对象 == 对象  比较的是空间地址(永远不相等)
+       // 对象 == 数字  对象转数字在比较
+       //  对象 == 字符串  把对象转换为字符串再比较
+//对象 == 布尔    它会把两边全部转数字在进行比较
+//数字 == 字符串  它会把字符串转数字进行比较
+//数字 == 布尔    把布尔转数字在进行比较
+//字符串 == 布尔   把两边全部转换数字在进行比较
+
+//null == undefined 
+//null和其它值都不相等(undefined也是)
+console.log(({})==({}))//false
+console.log(({})==([]))//false
+console.log(({})==1)//false
+console.log(({})==NaN)//false
+console.log(({})=='px')//false
+console.log(['12','23'] ==123)//false
+console.log(['12','23'] =='12,23')//true
+console.log(({})==true)//false
+console.log(89=='89')//true
+console.log(0==true)//false
+console.log('21'==true)//false
+console.log(null==undefined)//true
+console.log(null==0)//false
+console.log(undefined == NaN)//false
+console.log(null==null)//true
+console.log(undefined == undefined)//true
+console.log(null !=null)//false
+console.log(7 != 7)//false
+console.log('21'!==true)//true
+console.log('21'!==21)//true
+console.log('21'=== 21)//false
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

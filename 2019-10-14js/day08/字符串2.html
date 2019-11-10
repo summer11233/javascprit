@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let url ='https://www.zhufengpeixun.cn?name=erYa&fire=1000';
+    let paramsStr=url.split('?')[1];//获取连接的字符串
+   // console.log(paramsStr)//name=erYa&fire=1000
+    let ary = paramsStr.split('&');//以&为分隔符转换为数组
+    //console.log(ary)//["name=erYa", "fire=1000"]
+    let obj ={ };//建立存放参数的对象
+    for (var i = 0; i<ary.length;i++){
+        let cur = ary[i];//当前项
+        let newAry = cur.split('=')//把雏形里面的名和值分开(转为一个数组)  //'name=erYa=>['name','erYa']
+        obj[newAry[0]]=newAry[1]
+
+    }
+    console.log(obj)//循环完成以后的obj 就是存放参数的对象
+                   //{name: "erYa", fire: "1000"}
+
+
+//     let url ='https://www.zhufengpeixun.cn?name=erYa&fire=1000';
+//     let index=url.split('?')[1];//获取连接的字符串
+//    // console.log(index)//name=erYa&fire=1000
+//     let ary = index.split('&');//以&为分隔符转换为数组
+//     //console.log(ary)//["name=erYa", "fire=1000"]
+//     let obj ={ };//建立存放参数的对象
+//     for (var i = 0; i<ary.length;i++){
+//         let cur = ary[i];//当前项
+//         let newAry = cur.split('=')//把雏形里面的名和值分开(转为一个数组)  //'name=erYa=>['name','erYa']
+//         obj[newAry[0]]=newAry[1]
+
+//     }
+//     console.log(obj)//循环完成以后的obj 就是存放参数的对象
+//                    //{name: "erYa", fire: "1000"}
+    
+    </script>
+</body>
+</html>

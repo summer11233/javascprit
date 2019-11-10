@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    /*
+        map循环数组，有返回值，为新数组，新数组的成员和老数组的成员是一致
+        return的是什么，数组成员就是什么
+
+        map(callback,changThat);
+    */
+    let ary = ['峰','珠','冉德鹏','李磊'];
+
+    // console.log(ary.map(item=>'<li>'+item+'</li>').join(''))
+
+    // ul.innerHTML = ary.map(item=>'<li>'+item+'</li>').join('');
+
+    let newAry = ary.map(function(item,i,all){
+        console.log(this);
+        return item;
+    },document);
+
+    // console.log(newAry)
+
+</script>
+</body>
+</html>

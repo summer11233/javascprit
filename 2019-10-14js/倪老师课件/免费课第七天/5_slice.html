@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        slice 数组的截取，不会操作原数组，返回值为新数组
+            第一个参数:
+                起始位置
+            第二个参数:
+                截取到的位置，但是又不包含截取位置
+
+            也有一个参数的情况:
+                从起始位置截取到最后
+    */
+
+    let ary = [1,2,3,4,5,6];
+
+    // console.log(ary.slice(2,5));
+
+    // console.log(ary.slice(1,5));
+
+    // console.log(ary.slice(3));
+
+
+    // function slice(ary,...arg){
+    //     let ary2 = [];
+    //     if(arg.length === 1){
+    //       for(let i=arg[0];i<ary.length;i++){
+    //         ary2.push(ary[i]);
+    //       }
+    //     }
+    //     if(arg.length === 2){
+    //         for(let i=arg[0];i<ary.length;i++){
+    //             if(i < arg[1]){
+    //                 ary2.push(ary[i]);
+    //             }
+    //         }
+    //     }
+    //     return ary2;
+    // }
+
+
+    function slice(ary,...arg){
+        let ary2 = [];
+        for(let i=arg[0];i<ary.length;i++){
+            if(arg.length === 1){
+                ary2.push(ary[i]);
+            }else if(arg.length === 2 && i < arg[1]){
+                ary2.push(ary[i]);
+            }
+        }
+        return ary2;
+    }
+
+
+    console.log(slice(ary,2,5))
+
+
+    console.log(ary);
+
+</script>
+</body>
+</html>

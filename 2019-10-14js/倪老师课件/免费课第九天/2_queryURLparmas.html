@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=珠峰培训&oq=es6&rsv_pq=acc9f8a90008dda0&rsv_t=6966d5%2FF0Vj%2FkajGJhMMBUY8h8osn0Q0ikUxg9J2hec0J9InBHmqMDSYmrg&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=18&rsv_sug1=10&rsv_sug7=101&rsv_sug2=0&inputT=4151&rsv_sug4=4151
+
+        ?前的有域名、端口、协议
+        ?后到#之间的叫查询信息(key=value&key=value)
+        ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=珠峰培训&oq=es6&rsv_pq=acc9f8a90008dda0&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=18&rsv_sug1=10&rsv_sug7=101&rsv_sug2=0&inputT=4151&rsv_sug4=4151
+
+
+    */
+
+    //把下面对象格式变成查询信息的格式 'ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=珠峰培训'
+    
+    let obj = {
+        ie:'utf-8',
+        f:8,
+        rsv_bp:1,
+        tn:'baidu',
+        wd:'珠峰培训'
+    }
+    let ary = [];
+    for(let attr in obj){
+        ary.push(attr+'='+obj[attr]);
+    }
+    // console.log(ary.join('&'))
+
+    let str = 'ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=珠峰培训';
+    let obj2 = {};
+
+    let ary3 = str.split('&');
+
+    ary3.forEach(item=>{
+        let ary = item.split('=');
+        obj2[ary[0]] = ary[1];
+    });
+
+    console.log(obj2);
+
+    console.dir(new URLSearchParams(obj));
+
+    // console.log(str.split('&'))
+
+
+
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn" onclick="alert(1)">按钮</button> -->
+    <button id="btn">按钮</button>
+      
+    前端三大核心知识
+        HTML  结构
+        CSS   样式
+        JS    行为 能当整个页面动起来
+
+        js是寄生在浏览器里面的，还可以寄生在服务器上V8（node）
+        
+        谷歌、火狐、IE...
+
+        JS的出现其实就是为了页面与用户进行交互的
+
+        开发PC上的应用、移动端的应用、服务器
+
+        JS是所有语言里面最划算学的一门没有之一，前端也是所有程序里面最杂的
+
+        JS最核心的三个知识（javascript）
+            ECMAscript  基本语法标准
+            DOM   Document Object Model 文档对象模型
+            BOM   Browser Object Model  浏览器对象模型
+
+
+        alert() 调用浏览器默认的弹框
+
+        /**/  js的注释(多行)
+        // 单行注释
+
+
+        onclick 点击
+
+
+        JS的使用方式:
+            1. 内嵌式
+                直接在标签身上写js
+            2. 内联式
+                script标签放到body结束标签的上方
+
+            3. 外链式
+                通过script标签的src属性，添加.js文件（不只是.js文件）的路径
+
+                注意:如果使用了外链，script中的代码是不响应的。
+
+
+<script src="./1.js">
+    // alert('你好');
+</script>
+<script>
+    //alert('珠峰培训');
+
+    /*
+        alert('珠峰培训');
+        alert('珠峰培训2');
+
+        document.getElementById('btn')   #btn
+
+        .onclick  点击某个元素
+
+        =  赋值   从右往左赋值
+
+        function () {   函数
+            //要做的事情
+        }
+
+        下面的代码意思是
+            把一个函数赋值给btn的点击事件
+
+    */
+
+    //通过ID的方式获取到了标签(元素)
+    // document.getElementById('btn').onclick = function(){
+    //     alert('珠峰欢迎你!');
+    // };
+
+
+</script>
+</body>
+</html>

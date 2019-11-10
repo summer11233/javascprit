@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let str = 'https://www.baidu.com?name=sunWuKong&age=null&sex=null'
+    let index =str.indexOf('?')
+    //console.log(index)21
+    let wo = str.substring(index+1);
+    //console.log(wo)
+    let ary = wo.split('&');
+   // console.log(ary)
+   let obj={ }
+   for(var i = 0; i<ary.length;i++){
+       let ni = ary[i];
+       let you = ni.split('=');
+       //console.log(you)
+       obj[you[0]] = you[1];
+   }
+   console.log(obj)//{name: "sunWuKong", age: "null", sex: "null"}
+    
+    
+    </script>
+</body>
+</html>

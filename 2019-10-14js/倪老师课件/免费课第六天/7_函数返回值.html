@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        函数返回值:
+            每个函数都有函数返回值，如果没有默认为undefined
+
+        在函数中都有一个return ，这个return后面的数据就是函数返回值.
+        
+        或者说提到函数返回值，就要直接去看函数内return后面的数据是什么,如果没有默认为undefined
+
+
+        函数返回值如何拿？输出、存值，函数名 + 括号
+
+
+
+        只要是函数名+括号，你需要知道的事有2件
+            1.函数里面的代码会执行一次
+            2.一定会有函数返回值（只不过看你用不用）
+                如果用就要输出、存值函数名+括号
+
+
+        
+        函数有个特性,函数内会形成一个独立的执行空间，这个空间不被外界（函数外）所干扰
+        如果在这个空间下去访问一个当前空间没有的变量，那么会去外界（函数外）查找，直到window
+
+
+        return 下面的代码是不会执行的。
+            比如:
+                function fn(){
+                    alert(1); //只会执行1
+                    return;
+                    alert(2);//因为在return下面所以不会执行
+                }
+
+            
+
+
+
+    */
+
+    // function fn() {
+    //     // return undefined;
+    //     return {};
+    // }
+
+    // let f = fn();
+
+    // let n = 20;
+
+    // console.log(f);
+
+    // console.log( fn() );
+
+    // function fn(x,y){
+    //     console.log(x+y);//3
+    // }
+    // let x = fn(1,2);
+    // console.log(x);//undefined
+
+
+    // function fn(a,b){
+    //     console.log(a*b);//NaN
+    // }
+    // let f = fn();
+    // console.log(f);//undefined
+
+    // function fn(){
+    //     console.log(1);
+    //     return 2;
+    // }
+
+    // let f = fn();
+
+    // console.log(f);
+
+
+    // function fn(a,b){
+    //     console.log(a/b);//2
+    //     return function(){//002
+    //         console.log('猜猜看');
+    //         return 100;
+    //     }
+    // }
+
+    // let f = fn(4,2);
+    // console.log(f());
+
+
+    // let fn2 = function(){
+    //     console.log(1111);
+    // }
+
+
+
+    // console.log(f);
+   
+    // let ff = 5;
+
+    // function fn2(){
+    //     // let ff = 6;
+    //     console.log(ff);
+    // }
+
+    // fn2();
+
+    // console.log(ff);
+
+
+    /*
+        函数外是不能直接拿到函数内的运算结果的，最好使用函数返回值。
+    */
+    // function sum(a,b){
+    //     // console.log(a+b);
+    //     return (a+b)
+    // }
+
+    // let num = 10;
+
+
+    // console.log(num * sum(1,2));//30
+
+
+    // console.log('10');
+
+    // function toDoule(num){
+    //     // if(num < 10){
+    //     //     return '0' + num;
+    //     // }else{
+    //     //     return '' + num;
+    //     // }
+    //     return num<10?'0'+num:''+num;
+    // }
+
+    // console.log(toDoule(6));
+
+
+
+    // function fn(){
+    //     alert(1);
+    //     return;
+    //     alert(5);
+    // }
+    // fn();
+
+    //如果函数中有for，可以使用return终止循环
+    function fn(){
+        for(let i=0;i<5;i++){
+            if(i===3) return;
+            alert(i);
+        }
+    }
+    fn();
+
+
+  
+
+
+   
+
+
+
+
+
+</script>
+</body>
+</html>

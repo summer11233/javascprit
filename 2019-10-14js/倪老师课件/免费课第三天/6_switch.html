@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <button id="btn">按钮</button>
+<script>
+    /*
+        switch判断条件语法:
+            同一个变量可能有多种情况
+            switch(变量){
+                case 某种情况:
+                    语句一
+                break;
+                case 另一种情况:
+                    语句二
+                break;
+                default:
+                    都不成立
+                break;
+            }
+        注意:
+            每个语句之间一定要用break，不然会穿透
+
+        能用if判断的不一定能用switch，但是能用switch的一定能用if判断
+    */    
+
+    btn.onclick = function(){
+        let val = txt.value;
+        switch (val) {
+            case 'css':
+                alert('有css课程');
+                break;
+            case 'html':
+                alert('有html课程');
+            break;
+            case 'js':
+                alert('有js课程');
+            break;
+            case '架构':
+                alert('有架构课程');
+            break;
+            case '平面设计':
+                alert('有平面设计课程');
+            break;
+            default:
+                alert('暂时没有'+ val +'课程');
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>

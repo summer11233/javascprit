@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let navlist = document.querySelectorAll(#NavBox li);
+    let tabList = document.querySelectorAll(#tabBox div);
+    for(var i= 0;i<navlist.length;i++){
+        navlist.myindex[i]=i
+        navlist.onclick=function( ){
+            changeTab(this.myindex)
+        }
+        function changeTab(index){
+            for(var i=0;i<navlist.length;i++){
+                navlist[i].className='';
+                tabList[i].className='';
+
+            }
+                navlist[index].className='active';
+                tabList[index].className='active';
+        }
+    }
+    
+    
+    </script>
+</body>
+</html>

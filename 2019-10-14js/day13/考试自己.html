@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //写一个方法,找出字符串'abcabcabcabcabcabda''ab'出现的次数和位置;
+    let str = 'abcabcabcabcabcabda';
+    function fn(strAll,str){//变量名(形参变量strAll是形参接收字符串,str=ab)
+     let ary =[];
+    for(let i=0;i<strAll.length;i++){
+        //判断strAll这个字符串的前一项等于str[0](a)并且后一项(strAll)[i+1]等于str[1](b)
+        if(strAll[i]===str[0]&&strAll[i+1]===str[1]){
+            //如果前一项等于a并且后一项等于b的话就把a 的索引放到新数组里;i等于a的索引
+            ary.push(i);
+            i++;
+        }
+    }
+    console.log(ary.length);
+
+
+
+    }
+
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>

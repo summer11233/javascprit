@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:0;
+    height:0;
+    background: skyblue;
+    transition: .5s;
+    /* border-radius: 50% */
+}
+</style>
+</head>
+<body>
+    <button id="btn">开</button>
+    <div id="box"></div>
+<script>
+    
+    /*
+        开关的核心概念:
+            1.设置一个默认值
+            2.在满足一个条件的时候，改变这个默认值，以便下次使用
+    */
+    
+    let onoff = false; //默认是关闭的状态
+
+    btn.onclick = function(){
+        //如果onoff是true(现在是开的状态)，开的状态就要关
+        if(onoff){
+            box.style.width = '';
+            box.style.height = '';
+            box.style.borderRadius = '';
+            box.style.background = 'skyblue';
+            btn.innerText = '开';
+            // onoff = false;
+        }else{
+            //关闭(false)的状态就要开
+            box.style.width = '100px';
+            box.style.height = '100px';
+            box.style.borderRadius = '50%';
+            box.style.background = 'pink';
+            btn.innerText = '关';
+            // onoff = true;
+        }
+        onoff = !onoff; // onoff=false ->  !false -> true -> onoff = true
+    }
+
+
+
+    // btn.onclick = function(){
+    //     //如果onoff是true(现在是开的状态)，开的状态就要关
+    //     if(onoff){
+    //         box.style.width = '';
+    //         box.style.height = '';
+    //         box.style.borderRadius = '';
+    //         box.style.background = 'skyblue';
+    //         btn.innerText = '开';
+    //         onoff = false;
+    //     }else{
+    //         //关闭(false)的状态就要开
+    //         box.style.width = '100px';
+    //         box.style.height = '100px';
+    //         box.style.borderRadius = '50%';
+    //         box.style.background = 'pink';
+    //         btn.innerText = '关';
+    //         onoff = true;
+    //     }
+    // }
+</script>
+</body>
+</html>

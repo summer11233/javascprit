@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        object 对象
+            引用类型的
+        创建一个对象，就在堆内存中开辟一个16进制的空间，在空间中存储一些数据,然后再把地址指针赋值给变量
+
+        {}名字叫对象的对象类型 
+            以键值对的方式去存储
+        {
+            key:value,
+            key2:value2
+        }
+
+        function (){
+            当做字符串存储的
+            console.log(1);
+            ....
+        } 
+
+        [0:true,1:{},2:'10']
+
+
+        key值一定是字符串，value值可以是任意的数据类型
+
+        如果key值为数字，那么会以从小到大的方式去排列
+
+        如果一个对象中有多个相同的key，那么后面的会把前面的覆盖
+
+        读操作:
+            obj.key =>  value
+
+        写操作:
+            obj.key = xxx
+
+        删除操作:
+            1.给指定的属性赋值一个undefined
+
+            2.delete删除指定的属性
+            
+
+        另一种操作方式:
+            []的方式去操作对象的属性
+
+            凡是能用.的地方都能用[]表示，[]内放的是一个key(字符串)
+        
+
+    */    
+
+    // let obj = {
+    //     name:'zhufeng',
+    //     age:10
+    // }
+
+
+    //标准写法，建议用标准写法，在前后端交互的时候一定要用标准写法不然会有意想不到的报错。
+    let name=10
+    let obj = {
+        "name":"zhufeng",
+        "age":10,
+        "1":"呵",
+        "0":"哈",
+        "1":"嗯",
+        "sex":"男"
+
+    }
+  //只要在对象中,所有属性名都是字符串形式的
+//     console.log(obj.age);//10
+//     console.log(obj['obj']);//10
+//    // console.log(obj[sex]);//报错
+//    console.dir(window)//Window
+
+    
+//     //console.log(obj[age]);//报错
+     console.log(obj[name]);//undefined
+     console.log(obj['name']);//zhufeng
+    
+    
+//     console.log(obj.length);//undefined
+    console.log(obj[length]);//哈(window含有length属性索引为0索引对应的就是哈)
+    console.log(obj[length-1]);//undefined
+
+    console.log(obj['length']);//undefined
+    console.log([obj]);//数组
+    console.log(['obj']);//数组
+    
+    
+
+     let b = 'age';
+    console.log(obj[b]);//10
+
+    /*
+        box = {
+            style:{
+                width:'100px'
+            }
+        }
+    */
+
+    let box2 = {
+        style:{
+            width:'100px'
+        }
+    }
+    // console.log(box2['style']['width']);
+
+    box['style']['width'] = '100px';
+    box.style.height = '100px'
+    box.style.background = 'red';
+
+    console.dir(box);
+
+
+
+
+
+
+
+
+     obj.name = '珠峰';
+
+    obj.sex = undefined;
+
+    delete obj.sex;
+
+    console.log(obj.sex);//undefined
+    console.log(obj);
+
+    console.log('sex' in obj); //in运算符可以检测对象上的指定属性是否存在，返回一个布尔值，存在就为true，否则为false
+
+
+
+
+
+</script>
+</body>
+</html>

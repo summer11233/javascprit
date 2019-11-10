@@ -1,0 +1,182 @@
+/* 一屏幕的大小  */
+html,body{
+    height:100%;
+}
+body{
+    background:#f0efed;
+}
+.wrapper{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+}
+header,.footer{
+    height:1.1rem;
+    background:linear-gradient(45deg,#FFD000,#FFBD00)
+}
+header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+header .city{
+    width:1.5rem;
+    height:1.1rem;
+    text-align: center;
+    line-height:1.1rem;
+}
+header img{
+    width:0.16rem;
+    margin-left:0.1rem;
+}
+header .search{
+    flex:1;
+}
+header .search input{
+   height:0.64rem;
+   width:100%;
+   background:#fff url("../images/search.png") 0.3rem center no-repeat;
+   background-size:0.28rem 0.28rem;
+   border:none;
+   padding-left:0.7rem;
+   box-sizing: border-box;
+   border-radius: 0.1rem;
+}
+header .people{
+    width:0.98rem;
+    height:1.1rem;
+    line-height: 1.1rem;
+    background:url("../images/people.png") center center no-repeat;
+    text-align: center;
+    background-size:0.48rem 0.48rem;
+}
+main{
+    flex:1;
+    overflow:auto;
+}
+.hotLinks{
+   display:flex;
+   flex-wrap: wrap;
+   color:#666;
+   background:#fff;
+   padding: 0.2rem 0;
+   
+}
+.hotLinks li{
+  width:20%;
+  text-align:center;
+
+}
+.hotLinks  a{
+    display:block;
+    padding:0.2rem 0;
+    color: #666;
+}
+.hotLinks .icon{
+    width:0.8rem;
+    line-height:0.8rem;
+    height:0.8rem;
+    border-radius:50%;
+    background:#fd9d21;
+    margin: 0 auto 0.1rem;
+    font-size:0.5rem;
+    color:#fff;
+}
+
+.hotLinks li:nth-child(2) .icon{
+    background:#ff6767;
+}
+.hotLinks li:nth-child(3) .icon{
+    background:#8a90fa;
+}
+.hotLinks li:nth-child(4) .icon{
+    background:#fed030;
+}
+.hotLinks  li:nth-child(5) .icon{
+    background:#FE8C00;
+}
+.hotLinks li:nth-child(6) .icon{
+    background:#fed030;
+}
+.hotLinks li:nth-child(7) .icon{
+    background:#4dc6ee;
+}
+.hotLinks li:nth-child(8) .icon{
+    background:#ff80c2;
+}
+.hotLinks li:nth-child(9) .icon{
+    background:#fd9d21;
+}
+.hotLinks li:nth-child(10) .icon{
+    background:#A8DD99;
+}
+
+.guessLike{
+    margin-top:0.3rem;
+    padding:0.3rem;
+    background:#fff;
+    color:#666;
+   
+}
+.guessLike h3{
+    font-size:0.36rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-weight: normal;
+    border-bottom:1px solid #eee;
+}
+
+.guessLists li{
+    border-bottom:1px solid #eee;
+}
+.guessLists li:last-child{
+    border-bottom:none;
+}
+.guessLists a {
+    display:flex;
+    padding:0.2rem 0;
+    color:#666;
+    font-size:0.28rem;
+    justify-content: space-between;
+}
+              
+.guessLists .left{
+    width:1.8rem;
+    height:1.8rem;
+}
+.guessLists .right{
+     display:flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+.guessLists  .nowPrice{
+    color:#F60;
+    font-weight:bold;
+}
+.guessLists  del{
+    font-size:0.24rem;
+    color:#999;
+}
+
+.footer{
+    display: flex;
+}
+h4{
+    color:#333;
+}   
+.footer li{
+   flex:1;
+}
+.footer li a{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#333;
+    
+}
+
+.footer li .icon{
+    font-size:0.5rem;
+}

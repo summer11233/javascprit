@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow
+}
+</style>
+</head>
+<body>
+    <button id="btn">改变</button>
+      
+    <div id="box"></div>
+<script>
+    /*
+        变量:
+            把数据放到一个自定义的名字中存储，目的是为了**复用**，
+            声明变量使用var（variable的缩写）或者let作为标识来定义
+
+            js来说是一个弱类型语言，变量名后面的数据可以为任意数据，
+            定义之后还能改变
+
+        起名字也是有标准的
+            1.不能以数字开头
+            2.不能以保留字或者关键字来命名
+                保留字:浏览器现在没有使用，未来可能使用的名字  class
+                关键字:浏览器现在已经开始使用的名字  let
+
+        一般声明变量名为小驼峰命名法:
+            标量开头小写，一个单词与另一个单词之间的字母首位大写
+            
+            get Element By Id
+
+            lookBooks
+
+        常量:
+            const(不可变的量)
+            把数据放到一个自定义的名字中存储，目的是为了**复用**，定义之后不能改变
+
+    */
+    // var 波克斯 = document.getElementById('box');
+
+    // let a = 10;
+    // a = 2;
+    // console.log(a);
+
+    // let var1 = true;
+
+    const a = 20;
+
+    // a = 2;
+
+    console.log(a);
+
+
+    let box = document.getElementById('box');
+    document.getElementById('btn').onclick = function(){
+
+        // document.getElementById('btn').className = 'active'; // 类
+
+        box.style.width = '100px';
+        box.style.height = '100px';
+        box.style.background = 'skyblue';
+        box.style.fontSize = '20px';
+        box.style.color = '#fff';
+    }
+</script>
+</body>
+</html>

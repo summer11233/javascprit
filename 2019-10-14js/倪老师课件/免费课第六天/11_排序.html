@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        排序:
+            sort()  默认是从小到大的顺序来排列(ASCII码来排列的)
+
+            返回值为排好序的数组
+
+            配置排序:
+                需要在sort方法中添加一个函数，这个函数必须要有返回值
+                并且这个返回值必须是个有效的数字。
+
+            a-b的结果返回的是一个正数就换位置
+            a-b的结果返回的是一个负数就不换位置
+            a-b的结果返回的是0,有可能交换，有可能不交换
+    */    
+
+    // let ary = [1,6,3,7,2,5,1,79,2,79,12];  //[2,5,3,1,7,8,11]
+
+    // ary.sort(function(a,b){
+    //     return b - a;
+    // });
+
+    // ary.sort((a,b)=>{
+    //     return a-b;
+    // });
+
+    // ary.sort((a,b)=>a-b);
+
+    // console.log(ary);
+
+    let ary2 = [6,'1px',8,'2px','3','9.5px'];
+    ary2.sort(function(a,b){
+        // console.log(parseFloat(a),b);
+        return parseFloat(a) - parseFloat(b);
+    });
+    console.log(ary2);
+
+</script>
+</body>
+</html>

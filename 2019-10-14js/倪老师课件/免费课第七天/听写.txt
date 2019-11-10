@@ -1,0 +1,49 @@
+1.ECMAscript的数据类型有哪些？（长什么样）
+
+2.typeof 数据类型都是什么？
+
+3.Number转所有的数据类型值为多少？
+
+4.布尔值转所有的数据类型值为什么？
+
+5.
+（1）[] == []
+（2）'' == 0
+（3）[0] == false
+（4）true == 1
+（5）{} == ‘’
+（6）'12' > 2
+（7）‘12’ > '2'
+（8）[] == 0
+（9）0 == null
+（10）'{}' == 1
+（11）undefined == null
+（12）null == undefined 
+（13）{name:1} == {name:1}
+（14）undefined == 0
+
+6.对象如何取值、循环。
+let obj = {name:'珠峰',age:10,sex:'男'，style:{w:{w1:5}}}
+
+7.parseInt,parseFloat区别
+
+8.如何判断一个数字为整数？
+
+9.let i=0  
+console.log(i++ == ++i)  
+console.log(++i == i++)
+console.log(i);
+
+10.
+let b = true && !(1-6) || '1px'-5 && {} && ['0'] || !!false && (7*Number(''))  || 9+parseInt('') && 666;
+
+
+11.选项卡的代码或者思路
+
+12.undefined什么时候会出现？
+
+13.null什么时候会出现？
+
+
+
+

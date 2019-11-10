@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#img{
+    position: absolute;
+    bottom:-380px;
+    right:0;
+    transition: 1s;
+}
+</style>
+</head>
+<body>
+    <button id="btn">开炸</button>
+    <button id="btn2">砖家</button>
+    <img id="img" src="http://img.zhufengpeixun.cn/zhufengquanzhan.jpg" alt="">
+<script>
+    /*
+        定时器
+    */    
+
+    // let t;
+    // btn.onclick = function(){
+    //     t = setTimeout(() => {
+    //         alert('炸了');
+    //     }, 3000);
+    // }
+    // btn2.onclick = function(){
+    //     clearTimeout(t);
+    // }
+
+    // console.dir(window);
+
+
+    
+     let t;
+    btn.onclick = function(){
+        t = setInterval(function(a){
+           console.log(a);
+        },1000,'炸了');
+    }
+    btn2.onclick = function(){
+        clearInterval(t);
+    }
+
+    
+
+
+    
+    // setTimeout(() => {
+    //     img.style.bottom = 0;
+    //     setTimeout(() => {
+    //         img.style.bottom = '-380px';
+    //     },3000);
+    // }, 1000);
+
+
+</script>
+</body>
+</html>

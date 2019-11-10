@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1、写一个方法，找出字符串 “abcabcabcabcabcabda” 中”ab”出现的次数和位置；
+    
+    // let str = 'abcabcabcabcabcabda';
+
+   
+        
+    // function fn(strAll,str){
+    //     console.time('计时器')
+    //     let ary = [];
+    //     for(let i=0;i<strAll.length;i++){
+    //         if(strAll[i] === str[0] && strAll[i+1] === str[1]){
+    //             ary.push(i);
+    //             i++;
+    //         }
+    //     }
+    //     console.timeEnd('计时器')
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+    // }
+    // console.log(fn(str,'ab'))
+
+    // 0.038818359375ms
+
+
+    // function fn(strAll,str){
+    //     console.time('计时器')
+    //     let i = 0;
+    //     let ary = [];
+    //     while(strAll.indexOf(str,i) != -1){ //只要有'ab'就循环
+    //         // debugger
+    //         let ii = strAll.indexOf(str,i);
+    //         ary.push(ii);
+    //         i = ii + str.length;
+    //     }
+    //     console.timeEnd('计时器')
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+    // }
+    // console.log( fn(str,'ab') );
+    //0.032958984375ms
+    
+   
+    // function fn(strAll,str){
+    //     console.time('计时器')
+    //     let ary = [];
+    //     let re = new RegExp(str,'g');
+    //     strAll.replace(re,(item,index)=>ary.push(index));
+    //     console.timeEnd('计时器')
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+    // }
+    // console.log( fn(str,'ab') );
+    //0.083984375ms
+
+
+    // console.log(ary.length , ary+'');
+
+    // console.log( fn(str,'ab') );
+
+
+    let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+
+    /*
+        {
+            name:'zxt',
+            age:28,
+            sex:0,
+            HASH:'teacher'
+        }
+    */
+
+    console.log(queryURLParameter(str));
+
+    function queryURLParameter(str){
+        str = str.split('?')[1].replace('#','&HASH=');
+        // str = str.replace('#','&HASH=');
+        let obj = {};
+        str.split('&').forEach(item=>{
+            let ary = item.split('=');
+            obj[ary[0]] = ary[1];
+        });
+        return obj;
+    }
+
+
+    
+</script>
+</body>
+</html>

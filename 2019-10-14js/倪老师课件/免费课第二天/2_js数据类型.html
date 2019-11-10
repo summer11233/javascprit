@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        
+    ECMAscript标准规定的：
+
+        基本数据类型(简单、原始) 存储在栈（stack）
+            数字 number
+            字符串 string
+            布尔值 boolean
+            空  null
+            未定义  undefined
+            唯一 symbol
+
+        引用数据类型（复杂、复合）存储在堆（heap）
+            对象object
+
+            数组对象[]
+            正则对象 /\d+/gi
+            对象 {}
+            时间对象 new Date
+            ...
+
+
+        检测数据类型的方式:  
+            1.typeof 一元运算符,也是一个全局的函数
+                *运算结果一定是一个小写的字符串*
+
+                typeof能够检测7种数据类型
+                    number
+                    string
+                    boolean
+                    undefined
+                    symbol
+                    object
+                    function
+                没有null，null为object，多了一个函数
+                
+                
+
+    */
+
+    let num = 1; //'number'
+    let str = '珠峰'; //'string'
+    let b = true; //'boolean'
+    let u; //'undefined'
+    let nu = null;  // 'object' 代表的是空对象
+    let obj = {}; // 'object'
+    let fn = function(){}  //'function'
+
+    // console.log(typeof fn);
+    // console.log(typeof obj);
+    // console.log(typeof nu);
+    // console.log(typeof typeof u);
+
+    // console.log(typeof b);
+
+    // console.log(typeof str);//'string'
+
+
+
+    // console.log(typeof(num));  //'number'
+</script>
+</body>
+</html>

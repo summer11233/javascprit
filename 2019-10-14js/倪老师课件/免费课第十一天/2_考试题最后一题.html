@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    width:300px;
+}
+ul li{
+    width:300px;
+    overflow: hidden;
+    height:50px;
+    line-height: 50px;
+    border-bottom: 1px dashed #000;
+}
+.blue{
+    background: skyblue;
+}
+.mo{
+    background: moccasin;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <li title="总书记">习近平总书记在庆祝中华人民共和国成立七十周年大会上的重要讲话在广大知识分子和青年学生中引起热烈反响</li>
+        <li>凝聚奋进力量 共创历史伟业——习近平总书记在庆祝中华人民共和国成立七十周年大会上重要讲话引起热烈反响</li>
+        <li>汇聚起同心共筑中国梦磅礴力量（我为祖国自豪 我为祖国祝福）</li>
+        <li>各地迎返程高峰 国庆假期全国铁路累计发送旅客超1亿人次</li>
+        <li>我们车站的客流比平时增了51%，到达客流集中在1、2、3号，返程高峰集中在6、7号</li>
+    </ul>
+<script>
+    const lis = document.querySelectorAll('li');
+    lis.forEach((ele,i)=>{
+        if(i%2){
+            ele.className = 'mo';
+            ele.color = 'mo';
+        }else{
+            ele.className = '';
+            ele.color = '';
+        }
+        ele.onmouseover = function(){
+            ele.className = 'blue';
+        }
+        ele.onmouseout = function(){
+            ele.className = this.color;
+        }
+        ele.onclick = function(){
+            alert('我是的'+i+'个LI元素');
+        }
+    });
+</script>
+</body>
+</html>

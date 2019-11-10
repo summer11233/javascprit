@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复习</title>
+</head>
+<body>
+<script>
+
+    //取余
+    /* A>B 取余   12  %   5    2
+    A<B 取余   5   %   12    5
+    A==B     0 */
+/* 
+    let str='珠';
+    let str2='峰';
+    let str3='今天的天'+str+'气还不'+str2+'错';
+
+    //${} 模板字符串
+    console.log(str+str2);//珠峰
+    console.log(str3);//今天的天珠气还不峰错
+ */
+
+  
+    
+
+    /* function fn(a){
+     console.log(a);
+     a(function(){
+
+     })
+    }
+     fn(function(b){
+       b()
+     }) */
+function fn(a){
+       a( function(c){
+           c(function(f){
+                        f(function(h){
+                             h( function(l){
+                                        l()
+                             })
+
+                    
+                        })
+           })
+       })
+}
+
+fn(function(b){
+    b(function(d){
+               d(function(g){
+                    g(function(j){
+                           j(function(){
+                                        console.log(6);
+                                        
+                           })
+                    })
+               })
+
+    })
+})
+
+/* 
+当一个函数在执行的时候,一定要记住有两件事要思考:
+1.函数运行
+2.看看有没有return
+
+ */
+ //重点看下   函数名=return
+
+// return 下面的所有代码不会执行
+
+ /* 
+ 递归:(难点)
+     重复的代码在函数内重复执行,函数自己调用自己 , 
+     难点:难在经验上,多练
+     递归需要终止一个条件
+ 
+  */
+
+/* function fn(){
+    console.log(i);
+    
+}
+ */
+ /* set
+ 在ES6里面添加了一个数据结构叫set,
+ 
+  */
+
+
+  var n = "zhu feng pei xun".indexOf("feng",1);
+  console.log(n);//4
+  
+</script>
+
+
+</body>
+</html>

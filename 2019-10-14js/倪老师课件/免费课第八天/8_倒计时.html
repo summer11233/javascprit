@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        未来的时间  -  当前时间 = 剩下多少时间  倒计时
+        时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总毫秒数
+    */    
+
+   
+
+    // console.log(Date.now());//时间戳  1970到现在的时间
+    // console.log(+new Date); //时间戳  1970到现在的时间
+
+
+    // console.log(d - now);//255996 时间戳  毫秒
+
+    // console.log(); 
+
+    let d = new Date('2019 9 27 18:00'); //未来的时间
+
+    setInterval(() => {
+      //  125 / 60   2   125%=60  5
+        let now = new Date;
+        let t = Math.floor((d - now)/1000); //秒
+
+        let day = Math.floor(t/86400);
+        t%=86400;
+        let h = Math.floor(t/3600);
+        t%=3600;
+        let mi = Math.floor(t/60);
+        t%=60;
+        console.log(toDoule(day)+'天'+toDoule(h)+'小时'+toDoule(mi)+'分钟'+toDoule(t)+'秒');
+
+    }, 1000);
+
+    function toDoule(n){
+        return n<10?'0'+n:''+n;
+    }
+
+
+
+
+
+    // let mi = Math.floor(t/60);
+
+    // let h = Math.floor(t/3600);
+
+    // let day = Math.floor(t/86400);
+
+    // let se = t%60;
+    // console.log(t%60); //秒
+
+    
+
+    // console.log(new Date == new Date);
+
+
+</script>
+</body>
+</html>

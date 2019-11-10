@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+
+
+</style>
+</head>
+<body>
+    <button class="active">按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+<script>
+    /*
+        for(let i=0;i<5;i++){
+            // debugger;
+            console.log(i);
+        }
+
+        for in
+            枚举对象下的属性
+
+    */
+
+    // let num = 0;  //btns[0].num = 0;
+    // let num = 0;  //btns[1].num = 1;
+    // let num = 0;  //btns[2].num = 2;
+
+  
+    const btns = document.querySelectorAll('button');
+    let ary = ['000',111,222]; //通过下标去获取数组中的成员
+    //ary[0]  ary[1]  ary[2]
+    for(var i=0;i<btns.length;i++){
+        btns[i].num = i;
+        btns[i].onclick = function(){
+            console.log(ary[this.num]);
+        }
+    }
+    
+    // btns[0].onclick = function(){
+    //     if(num === 0){
+    //         num ++;
+    //     }
+    // }
+    // btns[1].onclick = function(){
+    //     if(num1 === 0){
+    //         num1 ++;
+    //     }
+    // }
+    // btns[2].onclick = function(){
+    //     if(num2 === 0){
+    //         num2 ++;
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
+
+    // let obj = {
+    //     name:'珠峰',
+    //     age:10
+    // }
+
+    // let ary = [1,2] //有length
+
+
+    // for(let attr in obj){
+    //     console.log(obj[attr]);
+    // }
+
+
+    // let obj = {
+    //     0:'珠峰',
+    //     1:'培训',
+    //     2:'专注',
+    //     3:'前端',
+    //     length:4
+    // }
+
+    // for(var i=0;i<4;i++){ 
+    //     console.log(i);
+    // }
+
+   
+    // console.log(obj.length);
+    // for(var i=0;i<obj.length;i++){ //obj.length为undefined，所以条件不成立就不进入循环体
+    //     console.log(i);
+    // }
+
+
+
+
+
+
+    
+
+</script>
+</body>
+</html>

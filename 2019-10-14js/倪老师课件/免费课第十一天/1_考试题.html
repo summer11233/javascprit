@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        01、JS中的数据类型都有哪些？以及之间的区别？
+
+        原始数据类型  
+            string('',"",``)、
+            number(1,-1,0)、
+            boolean(true,false)、
+            null(document.onclick)、
+            undefined(document.onkuaile)、
+            symbol
+
+        引用数据类型
+            object  {}
+
+
+        02、检测数据类型的几种方式？（最少两种）
+
+            typeof 
+            Object.prototype.toString.call({})
+            ary instanceof Array
+
+        03、JS中创建变量的几种常用方式？
+            var 
+            let
+
+        04、写出下面程序的输出结果（腾讯面试题）
+            alert(3);
+
+        05、写出下面程序输出几次，结果分别是多少？（腾讯面试题）
+
+        06、向下面数组末尾追加一个值100你有几种办法？(至少两种)
+
+        07、把下面的数组进行排序（降序）
+
+        08、实现找到数组第n项到第m项(包括n和m)的内容，返回一个新的数组（百度面试题）
+
+        09、完成以下字符串处理需求（常见面试题）
+
+        10、获取 2~93 之间的随机整数(包含2也包含93)
+
+        
+    */
+
+    // console.log(document.onclick);
+    // console.log(document.onkuaile);
+    // console.log(typeof typeof '祖国生日快乐');//'string'
+
+//    console.log( Object.prototype.toString.call({}) );
+
+    // let ary = [];
+
+    // console.log(ary instanceof Array);//实例 instanceof 构造函数  
+
+    // console.dir(Array);
+
+    // let num = parseFloat('width:100px'); //NaN
+    // if(num===100){
+    //     alert(1);
+    // }else if(num===NaN){
+    //     alert(2);
+    // }else if(typeof num==='number'){
+    //     alert(3);
+    // }else{
+    //     alert(4);
+    // }
+
+    //0->1->+=2->3->4->4+=2->6+=3  9
+    // for(var i=0;i<10;i+=2){
+    //     if(i<=5){
+    //         i++;
+    //         continue;
+    //     }else{
+    //         i+=3;
+    //         break;
+    //     }
+    //     alert(i);
+    // }
+    // alert(i);
+
+
+    // for(let i=0;i<5;i++){
+    //     console.log(i);
+    //     if(i===3)break;
+    //     alert(i)
+    // }
+
+
+    // let ary = [1];
+
+    // ary.push(100);//返回值为新数组的长度
+    // ary[ary.length] = 100;
+    // console.log([...ary,100]);
+    // console.log(ary.concat(100));
+    // ary();
+
+    
+    // let ary = [12,14,13,35,16,28];
+
+    // ary.sort((a,b)=>b-a);
+    // console.log(ary);
+
+
+    
+    // let ary = [12,14,13,35,16,28];
+    // function slice(ary,n,m){
+    //     let ary2 = [];
+    //     for(let i=n;i<ary.length;i++){
+    //         ary2.push(ary[i]);
+    //         if(i ===m ) return ary2;
+    //     }
+    // }
+
+    // console.log(slice(ary,0,4));
+
+
+
+    // let ary = [12,14,13,35,16,28];
+    // function slice(ary,...arg){
+    //     let ary2 = [];
+    //     let len = arg.length;
+    //     let n = arg[0];
+    //     for(let i=n;i<ary.length;i++){
+    //         if(len === 1){
+    //             ary2.push(ary[i]);
+    //         }else if(len === 2){
+    //             let m = arg[1];
+    //             ary2.push(ary[i]);
+    //             if(i === m){
+    //                 return ary2;
+    //             }
+    //         }
+    //     }
+    //     return ary2;
+    // }
+
+    // console.log(slice(ary,4));
+
+
+
+    // 09、完成以下字符串处理需求（常见面试题）
+    let time = '2017-10-20';
+    //->需要获取的结果是 ‘2017/10/20’
+
+    // let year = time.substr(0,4);
+    // let month = time.substr(5,2);
+    // let date = time.substr(8,2);
+
+    // console.log(time.replace('-','/').replace('-','/'));
+    // console.log(year+'/'+month+'/'+date);
+    // console.log(time.split('-').join('/'));//['2017','10','20'].join('/')
+
+    // let temp = '';
+    // for(let i=0;i<time.length;i++){
+    //     if(time[i]!=='-'){
+    //         temp += time[i];
+    //     }else{
+    //         temp += '/';
+    //     }
+    // }
+    // console.log(temp);
+
+
+    // 10、获取 2~93 之间的随机整数(包含2也包含93)
+    // function random(n,m){
+    //     return Math.round(Math.random()*(m-n))+n;
+    // }
+    // console.log(random(2,93))
+
+    // 11、写出下面代码的输出结果？（腾讯面试题）
+
+    // let result = 1+null+true+undefined+'Tencent'+false+undefined+null;
+    // console.log(result);//'NaNTencentfalseundefinednull'
+
+
+    // 12、写出下面代码的输出结果？
+    
+    // A：3-'1px'?alert(2):alert(3);    //3
+    // B：3+'1px'?alert(4):alert(3);    //4
+
+    // 13、如下
+   /*
+        <body>
+            <div id='box' class='box'></div>
+            <script>
+                //=>在JS中获取这个元素对象（一个元素对象，不是元素集合），你有哪些办法可以实现？
+            <script>
+        </body>
+
+        document.getElementById('box');
+        document.querySelector('#box'); 
+    */
+
+
+    /*
+        14、如下
+        <body id="body">
+            <script>
+        
+                //=>在JS中动态创建一个div，并且把其添加到body的末尾
+        
+            <script>
+        </body>
+
+        let div = document.createElement('div');
+        body.appendChild(div);
+
+    */
+
+    /*
+        15、分析下面的代码，写出运行的结果（百度面试题）
+        
+        let a = 12;
+        
+        let b = a;
+       
+        b = 13;
+       
+        console.log(a);
+
+
+        let a = {n:12};
+        let b = a;
+        b['n'] = 13;
+        console.log(a.n);
+    */
+
+    // let a = 12;
+    // let b = a;
+    // b = 13;
+    // console.log(a);//12
+
+    // let a = {n:12};
+    // let b = a;
+    // b['n'] = 13;
+    // console.log(a.n);
+
+ 
+    // let a = {n:12};//001
+    // let b = a;//001
+    // b = {n:13};//002
+    // console.log(a.n);//12
+
+
+/*
+    16、写出下面代码的输出结果？ 布尔值和数组比，比较是隐式转为数字
+    A：[] == []   false
+    B：![] == []  false == []   true flase    true == [false]
+*/
+
+
+/*
+    17、请写出JS中设置定时器的两种方式？
+
+    setInterval
+    setTimeout
+*/
+
+// 18、怎么获取一个数组中的最大值？
+
+var ary = [123,43,2425,345,234,464];
+
+// console.log(Math.max(...ary));
+// console.log(ary.sort((a,b)=>b-a)[0]);
+// let max = -Infinity;
+// for(let i=0;i<ary.length;i++){
+//     if(max < ary[i]){
+//         max = ary[i];
+//     }
+// }
+// console.log(max);
+
+// 19、复制一个数组，你有几种方法？（至少两种）
+
+
+    // let ary2 = ary.concat();
+    // let ary2 = ary.slice();
+    // let ary2 = ary.splice(0);
+    // console.log(ary2);    
+    // let ary2 = [];
+    // for(let i=0;i<ary.length;i++){
+    //     ary2.push(ary[i]);
+    // }
+    // console.log(ary2);
+
+
+    // 20、下边表达式的运算结果是什么？
+    var a = 1 || 0, b = 1 && 0;
+    //var a = 1 || 0
+    //var b = 1 && 0
+    // console.log(a,b);//1,0
+
+
+    // 1、补充代码实现最后的效果（任意数求和）
+    // function sum(){
+    //     //=>在这里实现你的代码
+    //     // console.log(arguments);//实参的集合
+    //     let result = 0;
+    //     for(let i=0;i<arguments.length;i++){
+    //         let agri = Number(arguments[i]);
+    //         if(agri){
+    //             result += agri;
+    //         }
+    //     }
+    //     return result;
+    // }
+    // let total = sum(10,20,'30','珠峰','40');
+    // console.log(total);
+
+
+    // 2、补充代码实现最后的结果（常见面试题）
+
+    // function queryURLParameter(url){
+    //     //=>在这里实现你的代码
+        
+    // }
+    // let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+    // let result = queryURLParameter(str);
+    // console.log(result);
+/*
+ {
+
+   name:'zxt',
+   age:28,
+   sex:0,
+   HASH:'teacher'
+ }
+
+*/
+// function queryURLParameter(url){
+//     let obj = {};
+//     url = url.split('?')[1];
+//     let ary = url.split('&');
+//     //['name=zxt','age=2']
+//     ary.forEach(item=>{
+//         let ary2 = item.split('=');
+//         obj[ary2[0]] = ary2[1];
+//         return obj;
+//     });
+//     return obj;
+// }
+// let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+// let result = queryURLParameter(str);
+// console.log(result);
+
+// function fn(x,y){
+//     console.log(x+y);
+// }
+// console.log( fn(1,2) );
+
+
+/*
+    3、看需求文档，实现相关的JS代码
+    实现一个前端验证码功能，每次点击都能改变页面上展示的4位验证码
+*/
+    // let str = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+
+    // let temp = '';
+    // let len = str.length-1;
+    // for(let i=0;i<4;i++){
+    //     temp += str[Math.round(Math.random()*(len))]
+    // }
+    // console.log(temp);
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

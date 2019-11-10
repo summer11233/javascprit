@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>
+            <p>1234</p>
+        </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+        
+        <!-- children:找到某个元素下的元素子节点
+
+        firstElementChild:找到父级的第一个子元素
+
+        lastElementChild:找到父级的最后一个子元素 -->
+       <script>
+       
+       let li = ul.children;
+       console.log(li.length);
+       for(let i = 0;i<li.length;i++){
+        li[i].style.background = 'red';
+       }
+       ul.firstElementChild.style.background = 'blue';
+       ul.lastElementChild.style.background = 'pink';
+       
+       
+       </script>
+
+    
+</body>
+</html>

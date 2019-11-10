@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let navList =document.querySelectorAll('#navBox li');
+ 
+ //获取三个div
+ let tabList =document.querySelectorAll('#tabBox div');
+//2.给相应的元素绑定相应的事件
+for(var i=0;i<navList.length;i++){
+      //console.log(i)
+    //当for循环执行每一轮的时候,给当前的li增加一个属性(增加键值对),属性值是当前的i
+    navList[i].myIndex =i;
+    navList[i] .onclick=function(){
+        // console.log(i)
+        changeTab(this.myIndex)
+    }
+}
+    
+    
+    </script>
+</body>
+</html>

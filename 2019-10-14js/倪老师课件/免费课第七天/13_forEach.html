@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        forEach(callback,changeThis)
+            数组循环
+
+            callback(数组的每一项,数组的每一项对应的索引,整个数组)
+
+            返回值只是undefined
+
+            只有跳过(用return跳)，没有跳出
+
+        for循环比forEach要快，因为forEach内部每循环一次就调用函数，调用函数就有开销，所以for更快
+        但是forEach比for代码量要少一点。
+
+
+        今天有可能你会觉得forEach很难，但是，过1个星期之后，太简单，我当时为什么就不知道呢？
+
+    */
+
+    let ary = ['珠','feng','赵炎','尹德智'];
+
+
+
+    // function forEach(ary,callback){
+    //     for(let i=0;i<ary.length;i++){
+    //         callback(ary[i],i,ary)
+    //     }
+    // }
+
+    // forEach(ary,function(item,i,all){
+    //    console.log(item,i,all);
+    // });
+
+    console.time('计时器');
+    for(let i=0,len=ary.length;i<len;i++){}
+    console.timeEnd('计时器');
+    // ary.forEach(function(item,i,all){})
+    // for(let i=0,len=ary.length;i<len;i++){}
+    // ary.forEach(function(item,i,all){})
+    //0.036865234375ms,0.042724609375ms,0.046142578125ms
+    //0.01318359375ms,0.048095703125ms,0.0458984375ms,0.005126953125ms
+    // let a = ary.forEach(function(item,i,all){
+    //     // console.log(this);//window
+    //     // return 1;
+    //     // if(i === 1)return;
+    //     // alert(i);
+    // },document);
+   
+
+    
+
+    // console.log(a);
+   
+
+    // function fn(callback){    
+    //     console.log(callback(1));
+    // }
+    // fn(function(item){
+    //    console.log(item);
+    //    return 5;
+    // });
+
+
+    // function forEach(ary,callback){
+    //     for(let i=0;i<ary.length;i++){
+          
+    //     }
+    // }
+    
+    // forEach(ary,function(item,i,all){
+    //     console.log(item)
+    // });
+
+   
+
+
+
+
+
+</script>
+</body>
+</html>

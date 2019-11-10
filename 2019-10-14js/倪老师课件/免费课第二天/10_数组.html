@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Array  数组
+
+        [1,'租',true,{},[]]
+        new Array()
+
+        如果要访问数组中的成员，那么使用下标去访问即可[数字]
+        数字计数从0开始
+
+        length 长度
+
+        length可读可写
+
+        小技巧，数组的最后一个为数组的长度 - 1
+
+        如何检测一个变量为数组？
+            1.通过instanceof检测左值是不是右值构造出来的，是就为true，否则false
+            2.通过Array.isArray去检测数据是否为数组，是就为true，否则false
+            3.每个数据类型下面都有一个toString方法，
+                比如数组的
+                    [1,2,3,4] -> toString() -> '1,2,3,4'
+                对象的
+                    {} -> toStirng() -> '[object Object]'
+
+                Object.prototype.toString.call(ary) === '[object Array]'
+    */    
+
+    let ary = [1,'租',true,{},[]];
+    // let ary2 = new Array('a');
+    // console.log(ary.length);//5
+
+    // ary.length = 1;
+
+    // console.log(ary);
+
+    // console.log(ary[ary.length-1]);
+
+    // console.log(ary2);
+
+    // console.log(typeof ary);//'object'
+
+    // console.log(Array);  //构造函数
+
+    //ary是Array的实例
+     console.log(ary instanceof Array); //检测左值是不是右值构造出来的
+    // console.log(Array.isArray(ary))
+
+    console.log(Object.prototype.toString.call(ary) === '[object Array]')
+
+    // console.log(ary.toString());
+
+    // console.log((true).toString())
+
+    // console.log(({}).toString()); //'[object Object]'
+
+
+
+</script>
+</body>
+</html>

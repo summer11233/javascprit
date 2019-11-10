@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"> + 
+    <input type="text" id="txt2">
+    <button id="btn">计算</button>
+<script>
+    /*
+        Number 数字类型
+
+        new Number(1)
+        1
+
+        数字一般拿来运算
+            + - * / % (加、减、乘、除、取、余)
+
+        取余数:
+            A > B  取余数
+            A < B  取A
+            A == B  0
+
+        *** 页面中，所有的文本都是字符串
+
+        字符串转数字:(强制类型转换,主动人为转换)
+            1.Number('1') -> 数字1
+
+            2.parseInt(要转的字符串,前的字符串是几进制的) -> 转成10进制的数字
+                会把小数抹掉，取整
+
+            3.parseFloat(要转的字符串) -> 转成10进制的数字，可以是小数
+
+
+        转不出来就为NaN -> not a number (不是一个数字)，你做了一次非法的数学运算    
+        
+        *** NaN是数字类型,自己不等于自己
+
+    */    
+//    console.log(new Number(1));
+
+    // let num = {};
+
+    // console.log(num == num);
+
+    // console.log(num + 6); //11
+    // console.log(6 % 4);
+    // console.log(8 % 3);  //2
+
+    // console.log(3 % 8); //3
+    // console.log(4 % 8);//4
+    // console.log(5 % 8);//5
+    // console.log(7 % 8);//7
+    // console.log(8 % 8);//0
+    // console.log(9 % 8);//1
+
+    // console.dir(txt);
+
+    // console.log(Number('100'))
+
+    // console.log(Number('')); //空字符串被Number转之后为0
+    // console.log(Number(true));//1
+    // console.log(Number(false)); //0
+    // console.log(Number(null));//0
+    // console.log(Number(undefined));//NaN
+    // console.log(Number([]));//0
+    // console.log(Number(['px',1]));//如果有值会去转第一个，转不出来就是NaN
+    // console.log(Number({})); //NaN
+
+
+    // console.log(parseInt('')); //NaN
+    // console.log(parseInt(true)); 
+
+
+
+
+
+    // console.log(typeof NaN);
+
+    // console.log(parseInt('1px')); //->1
+    // console.log(parseInt('0001px')); 
+    // console.log(parseInt('1px100'));
+    
+    // console.log(parseInt('1.5px')); //1
+
+    // console.log(parseFloat('px1')); //NaN
+    // console.log(parseFloat('1.6px'));  //1.6
+
+    //1,2,4,8,16,32,64,128
+    // console.log(parseInt('110',2)); //011 0X2^0 + 1X2^1 + 1X2^2  0+2+4=6
+
+    // console.log(parseInt('1100',2));//0011  0+0+4+8 = 12
+
+    btn.onclick = function(){
+        //字符串的拼接
+        //就需要把字符串传成数字类型
+        // console.log(txt.value + txt2.value);//'100100'
+        // console.log(Number(txt.value) + Number(txt2.value));
+        // console.log(parseInt(txt.value) + parseInt(txt2.value));
+        console.log(parseFloat(txt.value) + parseFloat(txt2.value));
+    }
+
+</script>
+</body>
+</html>

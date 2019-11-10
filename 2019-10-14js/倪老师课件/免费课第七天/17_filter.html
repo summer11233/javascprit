@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        filter 返回数组中条件成立项，把不成立的过滤掉，返回一个新数组
+        第一个参数
+            callback(item,i,all)
+        第二个参数
+            改变this指向
+
+    */
+    let ary = [true,true,false];
+
+    // console.log( ary.filter(b=>b===false) );//[true,true];
+    ary.filter(function (b,i,all){
+        console.log(b,i,all,this);
+        return b===false;
+    },document);
+
+
+
+
+</script>
+</body>
+</html>

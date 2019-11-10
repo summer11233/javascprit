@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+#p{
+    width:100px;
+    height:50px;
+    border:2px solid #000;
+    text-align: center;
+    line-height:50px;
+    font-size: 25px;
+    margin: 0 auto;
+}
+</style>
+</head>
+<body>
+    <p id="p"></p>
+<script>    
+    let num = 0;
+    let timer = setInterval(() => {
+        let temp = '';
+        for(let i=0;i<4;i++){
+            temp += random(0,9);
+        }
+        p.innerText = temp;
+
+        num ++;
+        if(num === 10){
+            clearInterval(timer);
+            console.log(num);
+        }
+
+    }, 1000);
+
+    function random(n,m){
+        return Math.round(Math.random() * (m-n)) + n;
+    }
+</script>
+</body>
+</html>

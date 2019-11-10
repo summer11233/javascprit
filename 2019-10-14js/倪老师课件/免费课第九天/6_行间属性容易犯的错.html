@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"  class="active"></div>
+<script>
+    /*
+        设置行间属性:
+            element.setAttribute(key,value)
+
+        获取行间属性:
+            element.getAttribute(key)
+
+        删除行间属性:
+            element.removeAttribute(key)
+
+        let obj = {//001
+            id:'box',
+            attributes:{//002
+                id:'box',
+                index:1
+            }
+        }
+
+        obj.id -> 'box'
+
+        除了标准中定义的行间属性(id,class)，别的行间属性都在attributes上，也就是说
+        直接通过对象.属性去查找行间属性，一般是找不到的，因为对象上就没有定义过，标准行间属性和
+        自定义行间属性，他们在的空间地址是不一样的
+
+
+
+        使用对象下的xx去访问的属性，要通过对象下的xx去创建才能访问得到
+
+        使用getAttribute获取标签上的自定义属性，要通过手写标签上的属性，要么setAttribute设置的才能放访问的到
+
+
+
+
+    */
+
+    // console.log(box.id); //'box'
+
+    // console.log(box.index);//1  undefined
+
+    // console.dir(box);
+
+    // console.log(box.getAttribute('index'));
+
+    // box.index = 2;
+
+    box.setAttribute('index','1'); //->attributes 空间
+
+    console.log(box.index); //box 的空间
+
+
+    // box.setAttribute('index',1);
+</script>
+</body>
+</html>

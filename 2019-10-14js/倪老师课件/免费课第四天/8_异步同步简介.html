@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+    window.onload = function(){
+        console.log(document.getElementById('box'))
+    }
+   
+</script>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        js是单线程:同一时间只能做一件事
+        js执行代码是从上往下执行的,上面的代码没有执行完，下面的代码不会执行（同步）
+
+        异步队列:在js中专门有个任务队列去管理异步操作（不是立马要执行，是某个任务条件成立才执行的）
+    */    
+
+    let a = 10;
+    console.log(a);
+
+    // for(;true;){
+
+    // }
+
+    // console.log(a);
+
+    // document.onclick = function(){
+    //     console.log(a)
+    // }
+    // let a = 10;
+    
+
+
+</script>
+</body>
+</html>

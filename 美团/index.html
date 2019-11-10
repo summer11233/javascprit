@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 重置样式 -->
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        function refreshRem() {
+            var desW = 640,
+                winW = document.documentElement.clientWidth || document.body.clientWidth;
+            ratio = winW / desW;
+            document.documentElement.style.fontSize = ratio * 100 + 'px';
+        }
+        refreshRem();
+        window.addEventListener('resize', refreshRem);
+    </script>
+</head>
+
+<body>
+    <section class="wrapper">
+        <header>
+            <section class="city">
+                北京<img src="images/arrowDown.png" alt="">
+            </section>
+            <section class="search">
+                <input type="text" placeholder="请输入商家属性">
+            </section>
+            <section class="people"></section>
+        </header>
+        <main>
+            <!-- 热门链接 -->
+            <ul class="hotLinks">
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-meishi"></section>
+                        <section class="text">美食</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-maoyan"></section>
+                        <section class="text">猫眼</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-jiudian"></section>
+                        <section class="text">酒店</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-yule"></section>
+                        <section class="text">休闲娱乐</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-waimai"></section>
+                        <section class="text">外卖</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-ktv"></section>
+                        <section class="text">ktv</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-zhoubianyou"></section>
+                        <section class="text">周边游</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-liren"></section>
+                        <section class="text">丽人</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-xiaochi"></section>
+                        <section class="text">小吃快餐</section>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <section class="icon iconfont icon-live"></section>
+                        <section class="text">生活服务</section>
+                    </a>
+                </li>
+            </ul>
+            <!-- 猜你喜欢 -->
+            <section class="guessLike">
+                <h3>猜你喜欢</h3>
+                <ul class="guessLists">
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="left" src="images/libg.jpg" alt="">
+                            <section class="right">
+                                <h4>华莱士炸鸡汉堡</h4>
+                                <p>鸡腿堡+薯条+中杯可乐1份</p>
+                                <p>
+                                    <span class="nowPrice">18元</span>
+                                    <del>门市40元</del>
+                                    <span>已售2000</span>
+                                </p>
+                            </section>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer></footer>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="v1" />
+    <select id="s1">
+        <option>-</option>
+        <option>+</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <input type="text" id="v2" />
+    =
+    <span id="count">?</span>
+    <button id="btn">计算</button>
+<script>
+    /*
+        1.点击计算按钮的时候，获取v1,v2,s1中的value值
+        2.判断s1的值为什么运算符
+        3.把结果放到count身上
+
+        如果option中有value，优先获取option中的value值，如果没有才去option的标签内找内容
+    */
+    // let v11 = v1.value;  //v11 = ''  
+    // let v22 = v2.value;
+    // let s1v = s1.value;
+
+    btn.onclick = function(){
+        // console.log(v11);//v11是刚才存的值，''
+        // console.log(v1.value);
+        //点击的时候获取第一个input框中的值
+        let v11 = v1.value;    
+        //点击的时候获取第二个input框中的值
+        let v22 = v2.value;
+        //点击的时候获取select中的运算符号
+        let s1v = s1.value;
+        if(v11){ //第一个input框中的值不能为空字符串
+            v11 = parseFloat(v11);//'1.5px'->1.5
+            //'1.5px'->1.5->isNaN(1.5)->false
+            if(isNaN(v11)){ //是NaN不是可用数字
+                console.log('请正确添加内容')
+            }else{
+                //可以正常运算
+                if(s1v == '+'){
+                    count.innerText = Number(v11) + Number(v22);
+                }else if(s1v == '-'){
+                    count.innerText = v11 - v22;//'1.5px' - v22
+                }else if(s1v == '*'){
+                    count.innerText = v11 * v22;
+                }else if(s1v == '/'){
+                    count.innerText = v11 / v22;
+                }else if(s1v == '%'){
+                    count.innerText = v11 % v22;
+                }
+            }
+        }else{
+            console.log('v1必须要有内容')
+        }
+        // console.log(s1v)
+    }
+
+</script>
+</body>
+</html>

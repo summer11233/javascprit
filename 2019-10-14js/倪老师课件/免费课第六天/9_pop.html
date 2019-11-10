@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        向数组的最后一位删除一个数据，返回值为删除的那个数据
+    */    
+    let ary = ['珠','峰'];
+
+    /*
+        ['珠']   -> '峰'
+        ['珠',5,6,'峰'] -> 4
+        ['珠',5,6,'峰',4];
+    */
+    ary.push(ary.push(5,6,ary.pop('珠')));//珠，峰，5，6，珠，峰
+
+    // console.log(ary);
+
+
+    // console.log(ary.pop());
+    // console.log(ary);
+
+    // function pop(ary){
+    //     let data = ary[ary.length-1];
+    //     ary.length --;
+    //     return data;
+    // }
+
+
+    // console.log(pop(ary));//'峰'
+    // console.log(ary);//['珠']
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

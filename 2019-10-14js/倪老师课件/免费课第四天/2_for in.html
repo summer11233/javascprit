@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        循环:
+            for循环
+            while循环
+        
+        只有特殊数据格式下，遍历（循环、枚举）对象才可以使用for
+
+        for in
+
+        for(变量声明 in 对象){
+            每次枚举都会进入一次循环体，每次循环变量就为对象的属性
+        }
+
+        for in会枚举原型链,也就是除了对象自身的属性以外，还会查找原型链上的自定义属性
+        
+        可以通过obj.hasOwnProperty('属性名')去检测某个属性是不是对象自身的
+        如果是自身的，就返回true，否则false
+
+
+    */
+
+    let obj = {
+        name:"珠峰培训",
+        age:10
+    }
+
+    // console.log(obj.name);
+    // console.log(obj['name']);
+
+    // console.log(obj[name]);
+
+    // console.log(window); //window.name
+
+
+    /*
+        变量attr会为每次枚举的对象属性
+
+    */
+    for(let attr in obj){
+        // console.log(attr);
+        console.log(obj[attr]);
+    }
+
+    Object.prototype.border = '1px solid #000';
+
+    // console.log('name' in obj);
+
+    let obj2 = {
+        // width:'100px',
+        // height:'100px',
+        width:100,
+        height:100,
+        background:'skyblue'
+    }
+
+    for(let attr in obj2){
+        console.log(attr);
+        //只有obj2自身的属性才能进行赋值操作
+        if(obj2.hasOwnProperty(attr)){
+            console.log(attr);
+             //如果obj2[attr]值为字符串就直接赋值
+            if(typeof obj2[attr] === 'string'){
+                box.style[attr] = obj2[attr];
+            }else if(typeof obj2[attr] === 'number'){
+                box.style[attr] = obj2[attr] + 'px'; //width
+            }
+        }
+    }
+
+    // box.style.border = '10px solid #000'
+    // console.dir(box.style);
+
+    // console.log(obj.hasOwnProperty('haha'))
+
+
+    //特殊格式
+    
+    // let obj3 = {
+    //     0:'珠峰',
+    //     1:'前端',
+    //     2:'培训',
+    //     length:3
+    // }
+
+    // for(let i = 0;i < obj3.length; i++){
+    //     console.log(obj3[i]);
+    // }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

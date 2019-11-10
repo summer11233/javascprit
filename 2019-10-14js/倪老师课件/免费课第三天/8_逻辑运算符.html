@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        &&（并且）
+            A && B  
+                A必须成立才会走B，结果为B
+                如果A不成立，一定不会走B，并且结果为A
+
+            在if判断中，A和B这2个条件都成立的情况下才会进if
+             
+        ||（或者）
+            A || B
+                A不成立还会去看B ，结果是B
+                A成立就不会看B了，结果A
+            在if判断中，A和B只要有一个成立就会进if
+
+        三元运算符:
+            二元    1 + 1
+            一元    typeof 1
+            三元（三目）    ?:
+                条件?语句一:语句二
+
+        逗号运算符 ，
+            用逗号运算符可以在一条语句中执行多个运算。
+            var iNum1 = 1, iNum = 2, iNum3 = 3;
+
+
+    */    
+
+    // var iNum1 = 1;
+    // var iNum = 2;
+    // var b = 5;
+    // function fn(){
+    //     var iNum1 = 2, 
+    //     iNum = 3;
+    //     b = 7;
+    // }
+    // fn();
+    // console.log(iNum,iNum1,b);
+
+
+    // let data = false || true && 5 || '1px'-10 || 8 && [0] && {} || 99 || ('8'+NaN)
+    // console.log(data);//5
+    // let data = false || true && 5 && 8 && [0] && {} || 99 || ('8'+NaN)
+
+    // console.log(data);
+    
+
+
+    // let b = 'null' || false;
+    // let b = null || false;
+    // console.log(b);
+
+    // if(5-5 || 6){
+    //     console.log('成立');
+    // }
+
+
+
+    // let a = 'false' && 5;
+    // let a = false && 5;
+    // console.log(a);
+
+    // if({} && null){
+    //     console.log('条件成立')
+    // }else{
+    //     console.log('条件不成立')
+    // }
+
+    
+    let s = '火箭';
+    let s2 = '房';
+
+    // if(s === '车'){
+    //     if(s2 === '房'){
+    //         console.log('更好日子');
+    //     }
+    // }
+    
+    //可以改写成
+    // if(s === '车' && s2 === '房'){
+    //     console.log('更好日子');
+    // }
+
+    // function fn(){
+    //     alert('好日子');
+    // }
+
+    // if(s === '车'){
+    //     fn();
+    // }
+
+    //可以改写成
+
+    // (s === '车') && fn();
+
+    
+    //保证a一定有值并且还是个数字
+    // let a;
+    // a = a || 5;  //如果a是个真值，那么就按照真值走，否则有个5的默认值
+    // console.log(a || 5);
+
+
+    // if(s === '火箭'){
+    //     console.log('上天');
+    // }else{
+    //     console.log('下地');
+    // }
+
+    //可以改写成下面的语句
+
+    // s === '火箭'?console.log('上天'):console.log('下地');
+
+    // console.log(s === '火箭'?'上天':'下地');
+
+
+    // let a = 1;
+    // let b = 2;
+    
+    //改下成下面的代码
+
+    // let a = 1,b = 2;
+    
+    
+
+
+</script>
+</body>
+</html>

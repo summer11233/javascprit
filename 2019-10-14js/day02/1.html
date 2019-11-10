@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //string  类型
+    //把其他数据类型转字符串
+
+   //console.log(({}).toString())=>[object Object]
+   //console.log([].toString())
+   console.log((23).toString())//'23'
+   console.log(1)
+   console.log((true).toString())//true
+   true.toString()//
+
+
+
+   //字符串拼接
+   console.log([1]+1)
+   //'1'+1=>'11'
+   console.log([]+{})
+   //''+'[object Object]'
+   console.log([31415926]+{name:31415926})
+   //31415926[object Object]
+
+   console.log('10'+10)
+   //'1010'
+   console.log('10'-10)
+   //0
+   console.log('10px'-10)
+   //NaN
+   console.log([]+[])
+   //''+''
+   console.log([]+false)
+   //'false'
+   console.log('12px'*0)
+   //NaN
+   //console.log(1+null+false+'珠峰'+[]+null+unde)
+   //报错
+   //console.log(1+null+false+'珠峰'+[]+null+undefined)=>1+0+>1+0=>'1珠峰'=>'1珠峰null'=>'1珠峰nullundefined'
+   //'1珠峰nullundefined'
+
+   console.log(1+ true+ [] +false +[12]+ null)
+   //1+1=>2+''=>'2false12'=>'2false12null'
+   console.log(undefined+1+null+false+'珠峰'+[]+null)
+   //NaN+1=>NaN+'NaN+珠峰null'=>'NaN珠峰null'
+  
+//布尔
+//!false
+//!Boolean('1')//false
+//!!NaN//false
+
+  if(''){
+      console.log('xxx')
+  }  
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+<script>
+    // box.innerHTML = '<div>zf</div>';
+    // let div = box.children[0];
+    // div.onclick = function(){
+    //     alert(5)
+    // }
+
+    let div = document.createElement('div');
+
+    div.innerHTML = '王萌军在干嘛?'
+
+    div.onclick = function(){
+        // alert('尹德智听课');
+        // box.removeChild(this);
+        // let p = document.createElement('p');
+        // p.innerText = '李磊不要抓了';
+        // box.replaceChild(p,this);
+       
+        // box2.appendChild(this.cloneNode(false));
+
+        // console.log(this.cloneNode() == this);
+    }
+
+    box.appendChild(div);
+
+    // console.dir(div);
+
+
+    // function cloneNode(element,boolean){
+    //     console.dir(element) 
+    //     let div = document.createElement(element.nodeName);
+    //     if(boolean){
+    //         div.innerHTML = element.innerHTML;
+    //     }
+    //     // console.log(div);
+    //     return div;
+    // }
+
+    // console.log(cloneNode(div,true),div);
+
+
+
+</script>
+</body>
+</html>

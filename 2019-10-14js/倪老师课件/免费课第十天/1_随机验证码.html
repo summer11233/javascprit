@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        function random(x,y){
+            Math.round(Math.random()*(y-x))+y
+        }
+    */
+    let str = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+
+    function random(x,y){
+        return Math.round(Math.random()*(y-x))+x;   
+    }
+    let temp = '';
+    for(let i=0;i<4;i++){
+        temp += str[random(0,str.length-1)]
+    }
+    console.log(temp);
+
+
+
+    /*
+        null和undefined混淆
+
+        
+        函数:
+            定义
+                
+                function fn(){}
+                let fn = function(){}
+                (function(){})()
+                let fn = () => {};
+                
+
+            调用
+                1.执行函数体内的代码
+                2.看return返回值
+
+            参数
+                有实参，形参就是对应着实参
+                没有实参，直接undefined
+
+            返回值
+                有返回值并且用返回值 -> 函数调用的时候去使用就为return后面的值
+                没有return直接就是undefined
+            角色
+    */
+    // function fn(x){
+    //     console.log(x);//5
+    //     return function(y){
+    //         console.log(x+y)
+    //     }
+    // }
+
+    // let f = fn(5);
+    // console.log(f);
+    // console.log( f()() ); 
+
+    // alert( alert(5) ); //5 undefined
+
+
+    // console.log( random(0,str.length-1) ); //从第0位到字符串最后一位
+</script>
+</body>
+</html>

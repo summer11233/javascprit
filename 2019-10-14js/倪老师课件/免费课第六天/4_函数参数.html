@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        形参:
+            形式上的参数，在**函数定义**的时候括号中的英文为**形参**(形式上的参数)
+
+            形参是可以添加默认值的
+                比如:
+                    function fn(b=2){}
+
+        实参:
+            实际的参数，在**函数调用**的时候括号中的**任意数据**
+
+        参数是可以有多个的，参数与参数之间用,号分割
+
+        形参和实参一定是一一对应的关系（位置是对应好的）
+
+
+        剩余运算符:(运算剩下的参数)
+            function fn(...as){
+                as就是剩余的实参,as为数组
+            }
+            fn(1,2,3)
+
+            
+
+
+
+    */  
+
+    // function fn(a,b){//形式上的参数(形参)
+    //     console.log(a,b);  //let a = 1
+    // } 
+    // fn(1,2); //实参(实际的参数)
+
+    //可以给形参赋值默认值
+    // function fn(a=1){
+    //     console.log(a);
+    // } 
+    // fn(5);
+
+
+
+    //回调地狱,回调函数,钩子函数,生命周期函数
+    // function fn(a){
+    //     // console.log(a);
+    //     a(function(a){
+    //         a(function(){
+    //             console.log(1)
+    //         });
+    //     });
+    // }
+    // fn(function(a){
+    //     a(function(a){
+    //         a(function(a){
+    //             a();
+    //         });
+    //     });
+    // });
+
+
+    // function fn(a){
+    //     a(function(b){
+    //         b();
+    //     });
+    // }
+    // fn(function(b){
+    //     console.log('a');
+    //     b(function(){
+    //         console.log('b');
+    //     });
+    // })
+
+
+    function fn(a,b,...arg){
+        console.log(arg);
+    }
+    fn(1,2,3,4);
+
+</script>
+</body>
+</html>

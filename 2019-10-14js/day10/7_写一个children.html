@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+<script>
+    /*
+        childNodes 获取某个元素下的所有子节点
+
+        children 获取某个元素下的所有子元素节点
+
+        需求:
+            自己手写一个方法，这个方法返回某个元素下的所有元素子节点
+
+        1.通过childNodes去拿到所有的子节点
+        2.通过判断，这些子节点下哪个是元素子节点
+        3.如果是就把这个元素子节点push到一个数组中
+        4.最后把这个数组返回出去
+    */
+
+    function children(parent){
+        //我先看看这个parent到底是一个什么数据？
+        //如果是个字符串，那么我就获取元素
+        //如果parent直接就是一个元素了，就不需要获取了
+        // if(typeof parent === 'string'){
+        //     parent = document.querySelector(parent);
+
+        // }else if(parent.nodeType === 1){
+        //     parent = parent;
+        // }
+
+        parent = typeof parent === 'string'?document.querySelector(parent):(parent.nodeType === 1?parent:null)
+            
+        //如果为null，就说明参数是瞎传的
+        if(parent === null)return '请正确传参';
+
+        const chidrens = parent.childNodes;
+        let arr = [];
+        for(let i=0;i<chidrens.length;i++){
+            if(chidrens[i].nodeType === 1){
+                arr.push(chidrens[i]);
+            }
+        }
+        
+        return arr;
+    }
+
+    console.log(children('ul'));
+
+    
+
+</script>
+</body>
+</html>

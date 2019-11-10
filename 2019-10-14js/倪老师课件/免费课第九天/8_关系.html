@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+<script>
+    /*
+        childNodes  获取某个元素下的所有子节点
+
+        children   获取某个元素下的所有子元素节点
+
+        element.firstElementChild  获取某个元素下的第一个子元素
+        
+        element.lastElementChild   获取某个元素下的最后一个子元素
+
+
+        上一个兄弟节点
+            element.previousElementSibling
+        下一个兄弟节点
+            element.nextElementSibling
+
+        父级元素节点
+            parentNode
+
+        一个页面document就是顶层了
+        
+
+    */
+
+    // let lis = ul.children//ul.childNodes;
+
+    // console.log(lis.length);
+
+    // for(let i=0;i<lis.length;i++){
+    //     // if(lis[i].nodeType === 3)continue;
+    //     // if(lis[i].nodeType === 1){
+    //     //     lis[i].style.background = 'red';
+    //     // }
+    //     lis[i].style.background = 'red';
+    //     // console.log( lis[i].style )
+    // }
+
+
+    // console.log(ul.firstElementChild)
+    // console.log(ul.lastElementChild)
+
+    // ul.lastElementChild.previousElementSibling.style.background = 'red';
+
+    // ul.firstElementChild.nextElementSibling.style.background = 'red';
+
+    // console.log(ul.lastElementChild.nextElementSibling);
+
+    // console.log(ul.firstElementChild.parentNode.parentNode.parentNode.parentNode.parentNode);
+
+</script>
+</body>
+</html>

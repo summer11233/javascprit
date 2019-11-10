@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <button>你好</button>
+    <button>你好</button>
+    <button>你好</button>
+    <script>
+        //想操作谁就先获取谁
+        let btnlist = document.getElementsByTagName('button');
+        console.log(btnlist);
+        for ( var i = 0;i<btnlist.length;i++){
+            btnlist[i].myIndex = i
+            btnlist[i].onclick= function(){
+                alert(this.myIndex)
+            }
+        }
+        
+        
+  </script>
+</body>
+</html>

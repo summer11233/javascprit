@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Math,存折数学方法和属性
+    
+    console.dir(Math);
+    console.log(Math.PI)//圆周率
+    console.log(Math.ceil(5.7));//6  向上取整
+    console.log(Math.floor(5.9));//5 向下取整
+    //console.log(Math);
+    console.log(Math.round(5.5));//5 四舍五入
+    console.log(Math.random());//0-1之间无限不循环小数 随机的
+    console.log(Math.abs(-1));//  1  取绝对值
+    console.log(Math.max(5,6,7,8,9));//取最大值
+    let ary= [5,6,7,8,9];
+    console.log(Math.max(...ary));//9
+    console.log(Math.min(...ary));//5
+
+    console.log(Math.pow(2,3));//8 取幂
+
+    //0-5
+
+    function random(n,m){
+      return  Math.round(Math.random()*(m-n))+n
+    }  //公式记住
+    
+    console.log(random(0,5));
+    //获取随机不重复的验证码
+
+    //3rQ8
+
+    let str ='1234567890qwertyuiopkjhgfddssaszxcvbnmsdfghjkl'
+    let temp='';
+    for(let i= 0;i<4;i++){
+        temp += str[random(0,str.length-1)];
+    }
+     console.log(temp);
+     
+
+    
+    
+    
+    
+
+    
+    
+    </script>
+</body>
+</html>

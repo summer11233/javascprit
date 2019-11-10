@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+    console.log(document.getElementById('box1')); //因为script标签的上方找不到box1，所以出现null
+    //window.onload 当前页面加载完成时执行函数中的代码
+    // window.onload = function(){
+    //     console.log(document.getElementById('box1'));
+    // }
+</script>
+</head>
+<body>
+    <div id="box1"></div>
+<script>
+    /*
+        基本数据类型(简单、原始)
+            string  
+            number
+            null
+                元素没有获取过来(要么页面中压根没有这个元素，要么你写错了)
+            boolean
+                true(真，对)，false(假，错)
+            undefined
+                未定义
+                一个变量声明没有赋值的时候
+            symbol
+        引用数据类型
+
+            说到对象，指2种，一种是若干对象的泛指，另一种是{}
+
+            object
+
+            对象:{
+                key:value,
+                key2:value2
+            }   
+            叫对象的对象类型
+
+            key值为字符串，value值可以是任意的数据类型
+
+
+            数组:[]   叫数组的对象类型
+
+            [任意的数据类型1,任意的数据类型2,任意的数据类型3....]
+
+        在js中变量值如果出现文字（英文，中文...）,要么是变量，要么是字符串
+
+        数组获取值用下标([数字])获取，在js中计数从0开始
+    */ 
+   
+    // let str = '12345';  //长的像数字的字符串
+
+    // let a = 5;
+    // let str = a;  //a代表的是变量 如果没有这个变量a，那么会报错 a is not defined
+
+    // let str = 'a';  //a为字符串
+
+    // console.log('5'+'5'); 
+    // console.log(5+5);   
+
+    let aa;
+    // console.log(aa);//undefined
+
+    // let obj = {
+    //     name:1,
+    //     age:18,
+    //     style:{
+    //         display:'bolck'
+    //     }
+    // }
+
+
+    // console.log(obj.style.display);
+
+    // console.dir(document.getElementById('box1'))
+
+
+    // console.log(document.getElementById('box'));
+
+    // let name = '李磊';
+    // let age = 20;
+    // let job = '前端开发者';
+
+    // let obj = {
+    //     name:'李磊',
+    //     age:20,
+    //     job:'前端开发者'
+    // }
+
+    // console.log(name,age,job);
+    // console.log(obj)
+
+    let ary = [1,true,'字符串',null];
+
+    // console.log(ary[1]);
+
+
+
+
+</script>
+</body>
+</html>

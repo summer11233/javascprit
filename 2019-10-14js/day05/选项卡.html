@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>选项卡</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        font-size: 40px;
+    }
+    ul {
+        list-style: none;
+    }
+    #tabBox {
+        width: 500px;
+        margin: 0 auto;
+    }
+    #navBox {
+        display: flex;
+        position: relative;
+        top:1px;
+    }
+    #navBox>li {
+        border: 1px solid gray;
+        padding: 10px;
+        font-size: 30px;
+        color: orangered;
+        margin-right: 10px;
+    }
+    #tabBox>div {
+        height: 150px;
+        line-height: 150px;
+        text-align: center;
+        border: 1px solid gray;
+        display: none;
+    }
+    #tabBox>div.active {
+        display: block;
+    }
+    #navBox>li.active {
+        border-bottom-color: white;
+    }
+    
+    </style>
+</head>
+<body>
+  <div id="tabBox">
+  <ul id="navBox">
+      <li class="active">孙悟空</li>
+      <li>猪八戒</li>
+      <li>沙悟净</li>
+</ul>
+<div class="active"> 俺老孙来也</div>
+<div> 我要回庄里</div>
+<div> 二师兄说的对</div>
+  </div>
+  <script>
+  //1.获取元素(想操作谁,就获取谁)
+//   let navBox = document.getElementById('navBox');//通过元素的Id获取页面的元素(如果获取不到就是null)
+//   // 对象.className =xxx 这是给元素添加class名
+//   let navList = navBox.getElementsByTagName('li');//类数组  通过元素的标签名获取元素 (如果获取不到就是空数组)
+ 
+//   let aa  = document.getElementsByClassName('avtive');//类数组 ,通过元素的class名获取元素(如果获取不到就是空数组)
+
+//   let bb =document.querySelectorAll('#navBox li')//类数组 综合获取页面中的元素
+  
+ //1.获取元素(想操作谁,就获取谁)
+ //获取三个li
+ let navList =document.querySelectorAll('#navBox li');
+ 
+ //获取三个div
+ let tabList =document.querySelectorAll('#tabBox div');
+//2.给相应的元素绑定相应的事件
+for(var i=0;i<navList.length;i++){
+      //console.log(i)
+    //当for循环执行每一轮的时候,给当前的li增加一个属性(增加键值对),属性值是当前的i
+    navList[i].myIndex =i;
+    navList[i] .onclick=function(){
+        // console.log(i)
+        changeTab(this.myIndex)
+    }
+}
+//分析不行的原因:/
+// 当代码运行的时候,页面还没有出来,执行带for循环时,给每一个li 绑定点击事件,但是绑定的时候事件不会执行的(用户点击才会执行),for循环结束以后i变成3. 当用户点击li触发事件的时候(这时候for循环早已经执行结束i已经变成3)取到的i就是3//
+
+
+//只要把你点击的元素的索引传过了就好了
+function changeTab(index){
+    //1.清除所有元素的class名
+    for( var i=0;i<navList.length;i++){
+        navList[i].className='';
+        tabList[i].className='';
+    }
+    //2.给你点击的元素(当前操作的元素)加上class名
+        navList[index].className='active';
+        tabList[index].className='active';
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+  </script>
+</body>
+</html>

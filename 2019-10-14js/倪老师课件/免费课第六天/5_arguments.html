@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        函数体内有个**类数组**，名字叫arguments，这个arguments就为实参集合
+    */
+    // let a = {
+    //     name:'珠峰培训'
+    // }; 
+    // function fn(){
+    //     console.log(arguments[0].name);
+    //     arguments[0].name = '前端';
+    //     console.log(arguments[0].name);
+    //     arguments[0] = {
+    //         name:'专注'
+    //     }
+    // }
+
+    // fn(a,2,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6);
+    // console.log(a.name);
+
+    //计算实参之和
+    // function fn(){
+    //     let sum = 0;
+    //     for(let i=0,len=arguments.length;i<len;i++){
+    //         // console.log(arguments[i]);
+    //         sum += arguments[i]
+    //     }
+    //     console.log(sum);
+    // }
+    function fn(...arg){
+        let sum = 0;
+        for(let i=0,len=arg.length;i<len;i++){
+            sum += arg[i];
+        }
+        console.log(sum);
+    }
+    fn(5,2,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6,3,3,4,6);
+
+</script>
+</body>
+</html>

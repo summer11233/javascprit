@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1.ECMAscript的数据类型有哪些？（长什么样）
+
+            原始类型:
+                number:1,string:'hehe',boolean:true,undefined:undefined,null:null,symbol:Symbol()
+
+            引用类型:
+                object：[]、{}  Date、[]、function...
+
+        2.typeof 数据类型都是什么？
+            'function' -> function fn(){}
+            'string' -> '1231'
+            'number' -> 23
+            'boolean' -> true
+            'object' -> {}、null、[]..
+            'symbol' -> Symbol()
+            'undefined' -> undefined
+
+        3.Number转所有的数据类型值为多少？
+            0:'0',false,null,'',[],' '
+            1:'1',true,[1]
+            NaN:'px',undefined,{},['px'],function(){},'1px'*5
+
+        4.布尔值转所有的数据类型值为什么？
+            真:非空字符串,非0数字,对象,true,symbol,function
+            假:false,'',0,NaN,undefined,null
+
+        5.
+            （1）[] == []    flase
+            （2）'' == 0  true
+            （3）[0] == false true
+            （4）true == 1 true
+            （5）{} == '' flase
+            （6）'12' > 2 true
+            （7）‘12’ > '2' false
+            （8）[] == 0 true
+            （9）0 == null  false
+            （10）'{}' == 1 false
+            （11）undefined == null  true
+            （12）null == undefined  true
+            （13）{name:1} == {name:1} false
+            （14）undefined == 0  false
+
+        6.对象如何取值、循环。
+
+            obj.name
+            obj.age
+            obj['sex']
+
+        
+        7.parseInt,parseFloat区别
+            parseInt('12px',第一个参数是几进制) ->  10进制的正数，转不出来就NaN
+
+            parseFloat('12.5px')  -> 10进制的正数或者小数
+
+
+        8.如何判断一个数字为整数？
+            '8.5'  parseInt('8.5')->8  8!=8.5
+            '8'
+
+            parseInt('8.5') === parseFloat('8.5')
+            parseInt('8') === parseFloat('8')
+
+        9.  let i=0
+            console.log(i++ == ++i)  0==2 false
+            console.log(++i == i++)  3 == 3 true
+            console.log(i);  //4
+
+
+        10.
+        let b = true && !(1-6) || '1px'-5 && {} && ['0'] || !!false && (7*Number(''))  || 9+parseInt('') && 666;
+
+        11.选项卡的代码或者思路
+        
+        
+    */
+    // 字符串有length，数组有length，类数组，函数也有length
+    let obj = {name:'珠峰',age:10,sex:'男',style:{w:{w1:5}}}
+    // console.log(obj.style.w.w1)
+
+    // console.log(obj.length)  //undefined
+
+    for(let attr in obj){
+        if(attr === 'style'){
+            for(let attr2 in obj[attr]){
+                for(let attr3 in obj[attr][attr2]){
+                    console.log(obj[attr][attr2][attr3]);
+                }
+            }   
+        }else{
+            console.log(obj[attr]);
+        }
+    }
+
+    // let i=0
+    // console.log(i++ == ++i) // 0==2 false
+    // console.log(++i == i++)  //3 == 3 true
+    // console.log(i);  //4
+
+// let b = true && !(1-6) || '1px'-5 && {} && ['0'] ||
+//  !!false && (7*Number(''))  || 9+parseInt('') && 666;
+
+//  console.log(b);
+
+
+    
+</script>
+</body>
+</html>

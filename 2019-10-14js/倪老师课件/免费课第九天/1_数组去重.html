@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        数组去重 
+            splice
+
+            Set
+    */
+    let ary = [1,2,2,1,4,2,6,6,8,8,'8',{age:5},{age:2}];
+
+    // console.log([...new Set(ary)]);  //工作中用这个
+
+
+    // for(let i=0;i<ary.length;i++){
+    //     for(let j=i+1;j<ary.length;j++){
+    //         if(ary[i] === ary[j]){
+    //             ary.splice(j,1);
+    //             j--;
+    //         }
+    //     }
+    // }
+
+    // let s = new Set([1,2,3,2,2,2]); //[1,5,7]
+    // let s = new Set(ary);
+
+    // console.log(s.add(1));
+    // s.delete(4);
+    // console.log( s.has(2) );
+    // console.log( [...s] );
+
+
+
+
+    //对象的key值只能有一个，如果有多个，下面的会把上面的覆盖
+    /*
+        let ary = [1,2,1,1,1,1,2,0,0]
+        {
+            name:'锦程',
+            name:'彭锦程'
+        }
+
+        ary2 = [1,2,0];
+        {
+           1:true,
+           2:true,
+           8:true
+        }
+    */
+
+    /*
+        {
+            1number:true,
+            1string:true,
+        }
+    */
+    let ary2 = []; //声明一个空数组，为了存储不重复的值
+    let obj = {}; //对象的key值只能有一个，如果有多个，下面的会把上面的覆盖
+    ary.forEach(item=>{
+        //查看对象上有没有跟当前循环数组的值一样的数据，如果没有就push
+        if(typeof item === 'object'){
+            ary2.push(item);
+        }else if(!obj[item + typeof(item) ]){
+            ary2.push(item); //添加非重复数据
+            obj[item + typeof(item)] = true;//为了下次循环的时候能够识别ary2中已经有这个数据了
+        }
+    });
+
+    console.log(ary2,obj);
+
+   
+
+   
+
+
+
+
+</script>
+</body>
+</html>

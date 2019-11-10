@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1、写一个方法，找出字符串 “abcabcabcabcabcabda” 中”ab”出现的次数和位置；
+    
+     //let str = 'abcabcabcabcabcabda';
+
+   
+        
+    // function fn(strAll,str){//变量名(形参变量 strAll是形参接收字符串,str=ab)
+    //     //console.time('计时器')
+    //     let ary = [];
+    //     for(let i=0;i<strAll.length;i++){
+    //         //判断strAll这个字符串的前一项等于str[0](a)并且后一项(strAll[i+1])等于str[1](b)
+    //         if(strAll[i] === str[0] && strAll[i+1] === str[1]){
+    //             //如果前一项等于a并且后一项等于b的话就把a的索引放到新数组里;i等于a的索引
+    //             ary.push(i);
+    //             i++;
+    //         }
+    //     }
+    //     console.log(ary.length)//6
+    //     // console.log(ary)//0,3,6,9,12,15
+    //     //console.timeEnd('计时器')//
+    //     //ab出现了ab出现了6;依次出现在0,3,6,9,12,15   (ab的长度等于ab的次数)
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+       
+    // }
+    // console.log(fn(str,'ab'))//变量名(实参变量 strAll是形参接收字符串,str=ab)
+
+    // 0.038818359375ms
+
+
+    // function fn(strAll,str){
+    //     console.time('计时器')
+    //     let i = 0;
+    //     let ary = [];
+    //      indexOf  如果能拿到字符串的ab索引也就是第一项a的索引,就继续循环
+    //     while(strAll.indexOf(str,i) != -1){ //只是一个判断条件,是true的话就循环,//只要有'ab'就循环
+    //         // debugger
+               //给a的索引赋予一个变量名
+    //         let ii = strAll.indexOf(str,i);
+    //         ary.push(ii);
+                // 每一项的索引加ab的长度 , (str是ab)
+    //         i = ii + str.length;
+    //     }
+    //     console.timeEnd('计时器')
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+    // }
+    // console.log( fn(str,'ab') );
+    //0.032958984375ms
+    
+   
+    // function fn(strAll,str){
+    //     console.time('计时器')
+    //     let ary = [];
+    //     let re = new RegExp(str,'g');
+    //     strAll.replace(re,(item,index)=>ary.push(index));
+    //     console.timeEnd('计时器')
+    //     return str + '出现了' + ary.length + ';依次出现在' + ary;
+    // }
+    // console.log( fn(str,'ab') );
+    //0.083984375ms
+
+
+    // console.log(ary.length , ary+'');
+
+    // console.log( fn(str,'ab') );
+
+
+     let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+
+    // /*
+    //     {
+    //         name:'zxt',
+    //         age:28,
+    //         sex:0,
+    //         HASH:'teacher'
+    //     }
+    // */
+
+    
+    function queryURLParameter(str){
+        //以问好为分隔符把整个字符串分割成里面有两个属性的数组,
+        //str.split('?')[1]等于name=zxt&age=28&sex=0#teacher
+        str = str.split('?')[1].replace('#','&HASH=');
+        // str = str.replace('#','&HASH=');
+        let obj = {};
+        str.split('&').forEach(item=>{
+             
+              //ary={name: "zxt", age: "28", sex: "0", HASH: "teacher"}
+            let ary = item.split('=');
+            console.log(ary);
+            //索引1赋值给索引0 
+            obj[ary[0]] = ary[1];
+        });
+        return obj;
+    }
+
+    console.log(queryURLParameter(str));
+
+    
+</script>
+</body>
+</html>

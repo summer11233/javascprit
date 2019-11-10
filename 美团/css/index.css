@@ -1,0 +1,161 @@
+/* 一屏幕的高度 */
+html,body,.wrapper{
+    height:100%;
+}
+body{
+    background:#f0efed;
+}
+.wrapper{
+    display:flex;
+    flex-direction: column;
+}
+header,footer{
+    height:1.1rem;
+    background:linear-gradient(45deg,#FFD000,#FFBD00)
+}
+main{
+    height:2rem;
+    flex:1;
+    overflow:auto;
+}
+header{
+    display:flex;
+    align-items: center;
+}
+header .city{
+    width:1.5rem;
+    height:1.1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+header .city img{
+    width:0.16rem;
+    margin-left:0.1rem;
+}
+header .search{
+   flex:1;
+   height:0.64rem;
+}
+header .search input{
+    width:100%;
+    height:100%;
+    border:none;
+    background:#fff url("../images/search.png") 0.3rem center no-repeat ;
+    background-size:0.28rem 0.28rem;
+    padding-left:0.7rem;
+    box-sizing: border-box;
+    border-radius: 0.1rem;
+}
+header .people{
+    width:0.98rem;
+    height:1.1rem;
+    background:url("../images/people.png") center center no-repeat;
+    background-size:0.48rem 0.48rem;
+}
+
+/* 热门链接 */
+.hotLinks{
+  display:flex;
+  flex-wrap: wrap;
+  background:#fff;
+  padding: 0.2rem 0;
+
+}
+.hotLinks li{
+    width:20%;
+    box-sizing: border-box;
+  
+}
+.hotLinks li {
+    text-align:center;
+}
+
+.hotLinks li a{
+    color:#666;
+    padding: 0.2rem 0;
+    display: block;
+}
+.hotLinks li .icon{
+    width:0.8rem;
+    height:0.8rem;
+    line-height: 0.8rem;
+    border-radius: 50%;
+    background:#fd9d21;
+    margin:0 auto 0.1rem;
+    font-size: 0.5rem;
+    color: #fff;
+}
+.hotLinks li:nth-child(2) .icon{
+    background:#ff6767;
+}
+.hotLinks li:nth-child(3) .icon{
+    background:#8a90fa;
+}
+.hotLinks li:nth-child(4) .icon{
+    background:#fed030;
+}
+.hotLinks  li:nth-child(5) .icon{
+    background:#FE8C00;
+}
+.hotLinks li:nth-child(6) .icon{
+    background:#fed030;
+}
+.hotLinks li:nth-child(7) .icon{
+    background:#4dc6ee;
+}
+.hotLinks li:nth-child(8) .icon{
+    background:#ff80c2;
+}
+.hotLinks li:nth-child(9) .icon{
+    background:#fd9d21;
+}
+.hotLinks li:nth-child(10) .icon{
+    background:#A8DD99;
+}
+/* 猜你喜欢 */
+.guessLike{
+  margin-top:0.3rem;
+  background:#fff;
+  color:#666;
+  padding:0.3rem;
+
+}
+
+.guessLike h3{
+    height:0.8rem;
+    line-height:0.8rem;
+    font-size:0.36rem;
+    font-weight: normal;
+    border-bottom:1px solid #eee;
+    color: #333;
+}
+.guessLists a{
+    display: flex;
+    justify-content: space-between;
+    font-size:0.28rem;
+    color:#666;
+    padding:0.2rem 0;
+}
+.guessLists img{
+    width:1.8rem;
+    height:1.8rem;
+}
+.guessLists .right{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.guessLists h4{
+    color:#333;
+}
+.guessLists li{
+    border-bottom:1px solid #eee;
+}
+.guessLists .nowPrice{
+  color:#F60;
+}
+.guessLists del{
+    font-size:0.24rem;
+}

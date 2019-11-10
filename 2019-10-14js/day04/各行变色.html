@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+
+    }
+    ul{
+        list-style: none;
+        width: 500px;
+        margin: 0 auto;
+        border: 1px solid yellowgreen;
+        text-align: center;
+    }
+    li{
+        font-size: 40px;
+        color: red;
+    }
+    /* li:nth-child(even){
+        background: orange;
+    }
+    li:nth-child(odd){
+        background:pink;
+    }
+    li:hover{
+        background: oldlace;
+    } */
+    
+    </style>
+</head>
+<body>
+    <div>
+       <!-- ul.box>li*5{$} -->
+     <ul id="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+    </div>
+
+    <script>
+     //通过ID获取页面中的元素获取不到就是null
+     let aa = document.getElementById('a');  
+    let lists =document.querySelectorAll('#box li');
+    //是一个类数组
+    console.log(lists);
+
+    let ary =[ '一','二','三','四'];
+    for(let i=0){}
+    
+    </script>
+</body>
+</html>

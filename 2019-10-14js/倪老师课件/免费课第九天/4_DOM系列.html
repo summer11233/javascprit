@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="box" class="div" index="1" zf-model="ary"><!--这是我写的--><div></div>
+        文本
+    </div>
+<script>
+    /*
+        JS:
+            ECMAscript,DOM,BOM
+
+
+            DOM: Doucment Object Model (文档对象模型)
+
+                就是通过document提供的API，赋予开发者操作页面的能力；
+                页面中所有的内容都会组织在一个树形结构中，
+                所有的内容都是节点(对象)，
+                这些对象和页面成员(标签、文本、属性、注释..)都是一一映射的关系
+
+            
+            数组的API（数组的方法,push,pop...）Application Programming Interface((应用程序编程接口))
+            document的API（getElementById）
+
+            DOMTree  DOM树
+
+            DOM难点:
+                操作DOM -> 利用DOM关系查找DOM 
+
+            
+            关系:
+                父子关系  
+
+                兄弟关系
+                祖先关系  从下往上找
+                子孙关系  从上往下找
+
+            节点:
+                元素节点（标签）  1
+                文本节点（文字、'      '、标签回车的部分） 3  文字和、标签回车的部分算是一个节点
+                注释节点（<!--注释-->）8
+                文档节点（document）9
+                属性节点（<div id="box">） 2
+
+            如何去检测一个节点的类型?
+                    nodeType 属性 结果为数字
+                    nodeValue去获取节点内容
+                    nodeName去获取节点名字（如果获取到的是元素，那么元素是大写的字符串）
+
+     
+        
+            childNodes : 获取元素中的*所有*子节点
+            attributes : 元素的属性(包括标准属性和自定义属性的集合)
+            
+
+
+    */
+   const box = document.getElementById('box');
+//    console.log(body.nodeType);
+    // console.log(box.innerText);
+
+    // console.log(box.childNodes[1].nodeType)
+    // console.dir(box.childNodes[0].nodeValue);
+    // console.dir(box.childNodes[1].nodeName);
+
+    // console.log(document.nodeType)
+
+    let obj = {
+        ary:[1,2,3]
+    }
+
+    //通过元素中的zf-model找到obj下的ary
+    let ary2 = box.attributes;
+    for(let i=0;i<ary2.length;i++){
+        if(ary2[i].nodeName === 'zf-model'){
+            console.log(obj[ary2[i].nodeValue])
+        }
+    }
+
+
+    // console.log(box.attributes[2].nodeType)
+
+    /*
+        设置行间属性:
+            element.setAttribute(key,value)
+
+        获取行间属性:
+            element.getAttribute(key)
+
+        删除行间属性:
+            element.removeAttribute(key)
+    */
+//    box.setAttribute('index2',2);
+
+    // console.dir(box);
+    // box.attributes['aaa'] = 1;
+    // console.dir(box.attributes);
+    // console.log(box.attributes['aaa'])
+
+    // console.log( box.getAttribute('index') )
+    box.removeAttribute('index');
+
+
+
+
+
+
+
+
+   
+
+   
+
+
+
+
+</script>
+</body>
+</html>

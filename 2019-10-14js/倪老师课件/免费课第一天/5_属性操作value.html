@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <textarea ></textarea>
+    
+    <select name="" id="">
+        <option value="">上海</option>
+        <option value="">北京</option>
+    </select> -->
+      
+    <input type="text" id="txt" value="珠峰"/>
+    <!-- <button id="btn">按钮</button> -->
+    <input type="button" id="btn" value="按钮"/>
+      
+<script>
+
+    /*
+        获取表单元素的内容，要使用value属性才能获取
+        select框、input、textarea
+
+        用innerText和innerHTML是拿不到的。
+    */
+    document.getElementById('btn').onclick = function(){
+        // console.log(document.getElementById('txt').value); //读操作
+        document.getElementById('txt').value = '珠峰培训'; //写操作
+        // document.getElementById('btn').innerText = '确定';
+        document.getElementById('btn').value = '确定';
+    }
+</script>
+</body>
+</html>

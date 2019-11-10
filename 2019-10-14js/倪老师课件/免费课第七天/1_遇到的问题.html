@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        定义函数的方式
+            函数声明:
+                function fn(){}
+
+            函数表达式:
+                let fn = function (){}
+                
+            
+            构造函数式声明:
+                let fn = new Function('a,b','console.log(a+b)');
+
+                Function  内置类，它构造的function
+
+            匿名函数声明
+                (function (){  
+                    console.log(1);
+                })
+
+                  
+    */
+
+    // let 
+
+    // console.dir(Function);
+
+    // let fn = new Function('a,b','return a+b');
+
+    // console.log(fn(1,2));
+
+    // (function (){  
+    //     console.log(1);
+    // })
+
+    // function fn(x,y){
+    //     console.log(x+y+x);//4
+    // }
+    // let x = fn(1,2);
+    // console.log(x);//undefined
+
+
+    function fn(x){
+        return function(y){
+            return function(z){
+                return x+y+z;
+            }
+        }
+    }
+    //x:1,y:2,z:3  6
+    console.log( fn(1)(2)(3) );
+    
+    
+
+
+
+    
+
+
+</script>
+</body>
+</html>

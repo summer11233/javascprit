@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        join()
+            链接数组，把数组转成字符串，用参数进行链接，返回值为字符串
+
+            如果不传参，那么就是原数组调用toString并且返回
+
+            '珠-峰-培-训-前端'
+
+           '' str += ary[i] + arg[0]
+ 
+
+           '珠峰培训前端'  -> join('')
+    */
+    let ary = ['珠','峰','培','训','前端'];
+
+    function join(ary,...arg){
+        let str = '';
+        let j = arg[0];
+        if(j === undefined){
+            return ''+ary;
+        }
+        for(let i=0;i<ary.length;i++){
+            if(i === ary.length-1){
+                str += ary[i]
+            }else{
+                str += (ary[i] + j)
+            }   
+        }
+        return str;
+    }
+
+    // console.log(ary.join('-'));
+
+    // console.log(ary.join(''));
+
+    // console.log(ary.join(false));
+
+    // console.log(join(ary,''))
+
+</script>
+</body>
+</html>

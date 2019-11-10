@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // console.dir(Array);
+    /*
+        splice() 
+            增删改查数组，并且是操作的是原数组，
+            返回值:
+                只有删除功能才会有非空数组的返回值，
+                不然就是空数组。
+
+            删除功能:
+                2个参数:
+                    第一个参数:起始位置
+                    第二个参数:删除几个
+
+            添加功能:
+                至少3个参数:
+                    第一个参数:起始位置
+                    第二个参数:0
+                    第三个参数或以上:添加的数据
+
+
+            替换功能:
+                至少3个参数:
+                    第一个参数:
+                        起始位置
+                    第二个参数:
+                        替换几个
+                    第三个参数:
+                        替换成什么
+
+            
+    */
+
+    let ary = ['好',2,'三'];
+
+    // console.log(ary.splice(0,0));
+
+    // console.log(ary.splice(3,0,'四','五'));
+
+    console.log(ary.splice(0,2,'一','二'));
+
+    console.log(ary);
+
+
+
+
+</script>
+</body>
+</html>

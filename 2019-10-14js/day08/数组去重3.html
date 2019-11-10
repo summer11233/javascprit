@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [1,1,2,3,2,3,3,4];
+    let obj = {
+
+    }
+    //循环数组的每一项,以键值对的形式(1:1)把每一项增加到对象中(item:item),但是增加的时候我得判断一下,如果对象中有这个键值对了,我就把数组中对应的那一项删除
+    for (var i = 0;i<ary.length;i++){
+        //如果在obj中查找这个属性名存在,那就说明已经存在了
+    if(obj[ary[i]] !== undefined){
+           ary.splice(i,1)
+           i--
+           continue;
+    }
+     //如果能走到这里,那就说明对象中没有当前这一项
+    obj[ary[i]] = ary[i];
+    }
+    console.log(ary)//[1, 2, 3, 4]
+    //console.log(obj);//{1: 1, 2: 2, 3: 3, 4: 4}
+    
+    
+    
+    </script>
+</body>
+</html>

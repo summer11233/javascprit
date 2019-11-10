@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+<style>
+
+</style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+<script>
+    /*
+        计时器: 5699.867919921875ms
+        计时器: 4407.9228515625ms
+        计时器: 4697.449951171875ms
+
+        计时器: 7.80078125ms
+        计时器: 5.3291015625ms
+        计时器: 21.659912109375ms
+
+
+        计时器: 6.906982421875ms
+        计时器: 3.201904296875ms
+
+        频繁的DOM操作是性能杀手
+
+        1.浏览器会去解析标签，然后把这些标签转化为对象，组织在一个树形结构中，形成DOM树
+        2.如果碰到了css，那么浏览器会解析css，生成一个CSS树
+        3.DOM树 + CSSS树 = 渲染树
+        4.绘制到页面
+
+        重排:
+            当某个元素发生了几何变化或者位置发生了变化，那么会重新计算变化的元素和对应的位置(这个位置会影响局部或者整个页面元素的位置)
+            会导致局部元素或者整个页面的位置重新计算。
+
+        重绘:
+            颜色边框发生变化的时候，某个指定的元素会重新渲染
+
+        重排一定会重绘，重绘是不一定会重排的
+    */
+    // console.time('计时器');
+    // for(let i=0;i<1000;i++){
+    //     /*
+    //         box.innerHTML = box.innerHTML + '<div>'+ (i+1) +'</div>'
+    //     */
+    //     box.innerHTML += '<div>'+ (i+1) +'</div>';
+
+    // }
+    // console.timeEnd('计时器');
+
+
+    // console.time('计时器');
+    // let html = '';
+    // for(let i=0;i<1000;i++){
+    //     html += '<div>'+ (i+1) +'</div>';
+    // }
+    // box.innerHTML = html;
+    // console.timeEnd('计时器');
+
+    
+    console.time('计时器');
+    let f = document.createDocumentFragment();
+    for(let i=0;i<1000;i++){
+        let d = document.createElement('div');
+        d.innerText = ++i;
+        f.appendChild(d);
+    }
+    box.appendChild(f);
+    console.timeEnd('计时器');
+</script>
+</body>
+</html>

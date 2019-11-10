@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        some
+            在数组中只要有一项条件成立就返回true，如果都不成立就返回false
+
+            callback(item,i,all)
+            改变this指向
+    */
+
+    let ary = [1,2,3,4,18];
+
+    //看看ary中是否有一项是大于等于18的，只要有一个就返回true，如果一个都没有就返回false
+    console.log(ary.some(num=>num>=18));
+
+    ary.some(function(num,i,all){
+        console.log(num,i,all,this)
+        return num>=18
+    },document)
+
+
+
+</script>
+</body>
+</html>

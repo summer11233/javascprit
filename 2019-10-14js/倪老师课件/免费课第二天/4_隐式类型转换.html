@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        隐式类型转换:
+            在数据进行运算的时候，系统偷偷得帮我们进行了数据类型的转换
+
+        每个运算符都会进行隐式类型转换
+            * / - %  转成数字
+
+        isNaN()  检测数据是否为NaN  是NaN会返回true,否则返回false
+    */    
+    // console.log('5' * 5);
+    // console.log('5' - 5);
+    // console.log('5' / 5);
+
+    // console.log('5' + 5); //'55'
+    // console.log(+'5'); //5
+    // console.log('100'*1 + '100'*1);
+
+    // console.log('5px' * 5);  //NaN
+
+    // console.log(isNaN('5px' * 5)); //true
+    // console.log(isNaN(5)); //false
+
+    // console.log(isNaN(''));//->Number('') -> 0 -> false
+
+
+    let num = 1.5678;
+
+    /*
+        toFixed,保留指定位数的小数，注意的是指定+1的位数会通过四舍五入的方式进行计算
+        返回值为*字符串*
+
+    */
+    // console.log(num.toFixed(2));
+
+    // console.log((''+num).substr(0,4));
+let i =3
+console.log(5+(++i)+(i++)+3-2+(--i)+(i--)-2);
+
+</script>
+</body>
+</html>
