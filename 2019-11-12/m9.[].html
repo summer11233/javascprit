@@ -30,16 +30,16 @@
         
         
          */
-        let str = 'a1ca2ca3ca4c';
-        let str2 = 'a1cA2ca3^b2b';
+        // let str = 'a1ca2ca3ca4c';
+        // let str2 = 'a1cA2ca3^b2b';
 
-        console.log(str.match(/a\dc/g))//a1c,a2
-        // c,a3c,a4c,
-        console.log(str.match(/a(1|2|3)c/g));//a1c,a2
-        // c,a3c,  | 或
-        console.log(str.match(/a[1-4]c/g));//["a1c", "a2c", "a3c", "a4c"]
-        console.log(str2.match(/[A-z]\d[A-z]/g));//["a1c", "A2c", "a3^", "b2b"]
-        console.log(str2.match(/[A-Za-z]\d[A-Za-z]/g));//["a1c", "A2c", "b2b"]
+        // console.log(str.match(/a\dc/g))//a1c,a2
+        // // c,a3c,a4c,
+        // console.log(str.match(/a(1|2|3)c/g));//a1c,a2
+        // // c,a3c,  | 或
+        // console.log(str.match(/a[1-4]c/g));//["a1c", "a2c", "a3c", "a4c"]
+        // console.log(str2.match(/[A-z]\d[A-z]/g));//["a1c", "A2c", "a3^", "b2b"]
+        // console.log(str2.match(/[A-Za-z]\d[A-Za-z]/g));//["a1c", "A2c", "b2b"]
         //  16-108岁才能注册  
         // 如何进行验证？
         /* 16, 17, 18, 19, 20, 21, 22...., 99
@@ -64,8 +64,31 @@
   // let str = '16'; //true
 
     // console.log(/^(1[6-9]|[2-9][0-9]|10[0-8])$/.test(str));
+//计算出下列的字符字节,假设英文是1个字节,中文是2个字节.
 
-    
+let str = '大渣好,是兄弟就来砍我,come,on!';
+//中文的区间范围:[\u4e00-\u9fa5]
+
+let num = 0 ;//计数
+//如果test[str[i]]  是什么意思?
+for (let i= 0;i<str.length;i++){
+    if(/[a-z.,!]/i.test(str[i])){
+        num++;
+    }else{
+        num +=2;
+    }
+}
+
+
+// for(let i = 0;i<str.length;i++){
+//     if(/[\u4e00-\u9fa5]/i.test(str[i])){
+//             num+=2;
+//         }else{
+//             num ++;
+//         }
+// }
+console.log(num)
+
 
     </script>
 </body>

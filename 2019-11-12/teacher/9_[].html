@@ -67,21 +67,21 @@
 
     let num = 0;//计数   
 
-    // for(let i=0;i<str.length;i++){
-    //     if(/[a-z.,!]/i.test(str[i])){
-    //         num++;
-    //     }else{
-    //         num += 2;
-    //     }
-    // }
-
     for(let i=0;i<str.length;i++){
-        if(/[\u4e00-\u9fa5]/i.test(str[i])){
-            num+=2;
+        if(/[a-z.,!]/i.test(str[i])){
+            num++;
         }else{
-            num ++;
+            num += 2;
         }
     }
+
+    // for(let i=0;i<str.length;i++){
+    //     if(/[\u4e00-\u9fa5]/i.test(str[i])){
+    //         num+=2;
+    //     }else{
+    //         num ++;
+    //     }
+    // }
     console.log(num);
 
 
