@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    函数 -> 局部作用域
+        let, var, 参数,函数  正常情况下都不会跑外面
+
+        在函数内如果没有变量声明,函数,参数,当前的变量是属于window的
+
+        var a = b = 5;//b是window的
+        var a = 5,b = 5;  a 和b都是局部作用域的
+
+        函数 + 括号 函数中的this就是window
+
+    预解析(变量提升) - >代码从上而下执行 (=,打印输出)
+     */
+    
+     function Foo() { 
+        getName = function () {console.log(1);};
+        return this;
+    }
+
+    Foo.getName = function () {console.log(2);}; 
+    Foo.prototype.getName = function () {console.log(3);};
+    var getName = function () {console.log(4);};  
+    function getName() {console.log(5);} 
+
+    Foo.getName(); 
+    getName();
+    Foo().getName();
+    getName();
+    var a = new Foo.getName();
+    var b = new Foo().getName(); 
+    var c = new new Foo().getName  
+    
+    console.log(a,b,c);
+//==================================================
+//先变量提升
+    // function Foo() { 
+    //     getName = function () {console.log(1);};
+    //     return this;
+    // }
+   
+    // function getName() {console.log(5);}  
+    // var a 
+    // var b
+    // var c
+// =========================================
+
+ /* 
+    1.Foo.getName = function () {console.log(2);};
+    Foo.getName(啥啥.xx)  Foo就是个实例
+
+    
+
+
+
+
+
+    2.Foo.prototype.getName = function () {console.log(3);};
+    3.getName = function () {console.log(4);};
+    4. Foo.getName();  //2
+    5. getName(); //4
+    6. Foo().getName();
+    7.  getName();   //1
+    8.  a = new Foo.getName() 
+    9. b = new Foo().getName();
+    10. c = new new Foo().getName   
+
+   
+    */
+    
+    
+    
+    </script>
+</body>
+</html>

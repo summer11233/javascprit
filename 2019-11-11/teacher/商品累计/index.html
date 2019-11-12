@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="price.css" />
+</head>
+
+<body onselectstart="return false;">
+	<div class="wrap">
+		<div class="box">
+			<ul class="list">
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+			</ul>
+			<div class="info">
+				<span>商品公合计：<em>0</em>件</span>
+				<span>共花费了：<em>0</em>元</span>
+				<br />
+				<br />
+				<span>其中最贵的商品单价是：<em>0</em>元</span>
+			</div>
+		</div>
+	</div>
+	<script>
+		let obj = document.querySelectorAll('li');
+		let em = document.querySelectorAll('.list em')
+		console.log(em)
+		console.log(obj)
+		obj.forEach((ele, index) => {
+			ele.children[0].onclick = function () {
+
+				let v1 = ele.children[1].innerText;
+				if (v1 != 0) {
+					v1--
+					ele.children[1].innerText = v1;
+					let price = parseFloat(ele.children[3].children[0].innerText);
+					console.log(price)
+					ele.children[3].children[1].innerText = v1 * price + '元'
+				}
+				console.log(v1)
+			}
+
+			ele.children[2].onclick = function () {
+				let v2 = ele.children[1].innerText;
+				v2++;
+				console.log(v2)
+				let price = parseFloat(ele.children[3].children[0].innerText);
+				ele.children[1].innerText = v2;
+				ele.children[3].children[1].innerText = v2 * price + '元'
+			}
+			// let num = ele.children[1].innerText;
+
+			let aaa = [];
+			aaa.push(parseInt(em.innerText));
+			//  aaa.push(em.innerText)
+
+			let num = aaa.reduce(function (prev, next) {
+				console.log(prev);
+
+				return prev + next;
+			}, 0);
+			console.log(num);
+
+
+		}
+
+		)
+
+
+
+	</script>
+</body>
+
+</html>

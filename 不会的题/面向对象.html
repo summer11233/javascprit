@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //普通函数
+    function fn(){
+       /*  1.先默认创建一个对象
+        2.让obj__proto__指向fn的prototype
+        3.让当前作用域下的this指向该对象
+        4.返回这个对象
+        let obj = {};
+        this.num = 100;//新增键值对
+        returen
+        */
+
+    }
+    
+    let f1 = fn();//undefined
+    /* new 操作符做了什么?
+    fn  就是一个构造函数,是一个类 */
+
+
+
+    
+   /*  类一定是个函数,函数不一定是类 
+   类  默认首字母大写*/
+/* 
+面向对象:类的继承.封装.多态
+f 是fn的一个实例,fn是一个自定义类
+
+四种检测方法
+instanceOf:检测当前实例是否属于某个类的方法,如果是返回true,不是返回false
+
+ */
+    /* 内置类:
+    Array  Object  Number  String  Boolean  Null Undefined  Symbol  RegExp  Date
+    //自定义类
+    
+     */
+    
+
+   // =======================================================
+
+   //只要创建一个实例,就会开辟一个空间地址
+   //原型上的方法或者属性是实例的公有属性
+   //检测:公有属性.  in :可以检测该属性是否是它的属性;是的话返回ture;否则返回false
+
+
+   console.log('getx' in f1)
+   //hasOwnPropertype:检测私有属性
+  // console.log(f1 hasOwnProperty('getx'))
+
+
+
+
+   /* 
+   1.每一个函数(普通函数,类)天生自带一个prototype属性,其属性值是一个对象数据类型的,
+   2.这个prototype的属性值里面又天上自带一个constructor属性
+   constructor的属性值指向当前原型所属的类
+   3.每一个对象天生自带一个___proto__属性,其属性值指向当前实例所属类的原型
+   console.log(Fn.prototype.constructor===fn)//true
+   
+   
+   
+    */
+    </script>
+</body>
+</html>

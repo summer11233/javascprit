@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    数据类型的含义?(要明白是干嘛的)
+    undefined出现的几种情况
+    
+出现undefined的几种情况:
+1.对象中,获取属性名对应的属性值不存在就是undefined
+2.函数中,没有给形参赋值,那在函数体中获取形参变量就是是undefined
+3.函数中没有返回值(return),那函数执行返回结果就是undefined
+4.创建一个变量,没有赋值,那么获取这个变量是undefined
+5.除了null和undefined别的简单类型(基本数据类型)添加自定义属性和方法都是undefined
+6.在块套块中,子块有函数,如果在父块或者父块的上方去访问这个函数,返回值都是undefined
+
+
+    = 号是赋值
+    就是把右边的数据赋值到左边
+
+    简单数据类型就是赋值(你是你的,我是我的,修改你不会影响我)
+    引用类型赋址操作(你的是我的,我的还是我的)
+
+    为什么ary要赋值给ary2?
+        因为ary2想拿到ary中的数据(目的)
+    为什么要拷贝?
+        因为引用类型的赋值是赋址,即不想进行赋址操作又想拿到另一个引用类型
+
+
+
+
+
+    
+     */
+
+    // let num = 123;
+    // num.a = 10;
+    // console.log(num.a)//undefined
+    //除了null和undefined,别的简单数据类型添加自定义属性和方法都是undefined
+
+
+
+    //let ary = [1,2,3]
+    
+   // let ary2  = ary;
+    //ary2.push(4);
+    //console.log(ary);//[1,2,3,4]
+
+
+
+    /* 
+     = 号是赋值
+    就是把右边的数据赋值到左边
+
+    简单数据类型就是赋值(你是你的,我是我的,修改你不会影响我)
+    引用类型赋址操作(你的是我的,我的还是我的)
+
+    为什么ary要赋值给ary2?
+        因为ary2想拿到ary中的数据(目的)
+    为什么要拷贝?
+        因为引用类型的赋值是赋址,即不想进行赋址操作又想拿到另一个引用类型
+    // */
+    // let ary = [1,2,3]
+    // let ary2 = [];
+    // for(let i = 0;i<ary.length;i++){
+    //     ary2[i] = ary[i];
+    // }
+    // //console.log(ary2)//123
+
+
+
+    //深度克隆:
+    let ary = [1,2,3]
+ 
+    function deepClone(a){
+        //判断a是不是数组有没有push方法,是true.反之false
+        let obj = a.push?[]:{};//Array.isArray(a)第二种判断是不是数组,是执行不是就是对象
+        for (let attr in a){
+            if(a[attr] !==null&& typeof a[attr]==='object'){
+                obj[attr] = deepClone(a[attr])
+            }else{
+                obj[attr]=a[attr];
+            }
+        }
+        return obj;
+
+    }
+
+let ary2 = deepClone(ary);
+ary2.push(4)
+
+console.log(ary2)// [1, 2, 3, 4]
+console.log(ary)//[1,2,3]
+
+
+
+    /* this没有调用就是window   new fn  this 就是window */
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        做这个面试题用到:
+        检测数字类型
+        字符串拼接
+        for 循环
+    
+    
+    
+    
+        请把下列字符串中的数字挑出来,存到一个数组中
+    
+        Number('') ->0
+        parsrInt('') ->NaN ->typeof NaN ->'number'
+    
+        isNaN(parseInt('')) -> true ->!isNaN(parseInt(''))
+    
+        
+         */
+        //  let str = 'xh271y5rc74 326rgb087yr23n6x832321';
+        //  let ary = [];
+        // for(let i = 0;i<str.length;i++){
+        //     //if判断一下 不是NaN就是数字
+        //     if(!isNaN(parseInt(str[i]))){
+        //         ary.push(str[i]);
+        //     }
+        // }
+        // console.log(ary)
+        // console.log(str.split('').filter(item=>!isNaN(parseInt(item))))// ["2", "7", "1", "5", "7", "4", "3", "2", "6", "0", "8", "7", "2", "3", "6", "8", "3", "2", "3", "2", "1"]
+
+
+        //    请你把下列字符串中数组包括连续的数字挑出来，存到一个数组中
+
+        let str = 'xh271y5rc74 326rgb087yr23n6x832321';
+            //正则写法
+            console.log(str.match(/\d+/g));
+
+        let ary = [];
+        let temp = '';
+        for (let i = 0; i < str.length; i++) {
+            //如果当前的字符串为数字那么进行字符串拼接
+            if (!isNaN(parseInt(str[i]))) {
+            //最后一次循环的时候如果字符为数字,那么只是做了拼接,没有进行push,所以最后一次数字是没有放到数组中的
+                temp += str[i];
+            } else {
+             //如果当前的字符串不是数字,那么就把之前拼接好的字符放到数组中并且清空这个字符为了保证下次使用   
+                if (temp) {//保证temp不是一个空字符串
+                    ary.push(temp);
+                    temp = '';
+                }
+            }
+}
+//for循环完之后,如果发现temp不是一个空字符串,说明最后几个为数字,需要把没有push到数组中的数字字符放到数组中
+        if(temp){//保证temp不是一个空字符串
+            ary.push(temp);
+            temp = '';
+        }
+console.log(ary);// ["271", "5", "74", "326", "087", "23", "6", "832321"]
+
+    </script>
+</body>
+
+</html>
