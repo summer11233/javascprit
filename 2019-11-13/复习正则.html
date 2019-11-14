@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        
+         () 分组
+             应用:
+                 1.replace
+                 2.match
+                 通过分组能够得到更加具体的字符
+                 分组是从左往右数
+             ()()(())()()  数一边的括号
+             (\d)+  这个\d代表最后一个数字
+             (\d+)代表分组
+     
+             replace回调函数的参数
+     
+             ?=  前瞻仰
+             ?<= 后瞻仰
+             ?!  负前瞻仰
+             ?<! 负后瞻仰
+        
+         */
+        let str = '2019-------112';
+        //分两个组  \D非0-9直接的数字
+        console.log(str.match(/(\d+)\D+(\d+)/));
+
+        let str2 = '汉族满族日耳曼民族汉族印第安族大和民族犹太族汉族'
+        console.log(str2.replace(/汉族/g, ($0) => $0.substr(0, 1) + '人'))
+        //汉人满族日耳曼民族汉人印第安族大和民族犹太族汉人
+
+        //匹配项是括号的后面(后瞻仰 ?<=)
+        console.log(str2.replace(/(?<=汉)族/g, '人'));
+        //汉人满族日耳曼民族汉人印第安族大和民族犹太族汉人
+        console.log(str2.replace(/汉/g, '华夏民'))
+    //华夏民族满族日耳曼民族华夏民族印第安族大和民族犹太族华夏民族
+
+        //華夏族满族日耳曼民族華夏族印第安族大和民族犹太族華夏族
+    console.log(str2.replace(/汉(?=族)/g,'華夏'));
+
+       // let str3 = 'vctivea,vctiveb,lia,lib,diva,divb,divtbb';
+
+    //不要activea和不要带activeb
+    //l 或者d开头中间是i  a到z最少1项 最多4项
+    //console.log(str3.match(/[ld]i[a-z]{1,4}/g));
+        //["lia", "lib", "diva", "divb", "divtbb"]
+        
+        //负后瞻仰
+        let str4 = 'vctivec,vctivea,vctiveb,lia,lib,diva,divb,divtbb,cvtive';
+    console.log(str4.match(/(?<!vctive)(a|b|c)/g))
+    //["c", "c","c" ,"a", "b", "a", "b", "b", "b", "c"]
+
+
+    let str3 = 'vctivea,vctiveb,lia,lib,diva,divb,divtbb';
+    console.log(str3.match(/(?<!vctive)(a|b)/g))
+    //["a", "b", "a", "b", "b", "b"]
+    console.log(str3.match(/vctive(a|b)/g))
+    //["vctivea", "vctiveb"]
+
+        //只找排除vctive的a
+    let str5 = 'vctivea,vctiveb,lia,lib,diva,divb,divtbb';
+    console.log(str5.match(/(?<!vctive)(a|b)/g));
+    //["a", "b", "a", "b", "b", "b"]
+
+    let str6 = '汉族满族日耳曼民族汉族印第安族大和民族犹太族汉族'
+    console.log(str6.match(/(?<=汉)族/g))
+    //) ["族", "族", "族"]
+    let str7 = '汉族满族日耳曼民族汉族印第安族大和民族犹太族汉族'
+    console.log(str7.match(/汉(?=族)/g));
+    //["汉", "汉", "汉"]
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        width:400px;
+        height: 400px;
+        border: 1px solid red;
+        border-radius: 25px;
+        margin: 0 auto;
+        margin-top: 50px;
+        /* background: yellowgreen; */
+        box-sizing: border-box;
+        /* padding: 60px 30px 30px 30px; */
+
+    }
+    .main .box{
+        padding:25px 20px 25px 20px;
+
+    }
+    .main .box>span{
+        font-size: 20px;
+        color:#555;
+        display: inline-block;
+
+    }
+    .main .box>input{
+        width: 200px;
+        height: 30px;
+        margin-left: 50px;
+        border: 1px solid yellowgreen;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+    .main .box .two{
+        margin-left: 35px;
+    }
+    .main .box .tre{
+        margin-left: 20px;
+    }
+    .main .box .fale{
+        margin-left: 38px;
+    }
+
+    #bott{
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* margin-left: 150px; */
+        background: blueviolet;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 18px;
+
+    }
+    p{
+        width: 100px;
+        height: 30px;
+        /* background: blueviolet; */
+        display: block;
+        margin-left: 150px;
+        z-index: 999;
+        border-radius: 10px;
+        
+    }
+    .main .box .peng{
+        border-color: yellowgreen;
+    }
+    .main .box .peng1{
+        border-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <span>QQ:</span>
+            <input type="text"Placeholder='请输入QQ'>
+        </div>
+        <div class="box">
+            <span>Email:</span>
+            <input class='two' type="text"Placeholder='请输入邮箱'>
+        </div>
+        <div class="box">
+            <span>Mobile:</span>
+            <input class='tre'type="text"Placeholder='请输入手机号码'>
+        </div>
+        <div class="box">
+            <span>Date:</span>
+            <input class='fale'type="text"Placeholder='请输入生日'>
+        </div>
+        <p class="bom"><input type="text" value="注册" id="bott"></p>
+
+    </div>
+
+<script>
+       let text = document.querySelectorAll('input');
+       console.log(text)
+
+    //    for(let i=0;i<text.length;i++){
+            text[0].oninput=function(){
+               console.log(text[0].value)
+                if(/^[1-9]\d{4,10}$/.test(text[0].value)){
+                    text[0].classList.add('peng')
+                    text[0].classList.remove('peng1')
+                }else{
+                    text[0].classList.add('peng1')
+                    text[0].classList.remove('peng')
+                }
+            }
+    //    }
+
+
+            for (let i = 0; i < text.length; i++) {
+                text[i].oninput=function(){
+                    if(/^[1-9]\d{4,10}$/.test(text[i].value)){
+                    text[i].classList.add('peng')
+                    text[i].classList.remove('peng1')
+                }else {
+                    text[i].classList.add('peng1')
+                    text[i].classList.remove('peng')
+                
+                }
+                 if(/^[1-9a-zA-Z][\w.-]{5,17}@[0-9a-zA-Z]{2,10}\.c(om|n)$/.test(text[i].value)){
+                    text[i].classList.add('peng')
+                    text[i].classList.remove('peng1')
+
+                }else{
+                    text[i].classList.add('peng1')
+                    text[i].classList.remove('peng')
+                }
+                if(/^1[3-9]\d{9}$/.test(text[i].value)){
+                    text[i].classList.add('peng')
+                    text[i].classList.remove('peng1')
+                }else{
+                    text[i].classList.add('peng1')
+                    text[i].classList.remove('peng')
+                }
+
+                }
+                
+                
+            }
+
+</script>
+
+
+
+</body>
+</html>

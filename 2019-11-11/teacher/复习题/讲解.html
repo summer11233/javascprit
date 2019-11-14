@@ -15,7 +15,7 @@
     //     /*
     //         var x
     //     */
-    //     console.log(x, y);//1,2     undefined,2
+    //     console.log(x, y);//     undefined,2
     //     var x = y = 3;
     //     /*
     //         x = y = 3    window.y = 3
@@ -41,16 +41,16 @@
     // y = fn(y);//undefined
     // console.log(x, y, z);//1,undefined,6
 
-    // var x = 0;
-    ////var let function 参数(是原始类型的，引用类型的参数，如果改变属性才会跑出去)
-    // function fn(){ 
-    //     var x = 10;
-    //     function f(){
-    //         console.log(x);
-    //     }
-    //     f();
-    // }
-    // fn()
+    var x = 0;
+    //var let function 参数(是原始类型的，引用类型的参数，如果改变属性才会跑出去)
+    function fn(){ 
+        var x = 10;
+        function f(){
+            console.log(x);//10
+        }
+        f();
+    }
+    fn()
 
 
 
@@ -118,27 +118,27 @@
     /*
         匿名函数自执行的this是window
     */
-    var x=2;
-    var y={
-        x:3,
-        z:(function(x){//var x = 2    
-            this.x*=x;  //x *= 2   window.x = 4
-            x+=2;//4
-            return function(n){
-                this.x*=n;  //y.x *= 5   3*=5  y.x = 15
-                x+=3;  //7   父级的x变成7 -> 10
-                console.log(x);
-            }
-        })(x)
-    };
-    var m=y.z; //return 后面的函数
+    // var x=2;
+    // var y={
+    //     x:3,
+    //     z:(function(x){//var x = 2    
+    //         this.x*=x;  //x *= 2   window.x = 4
+    //         x+=2;//4
+    //         return function(n){
+    //             this.x*=n;  //y.x *= 5   3*=5  y.x = 15
+    //             x+=3;  //7   父级的x变成7 -> 10
+    //             console.log(x);
+    //         }
+    //     })(x)
+    // };
+    // var m=y.z; //return 后面的函数
 
-    // console.dir(m);
-    m(4);//7  window.x *= n -> 4*=4   x = 16
+    // // console.dir(m);
+    // m(4);//7  window.x *= n -> 4*=4   x = 16
 
-    y.z(5);//7   10
+    // y.z(5);//7   10
 
-    console.log(x, y.x);//7,30     16,15
+    // console.log(x, y.x);//7,30     16,15
 
 
 

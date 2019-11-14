@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+        数组方法:
+            1.数组中存放的属性值,它的属性名是浏览器规定的是数字从0开始依次递增,代表每一项的位置,数组的属性名也叫索引
+            2.天上自带length属性,代表数组的长度
+
+
+    splice() 
+            增删改查数组，并且是操作的是原数组，
+            返回值:
+                只有删除功能才会有非空数组的返回值，
+                不然就是空数组。
+
+            删除功能:
+                2个参数:
+                    第一个参数:起始位置
+                    第二个参数:删除几个
+
+            添加功能:
+                至少3个参数:
+                    第一个参数:起始位置
+                    第二个参数:0
+                    第三个参数或以上:添加的数据
+
+
+            替换功能:
+                至少3个参数:
+                    第一个参数:
+                        起始位置
+                    第二个参数:
+                        替换几个
+                    第三个参数:
+                        替换成什么
+    
+    
+     */
+    //let ary = ['好',2,'三',4,6,7,8,];
+        //splice第一项是索引  第二项为删除第几项,其中包括它  然后把后面的值添加或替换进去
+        //如果第二项是0
+    // console.log(ary.splice(0,0))//空数组
+    // console.log(ary.splice(1,1,55,88))
+    //console.log(ary)//["好", 55, 88, "三"]
+    // console.log(ary.splice(0,5,888))
+    // console.log(ary)
+    // console.log(ary.splice(1,0,99))
+    // console.log(ary.splice(0,1,99))
+    // console.log(ary)
+
+
+    /* reverse:数组翻转
+            是操作原数组
+            
+      
+            
+     */
+     let ary = [6,5,4,'三',2,1]
+
+     function reverse(ary){
+         let ary2 = [];
+         for(let i= ary.length-1;i>=0;i--){
+             ary2.push(ary[i]);
+         }
+         for(let i = 0;i<ary2.length;i++){
+             ary[i] = ary2[i];
+         }
+         return ary;
+     }      
+    reverse(ary)
+    console.log(ary.reverse()===ary)
+    console.log(ary)
+    console.log(ary2)
+    </script>
+</body>
+</html>

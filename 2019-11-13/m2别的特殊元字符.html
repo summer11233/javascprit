@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        验证手机:
+        11位
+        都是数字
+        3456789
+        +9位数
+    
+        验证QQ号:
+            不能为0开头
+            不能为字母
+            最少5位,最多11位
+    
+        \d 0-9直接的一个数字
+        \D 非0-9直接的一个数字
+        \n 换行符
+        \s 一个空格
+        \S 一个非空格
+        \b 一个边界符
+        \B 一个非边界符
+        \w 一个数字,字母,下划线
+        \W 一个非数字,字母,下划线
+    
+    */
+
+        //let str = '18931611233';//整段字符都要匹配这个规则///true
+        // //let str = '12331611233';//false
+        // console.log(/^1[3-9]\d{9}$/.test(str));
+        // /* 验证qq号 */
+        // let str2 = '89320433 9'//true
+        // console.log(/^[1-9]\d{4,10}$/.test(str2)); \
+
+        // //=========================
+        // console.log(/\s/.test(''));//trim() 去掉前后空格的
+        // console.log(/\s/.test(str2));//true
+        //========================================
+        // let str = '    d n s 中文 12 —_^  ';
+        // console.log(str)// d n s 中文 12 —_^  
+
+        // for(let i = 0;i<str.length;i++){
+        //     if(str[i] !== ''){
+        //         console.log(str.substring(i));
+        //         break;
+        //     }
+        // }
+
+        // console.log(str.replace(/^\s+|\s+$/g,''));
+
+        // console.log(str.replace(/\S+/g,'*'));
+        // //   * * * * * *  
+
+        /* 
+        英文的字符串开头有一个边界符,字母与字母之间是没有边界符的
+        中英文结合的情况下中文的左边有边界符,右边没有边界符
+        中文的符号左右两天都有边界符(前提是整个字符串都不能是中文)
+        整个字符串都是中文,是没有边界符的
+
+
+        getByClassName
+        querySele...
+
+        className
+
+        
+         */
+         let str = '中国龙';//|
+         console.log(str.replace(/\b/g,'|'))
+
+    </script>
+</body>
+
+</html>

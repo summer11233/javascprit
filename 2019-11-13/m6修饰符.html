@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    i
+    g
+    m 多行匹配
+
+
+    
+     */
+    let str = `
+    某 this is  某
+    某 this is  某
+    某 this is  某`;
+    console.log(str.match(/某$/mg))
+
+    console.log(str.match(/某$/gm));
+    
+    </script>
+</body>
+</html>
