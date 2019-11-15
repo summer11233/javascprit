@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /* 
+      千分符
+      1000000  -> 1,000,000
+
+      000,000
+      000
+
+      
+      */  
+    //  let str = '1000000';//  '' +=',0' 
+     console.log(/\d(?=\d{3})/.exec(str));//1
+//前瞻仰  只要每四位要第一位
+     console.log(str.match(/(\d)(?=\d{3})+/g))//1
+//加千分符
+//从后往前找，把3个数字前面的数字后加上一个，号
+     console.log(str.replace(/(\d)(?=(\d{3})+$)/g,'$1,'));//1,000,000
+       /* 
+       (?=(\d{3})+   -> 找3个数字前的什么东西？这种情况可以出现多次
+
+        加了$的意思是从结尾开始找(从字符串的最后开始查找)
+       
+       */ 
+
+       //千分符
+       console.log(str.replace(/(\d)(?=(\d{3})+$)/g,'$1,'));  
+       
+       console.log('4567123'.match(/(\d)(?=(\d{3})+$)/g));//["4", "7"]
+
+
+    /*
+        000,000  
+
+    */
+
+       
+    
+    let str = '1000000';
+    let temp = '';
+    let num = 0;
+//i= temp的长度-1代表从后往前,i--从后往前的每一项
+    for(let i=str.length-1;i>=0;i--){
+     //%3取余,非0进第一个  0 进else
+        if((temp.length-num)%3){
+            temp += str[i];
+        }else{
+            console.log(str[i])
+            temp += ',' +str[i];
+            num++;
+        }
+    }
+    console.log(temp);
+
+//  三元运算符判断  或者下面这个都行
+//因为第一位是逗号  截取第一位之后的字符串,返回一个没有逗号的新字符串
+    temp = temp[0]===','?temp.substring(1):temp;
+
+    // temp = temp.substring(1);
+
+    //转成数组,用数组方法reverse正过来,再转换为字符串
+    temp = temp.split('').reverse().join('');
+
+    console.log(temp);
+
+
+    //取数字前面的x
+    console.log('xyy,xoo,x88,x45'.match(/(x)(?=(\d{2})$)/g));//x,x
+        
+        
+    </script>
+</body>
+</html>
