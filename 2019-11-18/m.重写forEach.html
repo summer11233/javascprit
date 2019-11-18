@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        forEach (function(item,index,all){},that)
+        -> undefined
+
+        
+        
+        
+        */
+        let ary = [1,1,2,3,4];
+
+        //callback 是回调函数  that代表的是index  修改this指向
+
+        Array.prototype.myForEach = function(callback,that){
+            //this -> ary
+            for(let i= 0;i<this.length;i++){
+                callback.call(that,this[i],i,this);
+            }
+        }
+        
+
+
+
+        ary.forEach( (item)=>{} , )
+        
+
+
+     function fn(c){
+
+     }
+     fn(a)
+
+
+
+
+        // let r = ary.myForEach(function(item,index,all){
+    //     console.log(item,index,all,this);
+    //     // return 5;
+    // },document);
+
+
+        
+        </script>
+</body>
+</html>
