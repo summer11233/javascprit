@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    函数中的arguments
+    1. 是个类数组,里面存储的是所有的实参(实参集合)
+    2.他不受形参和实参的影响（他总是会有）
+    
+    
+     */
+    // function fn(){
+    //     console.log(1)
+    // }
+    // fn()//1
+
+    //改写为箭头函数
+
+    // let fn = (m) =>{
+    //     console.log(m)
+    // }
+    // fn(2)//2
+
+    //如果形参只有一个,可以省略小括号
+
+    // let fn = m=>{
+    //     console.log(m)
+    // }
+    // fn(5)//5
+
+    //如果函数体中只有return一行代码,可以省略return和大括号
+    // let fn = (m,n) =>{
+    //     return m+n
+    // }
+    // let fn = (m,n)=>m+n
+
+    // let num = fn(1,2)
+    // console.log(num)
+        //箭头函数没有this,没有arguments
+
+        //给形参赋默认值(如果不参实参,就走默认值,传了就走实参的值)
+
+
+         //如果箭头函数返回的(return)只是一个{},那就把{}加上小括号
+       //let fn =()=>{
+        //   return{}
+      // }
+    //    let fn=()=>({})
+    //    console.log(fn())
+
+
+    </script>
+</body>
+</html>

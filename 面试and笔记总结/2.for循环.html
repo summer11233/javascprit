@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        重复的做某一事件
+        + 创建循环的初始值
+        + (设置)判断循环的执行的条件
+        + 执行循环体中的内容
+        + 当前轮循环结束,进行步长累计操作
+    
+    
+          continue是跳过  循环继续执行
+          而break 是结束  循环停止  
+    
+    
+        
+        
+         */
+        // for(var i= 0;i<4;i++){
+        //     console.log(i)//0,1,2,3
+        // }
+        // console.log(i)//4
+
+        // for(var i = 0;i<5;i++){
+        //     if(i===3){
+        //         break;
+        //     }
+        //     console.log(i)//0,1,2
+        // }
+        // console.log(i)//3
+
+        //  for( var i =0;i<5;i++){
+        //     if(i===3){
+        //         continue;
+
+        //     }
+        //     console.log(i)//0,1,2,4
+        // }
+        // console.log(i)//5
+
+
+        for (var i = 0; i < 10; i++) {
+            if (i >= 2) {
+                i += 2;
+                continue;
+            }
+
+            if (i >= 6) {
+                i--;
+                break;
+            }
+            i++;
+            console.log(i)//1,
+        }
+        console.log(i) //11
+
+        
+
+
+    </script>
+</body>
+
+</html>

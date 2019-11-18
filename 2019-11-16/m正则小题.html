@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 把下面str的name，age，say换成obj中的value值
+   //  
+    let obj = {
+        name:'小明',
+        age:18,
+        say:'好好学习，天天向上'
+    }  
+    let str = '我的名字叫{name},年龄是{age}岁,我想说:{say}';
+
+    
+    //..ary代表数组
+    let s = str.replace(/{(\w+)}/g,(...ary)=>{
+        console.log(ary)
+        //key=$1  数组的解构赋值  $0代表整个数组$1代表name 或者age或者 say
+        //$0  $1   代表索引
+        let [,key] = ary;
+        console.log([,key])//
+        return obj[key];
+        // return ary[i++];
+
+    })
+    console.log(s)//我的名字叫小明,年龄是18岁,我想说:好好学习，天天向上
+
+     /*
+        计算下面字符串中哪个字符出现的次数最多,它是谁，出现了多少次
+
+        {
+            h:3,
+            d:6
+        }
+
+        {
+            '3':'h',
+            '6':'d'
+        }
+
+        let num = 1;
+        let key = 'd'
+        {
+           '2':d,
+           '3':f,
+           '17':a
+        }
+
+        //通过对象的默认key值为数字就自动排列的特性就进行排列
+    */
+    // let str2 = 'hdd82nxa89a3axdma2naejaaxaa8n2xdanja2cah2hnadhioamwajexnad8mdahiodn';
+    // // let obj = {};
+    //let ary = [];
+    
+    // for (let i = 0;i<str2.length;i++){
+        
+    //     if(!ary.includes(str2[i])){
+                //创建正则赋值变量
+    //         let re = new RegExp(str2[i],'g');
+                //正则匹配出来之后每一项的长度赋值变量
+    //         let len = str2.match(re).length;
+
+    //         // console.log(str2.match(re))
+                //数字(代表多个数):代表的是字母
+    //         obj[len] = str2[i];
+            //把当前项放到数组中;
+    //         ary.push(str2[i]);
+    //     }else{
+            //数组  不是第一项出现就结束
+    //         continue;
+    //     }
+
+    // }
+
+
+    //     let keys = Object.key(obj);//可以把对象的key拿出来,是个数组
+
+    //     let vals = Object.values(obj)//可以把对象的value 都拿出来,是个数组
+
+    //     console.log(ary);
+    //     console.log(key[keys.length-1],vals[vals.lenth-1]);
+
+
+
+
+    let obj = {}; 
+
+    let num = 0; 
+    let key = '';
+    let ary = [];
+
+ //['h','d'] -> ['d','h'] -> 'dh'
+    str2 = str2.split('').sort().join('');
+
+    str2.replace(/([\da-z])\1+/g,($0,$1)=>{
+        // console.log($0,$1);  //$0是每次匹配的重复项，$1匹配谁
+        if($0.length > num){
+            num = $0.length;
+            key = $1;
+        }
+    });
+    console.log(`${key}出现的次数最多，出现了${num}次`);
+
+    console.log(str2);
+
+
+
+    console.log({
+        "1":'d',
+        "0":'b',
+        "17":'a'
+    })
+//=================================================
+
+let str2 = 'hdd82nxa89a3axdma2naejaaxaa8n2xdanja2cah2hnadhioamwajexnad8mdahiodn';
+    
+    
+    let obj = {}; 
+    let num = 0; 
+    let key = '';
+    // key = 'h';
+    // key = 'd';
+        console.log(key)
+
+    for(let i=0;i<str2.length;i++){
+        //
+        if(!obj[str2[i]]){
+            //第一次循环h:1
+            //第二次循环d:1
+            obj[str2[i]] = 1;
+        }else{
+              //第三次循环d:2
+            obj[str2[i]] += 1;
+        }   
+
+        if(obj[str2[i]] > num){
+           // obj 的h的次数num
+            num = obj[str2[i]];
+            obj的key值赋值给key
+            key = str2[i];
+            console.log(key)
+        }
+    }
+    console.log(num,key);
+//==============================================
+let obj = {}; 
+let num = 0; 
+let key = '';
+let ary = [];
+
+ for(let i=0;i<str2.length;i++){
+        if(!obj[str2[i]]){
+            obj[str2[i]] = 1;
+        }else{
+            obj[str2[i]] += 1;
+        }
+    }
+//-Infinity:  无穷小
+    let max = -Infinity;
+    let key = '';
+    //attr代表obj每一项
+    for(let attr in obj){
+        if(obj[attr] > max){ //
+            max = obj[attr];
+            key = attr;
+        }
+    }
+
+    // console.log(`${key}出现的次数最多，出现了${max}次`);
+
+
+    
+    
+    
+    </script>
+</body>
+</html>

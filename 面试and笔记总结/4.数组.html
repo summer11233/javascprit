@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+       /*  数组方法:
+            1.数组中存放的属性值,它的属性名是浏览器规定的是数字从0开始依次递增,代表每一项的位置,数组的属性名也叫索引
+            2.天上自带length属性,代表数组的长度 */
+        //
+       /*  方法的含义:
+        传递的实参
+        返回值
+        原数组是否发生改变 */
+
+
+   /*  1. push
+         含义:向数组末尾追加内容
+         传递的实参:可以传多个js数据值
+         返回值:返回的是新数组的length
+         原数组发生变化 */
+    // let ary = [12,23,34,45,56];
+    // console.log(ary.length)//5
+    // console.log(ary.push(99,true,'erYa'))
+    //返回的是新数组的length
+/* 2.unshift
+含义:向数组开头增加内容
+传递的实参:可以传递多个js数据值
+返回值:返回的是新数组的length
+原数组发生变化 */
+
+// let ary = [12,23,34,45,56];
+// console.log(ary.unshift(true, 21))//7
+// console.log(ary)//[true, 21, 12, 23, 34, 45, 56]
+
+// ary[-1] = 'xxx' //破坏数组的原有结构
+// console.log(ary[-1])//xxx
+
+// console.log(ary)//[true, 21, 12, 23, 34, 45, 56, -1: "xxx"]
+// ary[0] = 'xx'// 不可取，这是修改值
+// console.log(ary)
+/* 3.shift
+含义:删除数组开头的第一项
+实参:不传
+返回值:删除的那一项
+原数组发生改变 */
+
+// let ary = [12,23,34,45,56];
+// console.log(ary.shift())//12
+// delete ary[0]//破坏数组结构
+// console.log(ary)// [empty, 34, 45, 56]
+
+/* 4.pop
+含义:删除数组末尾的一项
+实参:不传
+返回值:删除的那一项
+原数组改变 */
+
+let ary = [12,23,34,45,56];
+// console.log(ary.pop())//56
+// console.log(ary)
+ary.length = ary.length-1;
+//ary.length--
+//console.log(ary)
+/* 5. splice
+含义:实现数组的增.删,改
+实参:...(不固定)
+返回值:是一个新数组,里面存储的是删除的那几项
+原数组发生改变 */
+//(n,m):从索引n开始,删除m个(如果m不写,那就是从索引n删到末尾)
+// 返回值是一个新数组，里边存储的是删除的那几项
+
+
+
+
+  
+
+
+            
+
+   /*  splice() 
+            增删改查数组，并且是操作的是原数组，
+            返回值:
+                只有删除功能才会有非空数组的返回值，
+                不然就是空数组。
+
+            删除功能:
+                2个参数:
+                    第一个参数:起始位置
+                    第二个参数:删除几个
+
+            添加功能:
+                至少3个参数:
+                    第一个参数:起始位置
+                    第二个参数:0
+                    第三个参数或以上:添加的数据
+
+
+            替换功能:
+                至少3个参数:
+                    第一个参数:
+                        起始位置
+                    第二个参数:
+                        替换几个
+                    第三个参数:
+                        替换成什么 */
+    
+    
+     
+    //let ary = ['好',2,'三',4,6,7,8,];
+        //splice第一项是索引  第二项为删除第几项,其中包括它  然后把后面的值添加或替换进去
+        //如果第二项是0
+    // console.log(ary.splice(0,0))//空数组
+    // console.log(ary.splice(1,1,55,88))
+    //console.log(ary)//["好", 55, 88, "三"]
+    // console.log(ary.splice(0,5,888))
+    // console.log(ary)
+    // console.log(ary.splice(1,0,99))
+    // console.log(ary.splice(0,1,99))
+    // console.log(ary)
+
+
+    /* reverse:数组翻转
+            是操作原数组
+            
+      
+            
+     */
+    //  let ary = [6,5,4,'三',2,1]
+
+    //  function reverse(ary){
+    //      let ary2 = [];
+    //      for(let i= ary.length-1;i>=0;i--){
+    //          ary2.push(ary[i]);
+    //      }
+    //      for(let i = 0;i<ary2.length;i++){
+    //          ary[i] = ary2[i];
+    //      }
+    //      return ary;
+    //  }      
+    // reverse(ary)
+    // console.log(ary.reverse()===ary)
+    // console.log(ary)
+    // console.log(ary2)
+
+    // //
+
+
+    </script>
+</body>
+</html>
