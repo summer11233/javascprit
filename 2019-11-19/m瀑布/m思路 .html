@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        body{
+            background: seagreen
+        }
+        div{
+            position: relative;
+            padding: 30px;
+            background: salmon
+        }
+        td{
+            border:1px solid #ccc;
+            padding: 10px;
+        }
+        span{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td id='td'>
+                    <span id='span'>www</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+
+</body>
+
+</html>
+<script>
+   /* 
+   1.获取数据  封装成一个函数,去实现获取数据的操作
+   2.渲染数据   把从后台获取到的数据展示页面上,按照列来展示的,
+        循环后台给的数组,然后把每一条数据拼接好,添加到长度最小的那一列
+        这里封装了一个获取长度最小的列的方法  get MinLi
+        把元素集合转成数组,然后按照clientHeight  进行排序,由此找到最低的那个li
+    3.滚动加载更多,长度最小的那个li的底部露出来时,我们就去加载新的数据,loadMore  为了方式  一次性请求多次  我们做了一个flag的判断;只有当flag为false的时候,才去执行新数据的请求
+    当请求开始的时候  我们把flag直为true,渲染成功  我们把flag再置为false;
+    4.再加上图片懒加载的操作;loadImg  
+
+   
+   
+   */
+</script>

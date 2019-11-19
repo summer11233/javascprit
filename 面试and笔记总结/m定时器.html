@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器</title>
+    <style>
+    #box{
+        position: absolute;
+        top:-100px;
+        right:0;
+        width:100px;
+        height: 100px;
+        background: red;
+        transition: 1s;
+        }
+    
+    
+    </style>
+</head>
+
+<body>
+    <button id="btn">停止广告</button>
+    <div id="box"></div>
+</body>
+
+<script>
+/* 
+定时器
+    setTimeout  到了指定时间之后执行函数(只执行一次)
+    setTimeout(回调函数,间隔多少时间(毫秒),回调函数的实参)
+关闭定时器:
+    clearTimeout(定时器的返回值,编号)
+    clearInterval(定时器的返回值,编号)
+
+定时器
+    setInterval  只要一到指定时间就执行一次函数 (重复多次)
+    setInterval(回调函数,间隔多少时间(毫秒),回调函数的实参)
+关闭定时器
+    clearTimeout(定时器的返回值,编号)
+    clearInterval(定时器的返回值,编号)
+
+ */
+
+let timer = setTimeout(function(t){
+    box.style.top = t;
+},2000,0);
+
+console.log(timer)
+btn.onclick = function(){
+    clearTimeout(timer);
+
+}
+
+box.onclick = function(){
+    box.style.top = '-100px';
+}
+
+</script>
+</html>

@@ -19,29 +19,53 @@
         报错
 
     */
-    // console.log(a); //12   undefined    函数
-    // var a=12;
+   /*  var a  把var  pk掉
+    function a
+
+     私有作用域中 下面的a 可以拿到吗?   var a 的时候  和  a = 13赋值的时候有什么区                            别?    var a 时                      候在私有作用域中进行变量提升?
+
+ */
+
+    // console.log(a); // undefined   //报错   //a是一个函数?
+    // var a=12;          //window.a=12
     // function a(){
-    //     console.log(a);//13   undefined   12
+    //     console.log(a);// 13        
+
     //     a=13;
     // }
-    // a();
-    // console.log(a);  //13   12    (13|报错)
+    // a();                                 //36行报错  a不是一个函数
+    // console.log(a);  //12  
+
+/* 
+var n
+a function
+var c 
 
 
-    // var n=0; 
-    // function a(){
-    //     var n=10; //11
-    //     function b(){
-    //         n++; 
-    //         console.log(n); //11
-    //     }
-    //     b();
-    //     return b; 
-    // }
-    // var c=a(); //报错   b  //11
-    // c(); //12
-    // console.log(n);//0
+*/
+/* 
+私有作用域里面的东西什么时候可以赋值到window上 
+什么时候可以打印出来
+var a或者a=10 的话
+
+
+*/
+
+
+
+    var n=0; // window.n = 0;
+    function a(){
+        var n=10; //
+        function b(){
+            n++; 
+            console.log(n); //
+        }
+        b();
+        return b; 
+    }
+    var c=a(); 
+    c(); 
+    console.log(n);//
 
     
    

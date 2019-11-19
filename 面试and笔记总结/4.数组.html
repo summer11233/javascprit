@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>数组</title>
 </head>
 <body>
     <script>
@@ -275,7 +275,11 @@ else{
 //     //index 是每一项的索引
 //     //数组有多少项,就循环几次
 // }))
-    
+
+
+
+
+
   
 
 // function A(){
@@ -317,6 +321,30 @@ else{
 // fn();
 // obj.fn();
 // fn.call(obj);
+
+
+
+
+        var a
+        b,c
+
+       console.log(a, b, c);//undefined   undefined  undefined
+        var a = 12,
+            b = 13,
+            c = 14;
+            console.log(a, b, c)//12 13 14
+        function fn(a) {
+            console.log(a, b, c);//   10 13 14
+
+            var b = 888
+            a = 100;
+            c = 200;
+            console.log(a, b, c);//     100 13 200
+        }
+        b = fn(10);
+
+        console.log(a, b, c);//12             12 undefined 200
+
 
 
     </script>
