@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let str = 'https://www.baidu.com?name=sunWuKong&age=null&sex=null'
+
+// 1、获取连接里的参数
+let index = str.indexOf('?'); // 21 // 获取问号的索引
+let newStr = str.substring(index+1); // 通过问号的索引获取连接的参数
+// 'name=sunWuKong&age=null&sex=null'
+// console.log(str.split('?')[1]) // 获取连接的参数
+
+// 2、以 '&'为分割符把字符串转换为数组，然后进行循环
+let ary = newStr.split('&');
+let obj={} // 创建一个存放参数的对象
+ // ["name=sunWuKong", "age=null", "sex=null"]
+
+// 循环数组的每一项
+ for (var i = 0; i < ary.length; i++) {
+     let  cur = ary[i]; // 当前项
+    let newAry = cur.split('='); // 以 "="为分割符把当前项转换为数组，数组的第一项就是你要创建的键值对的属性名，数组的第二项就是键值对的属性值
+     // ['name','sunWuKong']
+    obj[newAry[0]] = newAry[1];
+ }
+
+ console.log(obj)
+// {
+//     name:'sunWuKong',
+//     age: 'null'
+//     sex:'null'
+// }
+
+
+
+console.log(newStr)
+console.log(index)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 获取随机不重复的验证码
+
+    //3rQ8
+    let str = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+
+    let temp = '';  //str[0]-> 0   '01fQ'
+    // let ary2 = [];
+    /*
+        ''
+        temp += '7'  -> '' temp = '' + '7' -> temp = '7'
+        temp += 'l' ->  temp = '7' + 'l' -> temp = '7l'
+    */
+
+    for(let i=0;i<4;i++){
+        temp += str[random(0,str.length-1)];
+        // ary2.push(str[random(0,str.length-1)])
+    }
+    
+    // console.log(ary2);
+
+    body.innerHTML = temp;//ary2.join('');
+    
+    
+    
+    
+    </script>
+</body>
+</html>

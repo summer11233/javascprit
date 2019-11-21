@@ -24,14 +24,17 @@
 
      私有作用域中 下面的a 可以拿到吗?   var a 的时候  和  a = 13赋值的时候有什么区                            别?    var a 时                      候在私有作用域中进行变量提升?
 
+
+     私有作用域里面的  东西什么时候可以拿到?里面var a   和a=   包括传参  里面的函数
+
  */
 
     // console.log(a); // undefined   //报错   //a是一个函数?
     // var a=12;          //window.a=12
     // function a(){
+    //     var a
     //     console.log(a);// 13        
-
-    //     a=13;
+    //      var a=13;
     // }
     // a();                                 //36行报错  a不是一个函数
     // console.log(a);  //12  
@@ -51,21 +54,29 @@ var a或者a=10 的话
 
 */
 
+// var n
+// a=function(){}
+// var c 
+
+//     var n=0; // window.n = 0;
+//     function a(){
+//        /*  var n
+//         b function(){}
+//  */
+//        var  n=10; //
 
 
-    var n=0; // window.n = 0;
-    function a(){
-        var n=10; //
-        function b(){
-            n++; 
-            console.log(n); //
-        }
-        b();
-        return b; 
-    }
-    var c=a(); 
-    c(); 
-    console.log(n);//
+//         function b(){
+//             n++; 
+//             console.log(n); //11
+//         }
+//         b();
+
+//         return b;                            
+//     }
+//     var c=a(); //
+//     c(); 
+//     console.log(n);//
 
     
    
@@ -92,8 +103,9 @@ var a或者a=10 的话
     // console.log(a1,a2);//4,[1,2,3]
 
 
-    // function fn(i) {
-    //     return function (n) {
+    // function fn(i) {        //10  //11                               //父函数包含子函数,子函数引用父函数的参数或者变量 子                                                                     涵数被外界所调用
+                                                                           
+    //     return function (n) {//40
     //         console.log(n + (i++));
     //     }
     // }
@@ -102,7 +114,7 @@ var a或者a=10 的话
 
     // fn(20)(40);//60
     // fn(30)(50);//80
-    // f(30);//40  41
+    //   f(30);//40  41
 
 
     /*
@@ -139,10 +151,15 @@ var a或者a=10 的话
 
 
     */
-    // var x = 3,
-    // obj = {x: 5};
+
+
+
+
+    // var x = 3,//win x=3   //12
+    // obj = {x: 5};  window.obj= {x:5}   //95
     // obj.fn = (function () {
-    //     this.x *= ++x;
+    //     this.x *= ++x; 
+    //                          //匿名函数自执行的this代表的window      
     //     return function (y) {
     //         this.x *= (++x)+y;
     //         console.log(x);
@@ -150,13 +167,15 @@ var a或者a=10 的话
     // })();
     // var fn = obj.fn; 
     // obj.fn(6);
-    // fn(4);
-    // console.log(obj.x, x);
+    // fn(4);//234
+    // console.log(obj.x, x);//
 
 
     // var x = 5;
     // function fn(){
-    //     console.log(x);
+      
+    //     console.log(x);//
+    //         x = 9
     // }
     // fn()
 
@@ -265,7 +284,27 @@ var a或者a=10 的话
 
 
 
+   var num = 1; 
+        var obj = {
+            num: 2, 
+            fn: (function () {
+                this.num *= 2;  //win 匿名函数自执行 this是win  num=2
 
+                num += 3;   //5
+
+                var num = 1;   
+
+                return function () {
+                    num += 2; 
+                    this.num += 2      //   this是obj下的num=2    2+2=4
+                    console.log(++num) //5       4,7
+                }
+            })()
+        };
+        var f = obj.fn;
+        f(); 
+        obj.fn(); ////5
+        console.log(window.num, obj.num);  //  5 , 1     4,4
 
 
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.a{
+    border:2px solid #000;
+}
+.b{
+    background:red;
+}
+#box{
+    width:100px;
+    height:100px;
+}
+.c{
+    display: none;
+}
+</style>
+</head>
+<body>
+    <button id="a">a</button>
+    <button id="b">b</button>
+    <button id="c">c</button>
+    <div id="box" class="d">1</div>
+    <!-- <input type="button" value="确定" id="txt">
+    <input type="text" id="txt1"> -->
+<script>
+    /*
+        文本:innerText
+        内容:innerHTML
+        表单内容:value  
+
+        className
+
+
+        页面中通过元素属性获取出来的***都是字符串***
+
+        classList
+            add  添加一个或者多个class
+            contains  指定的class是否存在，存在就是true，否则false
+            remove  删除一个或者多个class
+            replace(旧的class,新的class)  替换class
+            toggle(开关)
+    */
+    const box = document.getElementById('box');
+
+    console.dir(box.classList)
+
+    a.onclick = function(){
+        // box.classList.remove('b')
+        // box.classList.add('a');
+
+
+        //把d替换成a
+        box.classList.replace('d','a');
+
+    }
+    b.onclick = function(){
+        if(box.classList.contains('a')){
+            box.classList.remove('a')
+            box.classList.add('b');
+        }
+    }
+    c.onclick = function(){
+        // box.classList.add('b','a');
+
+        //点击的时候，如果是隐藏就显示，如果是显示的就隐藏
+        box.classList.toggle('c');
+    }
+    
+
+
+    // box.innerText = '<p>哈哈</p>'
+    // box.innerHTML = '<p>哈哈</p>'
+
+    // console.dir(typeof box.innerText);
+    // console.dir(typeof box.innerHTML);
+
+    // txt.value = 'typeof'  //写操作
+
+    // console.log(txt.value);// 读操作
+
+    // txt1.value = '珠峰培训';
+
+
+
+
+</script>
+</body>
+</html>

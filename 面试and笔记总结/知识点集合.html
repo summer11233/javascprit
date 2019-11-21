@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <!-- + 检测的返回值一定是一个字符串
++ 字符串里放的是检测出来的类型
++ typeof null  =>'object'
++ 检测对象返回的都是'object', 不能够详细区分数组和普通对象 -->
+
+<!-- forEach(函数,修改this指向)  循环数组的
+        函数:
+            function fn(数组的每一项,数据的索引,整个数组){
+                console.log(数组的每一项,数据的索引,整个数组)
+            } -->
+    map(回调,改变this指向)
+
+    some(function(){},修改this指向)
+            查看数组中的每个成员是否有一项是符合条件的，只要有一个符合就返回true，否则fals
+
+            every(回调函数,修改this指向)
+
+            查看数组中的每个成员是否*都*符合条件
+
+
+            children:找到某个元素下的元素子节点
+
+            firstElementChild:找到父级的第一个子元素
+    
+            lastElementChild:找到父级的最后一个子元素
+
+            下一个兄弟元素节点
+            nextElementSibling
+
+        上一个兄弟元素节点
+            previousElementSibling
+
+            // console.log(ul.firstElementChild.nextElementSibling);
+            // console.log(ul.lastElementChild.previousElementSibling)
+            // console.log(ul.firstElementChild.previousElementSibling)
+
+
+            parentNode  查找某个元素的父级节点
+
+
+            /*
+            childNodes 获取某个元素下的所有子节点
+    
+            children 获取某个元素下的所有子元素节点
+    
+            需求:
+                自己手写一个方法，这个方法返回某个元素下的所有元素子节点
+    
+            1.通过childNodes去拿到所有的子节点
+            2.通过判断，这些子节点下哪个是元素子节点
+            3.如果是就把这个元素子节点push到一个数组中
+            4.最后把这个数组返回出去
+        */
+
+        
+        创建元素:
+            document.createElement('标签名')
+
+        让元素的末尾添加一个元素:
+            parent.appendChild(child);
+
+        删除元素:
+            parent.removeChild(删除的元素)
+
+
+        
+            文本:innerText
+            内容:innerHTML
+            表单内容:value  
+    
+            className
+    
+    
+            页面中通过元素属性获取出来的***都是字符串***
+    
+            classList
+                add  添加一个或者多个class
+                contains  指定的class是否存在，存在就是true，否则false
+                remove  删除一个或者多个class
+                replace(旧的class,新的class)  替换class
+                toggle(开关)
+<script>
+
+
+
+</script>
+</body>
+</html>

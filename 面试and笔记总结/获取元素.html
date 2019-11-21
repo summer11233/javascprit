@@ -7,6 +7,42 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+    /* # document的API获取元素
+- `document.getElementById('ID')`
+    id选择器-----node单节点型（第一个id【具有唯一性】相同元素）
+
+- `document.getElementsByTagName('div')`
+    tag标签选择器(nodelist类数组类型)
+
+- `document.getElementsClassName('classname')`
+    class类名选择器  （nodelist类数组类型）
+
+- `document.querySelectorAll('')`
+    返回所有符合要求的元素（nodelist）
+
+- `document.querySelector('')`
+    返回第一个符合要求的元素
     
+- `document.querySelectorAll('[name=sex]')`
+    属性选择器
+
+## 宽高相关
+
+### 获取可视区的宽，高
+（如果有滚动条，会减去滚动条的宽度）
+`document.documemtElement.clientHeight` 高度
+`document.documentElement.clientWidth`  宽度
+
+### 获取元素的绝对位置等信息
+`element.getBoundingClientRect()`
+返回一个对象：这个对象下面有元素在页面中显示的绝对位置，宽高等信息；
+
+### 滚动条的高度（也就是页面滚过的距离）
+`document.documentElement.scrollTop` */
+    
+    
+    
+    </script>
 </body>
 </html>
