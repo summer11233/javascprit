@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    div{
+        float:left;
+    }
+    #box{
+        width:250px;
+        height: 250px;
+        border:2px solid #333;
+        position: relative;
+    }
+    #box2{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: rgba(255,125,175,.5);
+        top:0;
+        left:0;
+        display: none;
+        cursor: move;
+
+    }
+    #box3{
+        width: 400px;
+        height: 400px;
+        border:2px solid #000;
+        position: relative;
+        overflow: hidden;
+        display: none;
+    }
+    #img2{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    </style>
+</head>
+<body>
+        <div id="box"> 
+             <img src="1.jpg" alt=""> 
+             <div id="box2"></div>
+            
+        </div>
+
+        <div id="box3">
+            <img id="img2" src="2.jpg" alt="">
+        </div>
+
+
+    <script>
+        //滑入事件:滑入box2和box3呈现出来
+    box.onmouseover = function(ev){
+        box3.style.display = box2.style.display = 'block';
+    }
+    
+    box.onmouseout = function(){
+        //移出事件   box2和box3都消失
+        box3.style.display = box2.style.display = 'none';
+    }
+    //获取box的宽高
+        let boxw = box.clientWidth;
+        let boxh = box.clientheith;
+        //大盒子的移动事件
+        box.onmousemove = funtion(ev){
+            //box2的移动移动距离=从左边宽到鼠标距离-box2不带边框的宽度的一半
+            let l = ev.clientX - box2.clientWindth/2;
+            let w = ev.clientY - box2.clientHeight/2;
+        }
+    //限制box2 小盒子的移动范围
+    if( l<0 ){
+        l= 0;
+
+    }else if(l > boxw - box2.clientWidth){
+            l = boxw - box2.clientwindth;
+    }
+    if( t<0 ){
+        t= 0;
+
+    }else if(t > boxw - box2.clientHeigth){
+            t = boxw - box2.clientHeigth;
+    }
+   
+
+   //0-1之间的比例  
+    
+    
+    
+    
+    </script>
+</body>
+</html>

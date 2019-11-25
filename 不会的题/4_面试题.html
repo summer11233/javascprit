@@ -1,322 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-<script>
+    <script>
 
-    /*
-        与解析:
-           
-            a = function(){}
-
-        =  12
-
-        报错
-
-    */
-   /*  var a  把var  pk掉
-    function a
-
-     私有作用域中 下面的a 可以拿到吗?   var a 的时候  和  a = 13赋值的时候有什么区                            别?    var a 时                      候在私有作用域中进行变量提升?
-
-
-     私有作用域里面的  东西什么时候可以拿到?里面var a   和a=   包括传参  里面的函数
-
- */
-
-    // console.log(a); // undefined   //报错   //a是一个函数?
-    // var a=12;          //window.a=12
-    // function a(){
-    //     var a
-    //     console.log(a);// 13        
-    //      var a=13;
-    // }
-    // a();                                 //36行报错  a不是一个函数
-    // console.log(a);  //12  
-
-/* 
-var n
-a function
-var c 
-
-
-*/
-/* 
-私有作用域里面的东西什么时候可以赋值到window上 
-什么时候可以打印出来
-var a或者a=10 的话
-
-
-*/
-
-// var n
-// a=function(){}
-// var c 
-
-//     var n=0; // window.n = 0;
-//     function a(){
-//        /*  var n
-//         b function(){}
-//  */
-//        var  n=10; //
-
-
-//         function b(){
-//             n++; 
-//             console.log(n); //11
-//         }
-//         b();
-
-//         return b;                            
-//     }
-//     var c=a(); //
-//     c(); 
-//     console.log(n);//
-
+        /*
+            与解析:
+               
+                a = function(){}
     
-   
+            =  12
+    
+            报错
+    
+        */
+        /*  var a  把var  pk掉
+         function a
+     
+          私有作用域中 下面的a 可以拿到吗?   var a 的时候  和  a = 13赋值的时候有什么区                            别?    var a 时                      候在私有作用域中进行变量提升?
+     
+     
+          私有作用域里面的  东西什么时候可以拿到?里面var a   和a=   包括传参  里面的函数
+     
+      */
 
-    // var a1=4,a2=[1,2],x=6;//[1,2,3]
-    // function f(){
-    //     console.log(this.x);
-    // }
-    // f()
-    // function b(x,y,z) {      
-    //     /*
-    //         arguments实参的集合，是个类数组
-    //         [x,y,z]
-    //         z() 
-    //     */
-    //     arguments[0]=10;     
-    //     arguments[1].push(3);  
-    //     arguments[2]();//[,,f] 这个f是属于arguments,所以this.x没有就为undefined
-    //     // console.log(arguments);
-    //     y = [];   
-    //     console.log(x,y); //4,[]   10,[]
-    // }
-    // b(a1,a2,f);   
-    // console.log(a1,a2);//4,[1,2,3]
+        // console.log(a); // undefined   //报错   //a是一个函数?
+        // var a=12;          //window.a=12
+        // function a(){
+        //     var a
+        //     console.log(a);// 13        
+        //      var a=13;
+        // }
+        // a();                                 //36行报错  a不是一个函数
+        // console.log(a);  //12  
+
+        /* 
+        var n
+        a function
+        var c 
+        
+        
+        */
+        /* 
+        私有作用域里面的东西什么时候可以赋值到window上 
+        什么时候可以打印出来
+        var a或者a=10 的话
+        
+        
+        */
+
+        // var n
+        // a=function(){}
+        // var c 
+
+        //     var n=0; // window.n = 0;
+        //     function a(){
+        //        /*  var n
+        //         b function(){}
+        //  */
+        //        var  n=10; //
 
 
-    // function fn(i) {        //10  //11                               //父函数包含子函数,子函数引用父函数的参数或者变量 子                                                                     涵数被外界所调用
-                                                                           
-    //     return function (n) {//40
-    //         console.log(n + (i++));
-    //     }
-    // }
-    // var f = fn(10); //fn的闭包环境，i不会被回收  10  11 12
-    // f(20);//30  ->20+10
+        //         function b(){
+        //             n++; 
+        //             console.log(n); //11
+        //         }
+        //         b();
 
-    // fn(20)(40);//60
-    // fn(30)(50);//80
-    //   f(30);//40  41
+        //         return b;                            
+        //     }
+        //     var c=a(); //
+        //     c(); 
+        //     console.log(n);//
 
 
-    /*
-        (function () {
-            this.x *= ++x;
-            return function (y) {
+
+
+        // var a1=4,a2=[1,2],x=6;//[1,2,3]
+        // function f(){
+        //     console.log(this.x);
+        // }
+        // f()
+        // function b(x,y,z) {      
+        //     /*
+        //         arguments实参的集合，是个类数组
+        //         [x,y,z]
+        //         z() 
+        //     */
+        //     arguments[0]=10;     
+        //     arguments[1].push(3);  
+        //     arguments[2]();//[,,f] 这个f是属于arguments,所以this.x没有就为undefined
+        //     // console.log(arguments);
+        //     y = [];   
+        //     console.log(x,y); //4,[]   10,[]
+        // }
+        // b(a1,a2,f);   
+        // console.log(a1,a2);//4,[1,2,3]
+
+
+        // function fn(i) {        //10  //11                               //父函数包含子函数,子函数引用父函数的参数或者变量 子                                                                     涵数被外界所调用
+
+        //     return function (n) {//40
+        //         console.log(n + (i++));
+        //     }
+        // }
+        // var f = fn(10); //fn的闭包环境，i不会被回收  10  11 12
+        // f(20);//30  ->20+10
+
+        // fn(20)(40);//60
+        // fn(30)(50);//80
+        //   f(30);//40  41
+
+
+        /*
+            (function () {
+                this.x *= ++x;
+                return function (y) {
+                    this.x *= (++x)+y;
+                    console.log(x);
+                }
+            })();
+    
+            匿名函数自执行的this是window
+            window.x *= ++window.x ->3 *= 4  = 12
+    
+    
+            obj.fn = function (y) { //001
                 this.x *= (++x)+y;
                 console.log(x);
             }
-        })();
-
-        匿名函数自执行的this是window
-        window.x *= ++window.x ->3 *= 4  = 12
-
-
-        obj.fn = function (y) { //001
-            this.x *= (++x)+y;
-            console.log(x);
-        }
-
-
-        var fn = 001
-
-        obj.fn(6);
-        obj.x *= ++ window.x + y    window.x = 13
-        5 *= 13 + 6 -> 5*=19=  obj.x = 95
-
-
-        fn(4)
-        window.x *= ++ window.x + 4
-        13 *= 14+4   13*18 = window.x = 234   
+    
+    
+            var fn = 001
+    
+            obj.fn(6);
+            obj.x *= ++ window.x + y    window.x = 13
+            5 *= 13 + 6 -> 5*=19=  obj.x = 95
+    
+    
+            fn(4)
+            window.x *= ++ window.x + 4
+            13 *= 14+4   13*18 = window.x = 234   
+    
+    
+    
+    
+        */
 
 
 
 
-    */
+        // var x = 3,//win x=3   //12
+        // obj = {x: 5};  window.obj= {x:5}   //95
+        // obj.fn = (function () {
+        //     this.x *= ++x; 
+        //                          //匿名函数自执行的this代表的window      
+        //     return function (y) {
+        //         this.x *= (++x)+y;
+        //         console.log(x);
+        //     }
+        // })();
+        // var fn = obj.fn; 
+        // obj.fn(6);
+        // fn(4);//234
+        // console.log(obj.x, x);//
+
+
+        // var x = 5;
+        // function fn(){
+
+        //     console.log(x);//
+        //         x = 9
+        // }
+        // fn()
+
+
+
+        // function Fn() {
+        //     this.x = 10;
+        //     this.y = 20;
+        //     this.getX = function () {
+        //         console.log(this.x);
+        //     }
+        // }
+        // Fn.prototype.y=40;
+        // Fn.prototype={  //Fn{} -> Object
+        //     x:30,
+        //     getY:function(){
+        //         this.y+=1;
+        //         console.log(this.y);
+        //     },
+        //     sum:function(){
+        //         console.log(this.x+this.y);
+        //     }
+        // };
+        // let f1 = new Fn; //001
+        // let f2 = new Fn;//002
+        // console.log(f1.getX === f2.getX); //false
+        // console.log(f1.getY === f2.getY);//true
+        // console.log(f1.constructor);//window   Object
+        // f1.getX(); //10
+        // f2.getY();///21
+        // f1.sum();//50  //10+20=30
+
+        // var F = function () {};
+        // Object.prototype.a = function () {
+        //     console.log('a()')
+        // };
+        // Function.prototype.b = function () {
+        //     console.log('b()')
+        // };
+        // var f = new F();
+        // f.a(); //'a()'
+        // // f.b();//报错
+        // F.a();//'a()'
+        // F.b();//'b()'
+
+
+        // function A(){alert(1);}
+        // function Fn() {
+        //     A = function(){
+        //        alert(2);
+        //     };
+        //     return this;
+        // }
+        // Fn.A=A;
+        // Fn.prototype={
+        //     A:()=>{
+        //        alert(3);
+        //     }
+        // };
+        // A();//1
+        // Fn.A();//1
+        // Fn().A();//2
+        // new Fn.A();//1
+        // new Fn().A();//3
+        // new new Fn().A();//? 报错
+
+        // var name = "WINDOW",
+        //     obj = {
+        //         name:"OBJ",
+        //         fn:(function(){
+        //             console.log(this.name);//'WINDOW'  1
+        //             return function(){
+        //                 console.log(this.name);//'OBJ'
+        //             }
+        //         })()
+        //     },
+        //     fn=()=>{//箭头函数的call方法，还是指向上下文
+        //         console.log(this.name);//"WINDOW"
+        //     };
+        // fn();//"WINDOW" 2
+        // obj.fn();//'OBJ' 3
+        // fn.call(obj);//'WINDOW'  4
+
+
+        // let ff = function(){console.log(this)};
+        // let oo = {}
+        // oo.ff = ff;
+        // oo.ff();
+
+
+        // function A1(name) {
+        //     this.name = name;
+        // }
+        // function A2(name) {
+        //     this.name = name || 'Jerry';
+        // }
+        // function A3(name) {
+        //     name && (this.name = name);
+        // }
+        // A1.prototype.name = 'Tom';
+        // A2.prototype.name = 'Tom';
+        // A3.prototype.name = 'Tom';
+        // //undefined + 'Jerry' + 'Tom' 
+        // alert((new A1().name) + (new A2().name) + (new A3().name));
 
 
 
 
-    // var x = 3,//win x=3   //12
-    // obj = {x: 5};  window.obj= {x:5}   //95
-    // obj.fn = (function () {
-    //     this.x *= ++x; 
-    //                          //匿名函数自执行的this代表的window      
-    //     return function (y) {
-    //         this.x *= (++x)+y;
-    //         console.log(x);
+        //    var num = 1; 
+        //         var obj = {
+        //             num: 2, 
+        //             fn: (function () {
+        //                 this.num *= 2;  //win 匿名函数自执行 this是win  num=2
+
+        //                 num += 3;   //5
+
+        //                 var num = 1;   
+
+        //                 return function () {
+        //                     num += 2; 
+        //                     this.num += 2      //   this是obj下的num=2    2+2=4
+        //                     console.log(++num) //5       4,7
+        //                 }
+        //             })()
+        //         };
+        //         var f = obj.fn;
+        //         f(); 
+        //         obj.fn(); ////5
+        //         console.log(window.num, obj.num);  //  5 , 1     4,4
+
+    //     function Fn() {
+    //         this.x = 1;
+    //         y = 2;
+    //         this.getX = function () {
+    //             console.log(this.x);//1
+    //         }
     //     }
-    // })();
-    // var fn = obj.fn; 
-    // obj.fn(6);
-    // fn(4);//234
-    // console.log(obj.x, x);//
+    //     Fn.prototype.getX = function () {
+    //         this.y += 1;
+    //         this.y = 2;
+    //         console.log(this.x, this.y);
+    //     };
+    //     Fn.prototype = {
+    //         x: 'zhufeng',
+    //         getY: function () {
+    //             this.y += 1;
+    //             console.log(this.y);//   3  , NAN  
+    //         },
+    //         sum: function () {
+    //             console.log(this.x + this.y);    NaN
+    //         }
+    //     };
+    //     let f1 = new Fn;
+    //     let f2 = new Fn;
+    //     console.log(f1.getX === f2.getX);//FASLE
+    //     console.log(f1.getY === f2.getY);//true
+    //     console.log(f1.__proto__.getX === Fn.prototype.getX);//TRUE//  实例的原型链等于构造函数的原型
+    //     console.log(f1.prototype);  //undefined
+    //     console.log(f1.constructor);//object
+    //     f1.getX();//1   
+    //    // Fn.prototype.getX();//报错
+    //     let fn = f2.getY;
+    //     fn();//1
+    //     Fn.prototype.getY();//3
+    //     f1.sum();
 
 
-    // var x = 5;
-    // function fn(){
-      
-    //     console.log(x);//
-    //         x = 9
+
+
+//     function Fn() {
+//         var a = 1;
+//         this.a = a;
+        
+//     }
+//     Fn.prototype.say = function () {
+//         this.a += 2;
+//         return this.a
+        
+//     };
+//     var f2 = new Fn();
+//     Fn.prototype = new Fn;
+//     var f1 = new Fn;
+//     f1.__proto__.b = function () {
+//         this.a = 3;
+//         return this.a
+//     };
+//     console.log(f1.a);//1
+//    // console.log(f1.prototype.say());//报错
+//     console.log(f1.hasOwnProperty('b'));//   fasle
+
+//     console.log('b' in f1);//true
+//     console.log(f1.constructor == Fn);//
+//     console.log(Fn.prototype);
+//     f1.b();
+//     //f2.b()
+
+
+
+    // var F = function () {};
+    // Object.prototype.a = function () {
+    //     console.log('a()')
+    // };
+    // Function.prototype.b = function () {
+    //     console.log('b()')
+    // };
+    // var f = new F();
+    // f.a();
+    // f.b();
+    // F.a();
+    // F.b();
+
+
+    // var x = 1;
+    // var obj = {
+    //     x: 2,//7
+    //     fn: function (x) {        //
+    //         this.x += ++x;       //2+5=7
+    //         console.log(x,this.x);
+    //     }
+    // };
+    // var fn = obj.fn;
+    // obj.fn(4);// fn. 5,  obj.  7 
+    // fn(5);// 6,7
+    // console.log(x, obj.x ,);//7,7
+   
+    // function C1(name) {
+    //     if (name) {
+    //         this.name = name; //this是newC1的实例 下面有if判断但是没有传参是个undefined  ,undefined是false,就进不去,所以就去原型上找 找到了TOM//     if判断里面是布尔值
+    //     }
     // }
-    // fn()
-
-
-
-// function Fn() {
-//     this.x = 10;
-//     this.y = 20;
-//     this.getX = function () {
-//         console.log(this.x);
-//     }
-// }
-// Fn.prototype.y=40;
-// Fn.prototype={  //Fn{} -> Object
-//     x:30,
-//     getY:function(){
-//         this.y+=1;
-//         console.log(this.y);
-//     },
-//     sum:function(){
-//         console.log(this.x+this.y);
-//     }
-// };
-// let f1 = new Fn; //001
-// let f2 = new Fn;//002
-// console.log(f1.getX === f2.getX); //false
-// console.log(f1.getY === f2.getY);//true
-// console.log(f1.constructor);//window   Object
-// f1.getX(); //10
-// f2.getY();///21
-// f1.sum();//50  //10+20=30
-
-// var F = function () {};
-// Object.prototype.a = function () {
-//     console.log('a()')
-// };
-// Function.prototype.b = function () {
-//     console.log('b()')
-// };
-// var f = new F();
-// f.a(); //'a()'
-// // f.b();//报错
-// F.a();//'a()'
-// F.b();//'b()'
-
-
-// function A(){alert(1);}
-// function Fn() {
-//     A = function(){
-//        alert(2);
-//     };
-//     return this;
-// }
-// Fn.A=A;
-// Fn.prototype={
-//     A:()=>{
-//        alert(3);
-//     }
-// };
-// A();//1
-// Fn.A();//1
-// Fn().A();//2
-// new Fn.A();//1
-// new Fn().A();//3
-// new new Fn().A();//? 报错
-
-// var name = "WINDOW",
-//     obj = {
-//         name:"OBJ",
-//         fn:(function(){
-//             console.log(this.name);//'WINDOW'  1
-//             return function(){
-//                 console.log(this.name);//'OBJ'
-//             }
-//         })()
-//     },
-//     fn=()=>{//箭头函数的call方法，还是指向上下文
-//         console.log(this.name);//"WINDOW"
-//     };
-// fn();//"WINDOW" 2
-// obj.fn();//'OBJ' 3
-// fn.call(obj);//'WINDOW'  4
-
-
-// let ff = function(){console.log(this)};
-// let oo = {}
-// oo.ff = ff;
-// oo.ff();
-
-
-// function A1(name) {
-//     this.name = name;
-// }
-// function A2(name) {
-//     this.name = name || 'Jerry';
-// }
-// function A3(name) {
-//     name && (this.name = name);
-// }
-// A1.prototype.name = 'Tom';
-// A2.prototype.name = 'Tom';
-// A3.prototype.name = 'Tom';
-// //undefined + 'Jerry' + 'Tom' 
-// alert((new A1().name) + (new A2().name) + (new A3().name));
-
-
-
-
-   var num = 1; 
-        var obj = {
-            num: 2, 
-            fn: (function () {
-                this.num *= 2;  //win 匿名函数自执行 this是win  num=2
-
-                num += 3;   //5
-
-                var num = 1;   
-
-                return function () {
-                    num += 2; 
-                    this.num += 2      //   this是obj下的num=2    2+2=4
-                    console.log(++num) //5       4,7
-                }
-            })()
-        };
-        var f = obj.fn;
-        f(); 
-        obj.fn(); ////5
-        console.log(window.num, obj.num);  //  5 , 1     4,4
+    // function C2(name) {
+    //     this.name = name;
+    // }                     //第二个就没有传参  所以直接就是undefined
+    // function C3(name) {
+    //     this.name = name || 'join';//第三个也是没有传参,没有传参就是undefined,但是undefined是false,false的话看后面的  因为是或所以是join
+    // }
+    // C1.prototype.name = 'Tom';
+    // C2.prototype.name = 'Tom';
+    // C3.prototype.name = 'Tom';
+    // alert((new C1().name) + (new C2().name) + (new C3().name));
+    // //第一个 
 
 
 
 
 
 
-
-
-
-
-
-
-</script>
+    </script>
 </body>
+
 </html>
