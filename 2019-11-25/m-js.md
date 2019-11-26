@@ -40,8 +40,8 @@ $('.active') 获取所有的.active 元素
   ```
 
   ### 属性操作
-  - attr -> getAttribute,setAttribute
-  - removeAttr  -> removeAttribute
+  - attr -> getAttribute,//获取行间属性setAttribute
+  - removeAttr  -> removeAttribute//删除指定属性
   - prop  -> 表单的状态布尔值(表单元素用)
   - val  ->value
   - html()     -> innerHTML

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        position: absolute;
+        top:50px;
+        left: 0;
+        /* transition */
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+    <script src="./teacher/node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+    /* 
+    hide  
+    show 也是有动画
+
+    在做jq 动画的时候,记得使用stop(),把前面的动画清掉
+
+    
+     */
+    // $('#btn').click(function(){
+    //     //隐藏
+    //     //$('#box').hide(500);
+
+    //    // $('#box').toggle(1000);//改变宽高,缩小恢复
+    //    $('#box').fadeToggle(200)//渐隐渐现
+    // })
+
+    
+    //向左移动
+    // $(document).click(function(){
+    //     $('#box').css({
+    //         left:400
+    //     })
+    // })
+//delay:延迟3秒 向左移动500
+        // $('#box').delay(1000).animate({
+        //     left:500
+        // },3000)
+
+//重复执行
+    setInterval(()=>{
+        $('#box').animate({
+            left:$('#box').offset().left +100
+        },500);//走完整个过程需要0.5s
+    },1000)//每隔一秒执行一次
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

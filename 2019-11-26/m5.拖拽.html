@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width:100px;
+        height: 100px;
+        background: yellowgreen;
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    #boxsha{
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        position: absolute;
+        opacity: .5;
+        top: 0;
+        left: 0;
+    }
+    </style>
+</head>
+<body id="body">
+    <div id="box"></div>
+    <script src="./teacher/node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+    /* 
+    offset() -> 绝对位置
+    position() -> 基于父级的(offset)
+    
+     */
+    let num = 1;
+    $('#box').mousedown(function(ev){
+        let $box2 = $('<div id ="boxsha"></div>');
+        $box2.css({
+            left:$('#box').offset().left,
+            top:$('#box').offset().top,
+        })
+        $(body).append($box2);
+        let disX = ev.pageX - $('#box').offset().left;
+        let disY = ev.pageY - $('#box').offset().top;
+        $(document).mousemove(function(ev){
+            let t= ev.pageY - disY;
+            let l= ev.pageX - disX;
+            //小于这个范围回到顶部和左部
+            // if(t<500){
+            //     t = 0;
+            // }
+            // if(l<100){
+            //     l = 0;
+            // }
+
+            $box2.css({
+                left:l,
+                top:t,
+            })
+        });
+        $(document).mouseup(function(ev){
+            $(document).off('mousemove');
+            $(document).off('mouseup');
+            $('#box').css({
+                left:$box2.offset().left,
+                top:$box2.offset().top
+            });
+            $box2.remove();
+        })
+        return false;
+    })
+    //===========================
+    //没有影子的拖拽
+    // $('#box').mousedown(function(ev){
+    //     let disX = ev.pageX - $('#box').offset().left;
+    //     let disY = ev.pageY - $('#box').offset().top;
+
+    //     $(document).mousemove(function(ev){
+    //         $('#box').css({
+    //             left:ev.pageX - disX,
+    //             top:ev.pageY - disY
+    //         });
+    //     });
+
+    //     $(document).mouseup(function(){
+    //         $(document).off('mousemove');
+    //         // console.log('11111');
+    //         $(document).off('mouseup');
+    //     });
+
+    // });
+    
+    </script>
+</body>
+</html>
