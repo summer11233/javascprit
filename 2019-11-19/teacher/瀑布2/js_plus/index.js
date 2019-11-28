@@ -73,7 +73,7 @@ function throttling(cb,time){
     }
 
 function render(){
-    fetch('../data.json')
+    fetch('./data.json')
     .then(d=>d.json())
     .then(ary=>{
         ary.forEach((item,i)=>{
