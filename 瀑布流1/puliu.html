@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>手敲瀑布流</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="head">
+            <li><img src="./img/head1.png" alt=""></li>
+            <li><img src="./img/head2.jpg" alt=""></li>
+            <li><img src="./img/head3.jpg" alt=""></li>
+            <li><img src="./img/head4.jpg" alt=""></li>
+            <li><img src="./img/head5.jpg" alt=""></li>
+        </ul>
+        <ul class="body">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <script>
+            const box = document.querySelector('.body');
+            const lis = document.querySelectorAll('li');
+            const head = document.querySelector('.head')
+            function minEle(lis) {
+                let ary = [...lis].map(ele => ele.scrollHeight);
+                let min = Math.min(...ary);
+                let index = ary.findIndex(item => item === min);
+                return {
+                    ele: lis[index],
+                    index,
+                    min
+                }
+            }
+            function debounce(cb, time) {
+                let timer;
+                return function (...arg) {
+                    if (timer) {
+                        clearTimeout(timer);
+                    }
+                    timer = setTimeout(() => {
+                        cb.call(this, ...arg);
+                    }, time);
+                }
+            }
+            
+            function render() {
+                fetch('./data.json')
+                    .then(d => d.json())
+                    .then(ary => {
+                        ary.forEach((item, i) => {
+                            let { ele } = minEle(lis);
+                            let div = document.createElement('div');
+                            div.className = 'img_box';
+                            let img = document.createElement('img');
+                            img.src = item.pic;
+
+                            let p1 = document.createElement('p');
+                            let p2 = document.createElement('p');
+                            p1.className = 'desc';
+                            p1.innerText = item.desc;
+                            p2.className = 'author';
+                            p2.innerText = item.author;
+                            div.append(img);
+                            div.append(p1);
+                            div.append(p2);
+                            ele.append(div);
+                            setTimeout(() => {
+                                img.style.opacity = 1;
+                            })
+                        })
+                    })
+            }
+            render();
+
+            let iH = window.innerHeight;
+            window.onscroll = debounce(fn, 200);
+            function fn() {
+                if (box.scrollHeight < iH) return;
+                let { min } = minEle(lis);
+                let scroll = window.pageYOffset;
+
+                if (iH + scroll >= min + head.offsetHeight) {
+                    console.log('触底了');
+                    render();
+                }
+            }
+        </script>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

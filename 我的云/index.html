@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <title>我的云</title>
+    <style>
+    
+    body{
+        width: 1282px;
+        height: 100%;
+        background: cyan;
+    }
+   /*  .box{
+        display: flex;
+    } */
+    header{
+        /* width: 100%; */
+        height: 80px;
+        background: red;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 20px;
+        border: 1px solid #333;
+        margin-left: 65px;
+    }
+    header img{
+        width: 60px;
+        height: 60px;
+        display: block;
+        background: yellowgreen;
+        margin-left: 10px;
+
+        }
+    header div{
+        display: inline-block;
+        margin-left: 20px;
+    }
+    .nav{
+        background: yellow;
+        height: 50px;
+        width: 1215px;
+        border: 1px solid #333;
+        margin-left: 65px; 
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+    .ullist{
+        display: flex;
+        flex-direction: row-reverse;
+        line-height: 50px;
+
+        justify-content:space-around;
+        width: 1030px;
+        border: 1px solid #333;
+      }
+      .ullist li{
+        border: 1px solid #333;
+        width: 70px;
+        height:30px;
+        line-height: 30px;
+        border-radius: 5px;
+        margin-top: 10px;
+        text-align: center;
+    
+      }
+      .ullist li:hover{
+          background: chartreuse;
+      }
+     .nav .navleft{
+        width: 248px;
+        line-height: 50px;
+        border: 1px solid #333;
+        font-size: 20px;
+        font-weight: 800px;
+        text-align: center;
+        /* font-family:'Times New Roman', Times, serif; */
+     }
+    .neirong{
+        display: flex;
+        margin-left: 65px;
+    }
+    .left{
+        width: 250px;
+        height: 450px;
+        background: palevioletred;
+        border: 1px solid #333;
+
+    }
+    .left p{
+        font-size: 18px;
+        text-align: center;
+        margin-top: 40px;
+        height: 50px;
+        line-height: 50px;
+        
+
+    }
+    .left p:hover{
+        background: cornflowerblue;
+    }
+    .right{
+        width: 1030px;
+        height: 450px;
+        background: darkorange;
+        border: 1px solid #333;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <header>
+           <div><img src="" alt=""></div>
+           <div>珠峰硬盘</div>
+
+        </header>
+
+        <div class="nav">
+        <div class="navleft">我的云盘</div>
+           <ul class="ullist">
+               <li><a href="">下载</a></li>
+               <li><a href="">分享</a></li>
+               <li><a href="">移动到</a></li>
+               <li><a href="">重命名</a></li>
+               <li><a href="">删除</a></li>
+               <li><a href="">新建文件夹</a></li>
+             
+           </ul>
+        </div>
+        <div class="neirong">
+            <div class="left">
+                <p><a href="">视频</a></p>
+                <p><a href="">照片</a></p>
+                <p><a href="">音乐</a></p>
+                <p><a href="">种子</a></p>
+            </div>
+            <div class="right"></div>
+        </div>
+        
+
+
+    </div>
+</body>
+</html>
